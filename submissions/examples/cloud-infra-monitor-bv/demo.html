@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cloud Infrastructure Monitoring Hub — EaseMotion CSS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="im-layout">
+      <!-- ── SECTION 1: IM Header ── -->
+      <header class="im-header">
+        <div
+          style="
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+          "
+        >
+          <span>☁️</span>
+          <span>CloudInfra Monitor</span>
+        </div>
+        <div
+          style="
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--im-primary);
+          "
+        >
+          SLA Status: 99.998% Uptime
+        </div>
+      </header>
+
+      <!-- ── SECTION 2: Metric Telemetry Row ── -->
+      <section class="im-section">
+        <div class="im-grid-4">
+          <div class="im-card">
+            <h3>CPU Load</h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--im-primary);
+                margin-top: 1rem;
+              "
+            >
+              42%
+            </div>
+            <p
+              style="
+                color: var(--im-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Average across 140 nodes
+            </p>
+          </div>
+          <div class="im-card">
+            <h3>Memory Load</h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--im-accent);
+                margin-top: 1rem;
+              "
+            >
+              68%
+            </div>
+            <p
+              style="
+                color: var(--im-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Allocated resources active
+            </p>
+          </div>
+          <div class="im-card">
+            <h3>Network Out</h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--im-primary);
+                margin-top: 1rem;
+              "
+            >
+              1.2 Gbps
+            </div>
+            <p
+              style="
+                color: var(--im-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Throughput bandwidth rate
+            </p>
+          </div>
+          <div class="im-card" style="border-color: var(--im-warning)">
+            <h3>Active Alerts</h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--im-warning);
+                margin-top: 1rem;
+              "
+            >
+              2
+            </div>
+            <p
+              style="
+                color: var(--im-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Non-blocking alerts pending
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 3: Server Nodes & Resource Allocation ── -->
+      <section class="im-section im-flex-2">
+        <div>
+          <h3>Infrastructure Active Cluster Nodes</h3>
+          <div style="margin-top: 1.5rem">
+            <table class="im-table">
+              <thead>
+                <tr>
+                  <th>Node ID</th>
+                  <th>Region</th>
+                  <th>CPU Alloc</th>
+                  <th>Memory Alloc</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>node-us-east-44</td>
+                  <td>us-east-1</td>
+                  <td>32%</td>
+                  <td>64%</td>
+                  <td style="color: var(--im-primary)">Healthy</td>
+                </tr>
+                <tr style="background-color: rgba(245, 158, 11, 0.05)">
+                  <td>node-eu-central-12</td>
+                  <td>eu-central-1</td>
+                  <td>88%</td>
+                  <td>92%</td>
+                  <td style="color: var(--im-warning); font-weight: bold">
+                    High Load
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="im-card">
+          <h3>Scale Orchestration</h3>
+          <p
+            style="
+              font-size: 0.9rem;
+              color: var(--im-text-muted);
+              margin-top: 0.5rem;
+              margin-bottom: 1.5rem;
+            "
+          >
+            Adjust container cluster deployment capacities.
+          </p>
+          <button
+            style="
+              width: 100%;
+              padding: 0.75rem;
+              background-color: var(--im-primary);
+              border: none;
+              color: #fff;
+              font-weight: 700;
+              border-radius: 0.5rem;
+              cursor: pointer;
+              margin-bottom: 1rem;
+            "
+          >
+            Add Replica Nodes
+          </button>
+          <button
+            style="
+              width: 100%;
+              padding: 0.75rem;
+              background-color: transparent;
+              border: 1px solid var(--im-border);
+              color: var(--im-text);
+              font-weight: 600;
+              border-radius: 0.5rem;
+              cursor: pointer;
+            "
+          >
+            Download Metrics JSON
+          </button>
+        </div>
+      </section>
+
+      <!-- ── SECTION 4: Live Cluster Logs ── -->
+      <section class="im-section">
+        <h3>Cloud Cluster Stream Terminal</h3>
+        <div style="margin-top: 1.5rem">
+          <pre><code>$ infra-observer --stream --level=info
+[INFO] Cluster node-us-east-44 registered successfully
+[WARN] Storage usage on node-eu-central-12 crossed 90% capacity threshold
+[INFO] Auto-scale script booted; adding 2 storage allocation volumes</code></pre>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
