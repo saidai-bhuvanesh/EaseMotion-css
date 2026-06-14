@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fraud Detection Operations Center — EaseMotion CSS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="fd-layout">
+      <!-- ── SECTION 1: Fraud Header ── -->
+      <header class="fd-header">
+        <div
+          style="
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+          "
+        >
+          <span>🔍</span>
+          <span>FraudIntel Operations</span>
+        </div>
+        <div
+          style="
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--fd-primary);
+          "
+        >
+          Security Profile: Secure
+        </div>
+      </header>
+
+      <!-- ── SECTION 2: Fraud Metrics Row ── -->
+      <section class="fd-section">
+        <div class="fd-grid-4">
+          <div class="fd-card fraud-warning">
+            <h3>Flagged Transactions</h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--fd-danger);
+                margin-top: 1rem;
+              "
+            >
+              14
+            </div>
+            <p
+              style="
+                color: var(--fd-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Under active review
+            </p>
+          </div>
+          <div class="fd-card">
+            <h3>Verified Safe</h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--fd-success);
+                margin-top: 1rem;
+              "
+            >
+              98.8%
+            </div>
+            <p
+              style="
+                color: var(--fd-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Accuracy confidence score
+            </p>
+          </div>
+          <div class="fd-card">
+            <h3>Saved Value</h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--fd-success);
+                margin-top: 1rem;
+              "
+            >
+              $124,500
+            </div>
+            <p
+              style="
+                color: var(--fd-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Prevented fraud chargebacks
+            </p>
+          </div>
+          <div class="fd-card">
+            <h3>Average Risk Score</h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--fd-primary);
+                margin-top: 1rem;
+              "
+            >
+              18%
+            </div>
+            <p
+              style="
+                color: var(--fd-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Across all networks
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 3: Fraud Alert Ledger & Controls ── -->
+      <section class="fd-section fd-flex-2">
+        <div>
+          <h3>Transaction Alert Registry</h3>
+          <div style="margin-top: 1.5rem">
+            <table class="fd-table">
+              <thead>
+                <tr>
+                  <th>Transaction ID</th>
+                  <th>Value</th>
+                  <th>Risk Score</th>
+                  <th>Flagged Reason</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="background-color: rgba(239, 68, 68, 0.05)">
+                  <td>tx-8850-f</td>
+                  <td>$1,200.00</td>
+                  <td style="color: var(--fd-danger); font-weight: bold">
+                    88%
+                  </td>
+                  <td>IP Geolocation Mismatch</td>
+                  <td>Awaiting Triage</td>
+                </tr>
+                <tr>
+                  <td>tx-8849-s</td>
+                  <td>$49.00</td>
+                  <td style="color: var(--fd-success)">12%</td>
+                  <td>Standard Purchase</td>
+                  <td>Cleared</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="fd-card">
+          <h3>Verification Actions</h3>
+          <p
+            style="
+              font-size: 0.9rem;
+              color: var(--fd-text-muted);
+              margin-top: 0.5rem;
+              margin-bottom: 1.5rem;
+            "
+          >
+            Determine outcome of flagged transaction alerts.
+          </p>
+          <button
+            style="
+              width: 100%;
+              padding: 0.75rem;
+              background-color: var(--fd-danger);
+              border: none;
+              color: #fff;
+              font-weight: 700;
+              border-radius: 0.5rem;
+              cursor: pointer;
+              margin-bottom: 1rem;
+            "
+          >
+            Quarantine &amp; Block TX
+          </button>
+          <button
+            style="
+              width: 100%;
+              padding: 0.75rem;
+              background-color: transparent;
+              border: 1px solid var(--fd-border);
+              color: var(--fd-text);
+              font-weight: 600;
+              border-radius: 0.5rem;
+              cursor: pointer;
+            "
+          >
+            Force Clear Transact
+          </button>
+        </div>
+      </section>
+
+      <!-- ── SECTION 4: Live Rules Logs ── -->
+      <section class="soc-section">
+        <h3>Fraud Detection Engine Shell</h3>
+        <div style="margin-top: 1.5rem">
+          <pre><code>$ fraud-engine --monitor --verbose
+[ALERT] Transaction tx-8850-f flagged with high risk score (88%)
+[RULES] IP mismatch: Card origin (US) - Session IP (RU)
+[INFO] SMS Verification code dispatched to account owner</code></pre>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

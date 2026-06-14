@@ -1,0 +1,140 @@
+/* ============================================================
+   FRAUD DETECTION OPERATIONS CENTER — Style Sheet
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+:root {
+  --fd-bg: #090a12;
+  --fd-surface: #141727;
+  --fd-elevated: #21253e;
+  --fd-primary: #f59e0b;
+  --fd-accent: #3b82f6;
+  --fd-danger: #ef4444;
+  --fd-success: #10b981;
+  --fd-text: #f9fafb;
+  --fd-text-muted: #9ca3af;
+  --fd-border: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--fd-bg);
+  color: var(--fd-text);
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+.fd-layout {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.fd-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--fd-border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.fd-section {
+  margin-bottom: 3.5rem;
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.fd-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.fd-card {
+  background: rgba(20, 23, 39, 0.7);
+  border: 1px solid var(--fd-border);
+  backdrop-filter: blur(16px);
+  padding: 2rem;
+  border-radius: 1rem;
+  transition: all 0.3s;
+}
+
+.fd-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--fd-primary);
+  box-shadow: 0 10px 20px rgba(245, 158, 11, 0.1);
+}
+
+.fd-card.fraud-warning {
+  border-color: var(--fd-danger);
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.fd-flex-2 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.fd-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.fd-table th,
+.fd-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--fd-border);
+}
+
+.fd-table th {
+  color: var(--fd-text-muted);
+  font-size: 0.85rem;
+}
+
+pre {
+  background-color: #020617;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--fd-border);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  overflow-x: auto;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .fd-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .fd-flex-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .fd-grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+/* ============================================================
+   END OF FILE
+   ============================================================ */
