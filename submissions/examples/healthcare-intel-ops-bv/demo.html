@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healthcare Intelligence Operations Platform — EaseMotion CSS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hc-layout">
+      <!-- ── SECTION 1: Healthcare Header ── -->
+      <header class="hc-header">
+        <div
+          style="
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+          "
+        >
+          <span>🏥</span>
+          <span>CareIntel Command</span>
+        </div>
+        <div
+          style="
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--hc-primary);
+          "
+        >
+          Facility Status: Operational
+        </div>
+      </header>
+
+      <!-- ── SECTION 2: Clinical Dials ── -->
+      <section class="hc-section">
+        <div class="hc-grid-4">
+          <div class="hc-card">
+            <h3>ICU Capacity</h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--hc-accent);
+                margin-top: 1rem;
+              "
+            >
+              82%
+            </div>
+            <p
+              style="
+                color: var(--hc-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Occupied resource beds
+            </p>
+          </div>
+          <div class="hc-card">
+            <h3>Avg ER Wait Time</h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--hc-primary);
+                margin-top: 1rem;
+              "
+            >
+              14 mins
+            </div>
+            <p
+              style="
+                color: var(--hc-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Average triage delay
+            </p>
+          </div>
+          <div class="hc-card">
+            <h3>Staff Active</h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--hc-accent);
+                margin-top: 1rem;
+              "
+            >
+              142
+            </div>
+            <p
+              style="
+                color: var(--hc-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Doctors and nurses on shift
+            </p>
+          </div>
+          <div class="hc-card" style="border-color: var(--hc-warning)">
+            <h3>Critical Alerts</h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--hc-warning);
+                margin-top: 1rem;
+              "
+            >
+              1
+            </div>
+            <p
+              style="
+                color: var(--hc-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              ICU capacity threshold check
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 3: Patient Registry & Clinical Actions ── -->
+      <section class="hc-section hc-flex-2">
+        <div>
+          <h3>Emergency Patient Intake Registry</h3>
+          <div style="margin-top: 1.5rem">
+            <table class="hc-table">
+              <thead>
+                <tr>
+                  <th>Intake ID</th>
+                  <th>Priority</th>
+                  <th>Assigned Ward</th>
+                  <th>Clinician</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="background-color: rgba(239, 68, 68, 0.05)">
+                  <td>in-8850-x</td>
+                  <td style="color: var(--hc-danger); font-weight: bold">
+                    Priority 1
+                  </td>
+                  <td>ICU Ward B</td>
+                  <td>Dr. Jane Smith</td>
+                  <td>Admitted</td>
+                </tr>
+                <tr>
+                  <td>in-8849-y</td>
+                  <td style="color: var(--hc-warning)">Priority 2</td>
+                  <td>General Ward 3</td>
+                  <td>Dr. Mark Manson</td>
+                  <td>Triage Completed</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="hc-card">
+          <h3>Clinical Controls</h3>
+          <p
+            style="
+              font-size: 0.9rem;
+              color: var(--hc-text-muted);
+              margin-top: 0.5rem;
+              margin-bottom: 1.5rem;
+            "
+          >
+            Manage hospital staffing and capacity allocations.
+          </p>
+          <button
+            style="
+              width: 100%;
+              padding: 0.75rem;
+              background-color: var(--hc-primary);
+              border: none;
+              color: #fff;
+              font-weight: 700;
+              border-radius: 0.5rem;
+              cursor: pointer;
+              margin-bottom: 1rem;
+            "
+          >
+            Roster On-Call Staff
+          </button>
+          <button
+            style="
+              width: 100%;
+              padding: 0.75rem;
+              background-color: transparent;
+              border: 1px solid var(--hc-border);
+              color: var(--hc-text);
+              font-weight: 600;
+              border-radius: 0.5rem;
+              cursor: pointer;
+            "
+          >
+            Compile Clinic Audit
+          </button>
+        </div>
+      </section>
+
+      <!-- ── SECTION 4: Live Care log ── -->
+      <section class="hc-section">
+        <h3>CareIntel Clinical Console</h3>
+        <div style="margin-top: 1.5rem">
+          <pre><code>$ careintel --monitor --hospitals
+[INFO] intake in-8850-x telemetry synchronised successfully
+[WARN] ICU capacity alert: occupancy crossed 80% limit threshold
+[INFO] Allocating additional backup nursing shifts for ICU Ward B</code></pre>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
