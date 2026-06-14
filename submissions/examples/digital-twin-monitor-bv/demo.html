@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Twin Monitoring Platform — EaseMotion CSS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="dt-layout">
+      <!-- ── SECTION 1: Twin Header ── -->
+      <header class="dt-header">
+        <div
+          style="
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+          "
+        >
+          <span>⚙️</span>
+          <span>DigitalTwin Observability</span>
+        </div>
+        <div
+          style="
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--dt-primary);
+          "
+        >
+          Simulation Mode: Active Sync
+        </div>
+      </header>
+
+      <!-- ── SECTION 2: Physical Device Metrics ── -->
+      <section class="dt-section">
+        <div class="dt-grid-4">
+          <div class="dt-card">
+            <h3>Asset Health</h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--dt-success);
+                margin-top: 1rem;
+              "
+            >
+              98.4%
+            </div>
+            <p
+              style="
+                color: var(--dt-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Across all physics engines
+            </p>
+          </div>
+          <div class="dt-card">
+            <h3>Latency</h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--dt-accent);
+                margin-top: 1rem;
+              "
+            >
+              4.2ms
+            </div>
+            <p
+              style="
+                color: var(--dt-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Real-time sync latency
+            </p>
+          </div>
+          <div class="dt-card">
+            <h3>Operational Temp</h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--dt-success);
+                margin-top: 1rem;
+              "
+            >
+              44°C
+            </div>
+            <p
+              style="
+                color: var(--dt-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Avg temperature load
+            </p>
+          </div>
+          <div class="dt-card" style="border-color: var(--dt-danger)">
+            <h3>Asset Alerts</h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--dt-danger);
+                margin-top: 1rem;
+              "
+            >
+              1
+            </div>
+            <p
+              style="
+                color: var(--dt-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Critical bearing warning
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 3: Sensor Data & Mitigation Controls ── -->
+      <section class="dt-section dt-flex-2">
+        <div>
+          <h3>Digital Twin Sensor Registries</h3>
+          <div style="margin-top: 1.5rem">
+            <table class="dt-table">
+              <thead>
+                <tr>
+                  <th>Sensor ID</th>
+                  <th>Type</th>
+                  <th>Value</th>
+                  <th>Tolerance</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>sensor-turbine-04</td>
+                  <td>Vibration</td>
+                  <td>0.04 mm/s</td>
+                  <td>&lt; 0.1 mm/s</td>
+                  <td style="color: var(--dt-success)">Normal</td>
+                </tr>
+                <tr style="background-color: rgba(239, 68, 68, 0.05)">
+                  <td>sensor-bearing-12</td>
+                  <td>Thermal</td>
+                  <td>92°C</td>
+                  <td>&lt; 85°C</td>
+                  <td style="color: var(--dt-danger); font-weight: bold">
+                    Overheat
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="dt-card">
+          <h3>Simulation Control</h3>
+          <p
+            style="
+              font-size: 0.9rem;
+              color: var(--dt-text-muted);
+              margin-top: 0.5rem;
+              margin-bottom: 1.5rem;
+            "
+          >
+            Manage digital twin physical model parameters.
+          </p>
+          <button
+            style="
+              width: 100%;
+              padding: 0.75rem;
+              background-color: var(--dt-primary);
+              border: none;
+              color: #fff;
+              font-weight: 700;
+              border-radius: 0.5rem;
+              cursor: pointer;
+              margin-bottom: 1rem;
+            "
+          >
+            Calibrate Sensors
+          </button>
+          <button
+            style="
+              width: 100%;
+              padding: 0.75rem;
+              background-color: transparent;
+              border: 1px solid var(--dt-border);
+              color: var(--dt-text);
+              font-weight: 600;
+              border-radius: 0.5rem;
+              cursor: pointer;
+            "
+          >
+            Recalculate Physics
+          </button>
+        </div>
+      </section>
+
+      <!-- ── SECTION 4: Live Physics stream ── -->
+      <section class="dt-section">
+        <h3>Physics Simulation Engine Log</h3>
+        <div style="margin-top: 1.5rem">
+          <pre><code>$ digitaltwin-engine --stream --realtime
+[SYNC] Twin status connected: asset-id-8850 (Turbine-Beta)
+[WARN] sensor-bearing-12 triggered critical threshold warnings
+[INFO] Dispatched cooling liquid instructions to physical actuator controls</code></pre>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
