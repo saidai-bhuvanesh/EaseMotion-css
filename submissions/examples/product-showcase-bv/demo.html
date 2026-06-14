@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Product Showcase Hub — EaseMotion CSS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="ps-layout">
+      <!-- ── SECTION 1: Product Hero Banner ─────────────────────────── -->
+      <section class="ps-hero">
+        <h1>DevSync Enterprise</h1>
+        <p>
+          The ultimate workflow automation tool for next-gen development squads.
+          Build, orchestrate, and observe pipelines in real-time.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 1rem">
+          <button class="ps-btn ps-btn-cta">Start Free Trial</button>
+          <button
+            class="ps-btn ps-btn-primary"
+            style="
+              background-color: var(--ps-elevated);
+              border: 1px solid var(--ps-border);
+            "
+          >
+            Watch Live Demo
+          </button>
+        </div>
+      </section>
+
+      <!-- ── SECTION 2: Feature Showcase Grid ───────────────────────── -->
+      <section class="ps-section">
+        <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.25rem">
+          Built for Scale. Engineered for Velocity.
+        </h2>
+        <div class="ps-grid-3">
+          <div class="ps-card">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem">⚡</div>
+            <h3>Infinite Pipelines</h3>
+            <p
+              style="
+                color: var(--ps-text-muted);
+                font-size: 0.95rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Orchestrate multi-cloud tasks with zero container setup delay.
+            </p>
+          </div>
+          <div class="ps-card">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem">🛡️</div>
+            <h3>Granular Access</h3>
+            <p
+              style="
+                color: var(--ps-text-muted);
+                font-size: 0.95rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Enterprise-grade security controls with automated token rotation
+              policies.
+            </p>
+          </div>
+          <div class="ps-card">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem">📊</div>
+            <h3>Deep Intelligence</h3>
+            <p
+              style="
+                color: var(--ps-text-muted);
+                font-size: 0.95rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Machine learning alerts that notify operators before bottlenecks
+              happen.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 3: Interactive Demo Tabs ───────────────────────── -->
+      <section class="ps-section">
+        <h2 style="text-align: center; margin-bottom: 2rem">
+          Explore the Workflow
+        </h2>
+        <div class="ps-tabs-nav">
+          <button class="ps-tab-btn active">Task Orchestration</button>
+          <button class="ps-tab-btn">Security Auditing</button>
+          <button class="ps-tab-btn">Global Analytics</button>
+        </div>
+        <div
+          class="ps-card"
+          style="
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--ps-elevated);
+          "
+        >
+          <div style="text-align: center">
+            <p
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 1.1rem;
+                color: var(--ps-primary);
+              "
+            >
+              pipeline.stage("Build") -> docker.push("registry.devsync.io/app")
+            </p>
+            <p
+              style="
+                color: var(--ps-text-muted);
+                margin-top: 1rem;
+                font-size: 0.9rem;
+              "
+            >
+              Clean, visual pipelines ready in under 5 seconds.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 4: Product Analytics Dashboard ─────────────────── -->
+      <section class="ps-section">
+        <h3>Live Activity &amp; Usage Metrics</h3>
+        <div class="ps-grid-3" style="margin-top: 2rem">
+          <div class="ps-card" style="text-align: center">
+            <div
+              style="
+                font-size: 3rem;
+                font-weight: 800;
+                color: var(--ps-primary);
+              "
+            >
+              99.99%
+            </div>
+            <p
+              style="
+                color: var(--ps-text-muted);
+                font-size: 0.9rem;
+                margin-top: 0.5rem;
+              "
+            >
+              SLA Uptime Guarantee
+            </p>
+          </div>
+          <div class="ps-card" style="text-align: center">
+            <div
+              style="font-size: 3rem; font-weight: 800; color: var(--ps-accent)"
+            >
+              12.4ms
+            </div>
+            <p
+              style="
+                color: var(--ps-text-muted);
+                font-size: 0.9rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Median Global Latency
+            </p>
+          </div>
+          <div class="ps-card" style="text-align: center">
+            <div
+              style="font-size: 3rem; font-weight: 800; color: var(--ps-cta)"
+            >
+              48M+
+            </div>
+            <p
+              style="
+                color: var(--ps-text-muted);
+                font-size: 0.9rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Pipelines Processed Weekly
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 5: Onboarding Stepper ──────────────────────────── -->
+      <section class="ps-section">
+        <h3>Get Started in 3 Simple Steps</h3>
+        <div class="ps-stepper">
+          <div class="ps-step active">
+            <div class="ps-step-num">1</div>
+            <h4>Deploy Sandbox</h4>
+            <p
+              style="
+                font-size: 0.85rem;
+                color: var(--ps-text-muted);
+                margin-top: 0.5rem;
+              "
+            >
+              Run single script to launch localhost environment.
+            </p>
+          </div>
+          <div class="ps-step">
+            <div class="ps-step-num">2</div>
+            <h4>Link Projects</h4>
+            <p
+              style="
+                font-size: 0.85rem;
+                color: var(--ps-text-muted);
+                margin-top: 0.5rem;
+              "
+            >
+              Connect repository or cloud host credentials.
+            </p>
+          </div>
+          <div class="ps-step">
+            <div class="ps-step-num">3</div>
+            <h4>Launch Live</h4>
+            <p
+              style="
+                font-size: 0.85rem;
+                color: var(--ps-text-muted);
+                margin-top: 0.5rem;
+              "
+            >
+              Observe live data pipelines streaming instantly.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 6: Integration Partner Grid ────────────────────── -->
+      <section class="ps-section" style="text-align: center">
+        <h3>Seamless Integrations</h3>
+        <p style="color: var(--ps-text-muted); margin-bottom: 2rem">
+          Works out of the box with your current tools
+        </p>
+        <div
+          style="
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            font-size: 1.5rem;
+            opacity: 0.6;
+          "
+        >
+          <span>AWS</span>
+          <span>Google Cloud</span>
+          <span>GitHub</span>
+          <span>GitLab</span>
+          <span>Slack</span>
+          <span>Kubernetes</span>
+        </div>
+      </section>
+
+      <!-- ── SECTION 7: Product Roadmap Timeline ─────────────────────── -->
+      <section class="ps-section">
+        <h3>Release Timeline &amp; Roadmap</h3>
+        <div class="ps-timeline" style="margin-top: 2.5rem">
+          <div class="ps-timeline-item">
+            <h4>Q3 2026: Visual Dag Orchestrator</h4>
+            <p
+              style="
+                font-size: 0.9rem;
+                color: var(--ps-text-muted);
+                margin-top: 0.5rem;
+              "
+            >
+              Enable drag-and-drop workflow adjustments inside sandbox
+              viewports.
+            </p>
+          </div>
+          <div class="ps-timeline-item">
+            <h4>Q4 2026: AI Copilot Assistant</h4>
+            <p
+              style="
+                font-size: 0.9rem;
+                color: var(--ps-text-muted);
+                margin-top: 0.5rem;
+              "
+            >
+              Proactively debug pipeline issues using integrated LLM
+              diagnostics.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 8: FAQ Accordion ───────────────────────────────── -->
+      <section class="ps-section">
+        <h3>Frequently Asked Questions</h3>
+        <div style="margin-top: 2rem">
+          <details class="ps-card" style="margin-bottom: 1rem; cursor: pointer">
+            <summary style="font-weight: 700">
+              Does it support on-prem deployments?
+            </summary>
+            <p
+              style="
+                margin-top: 1rem;
+                color: var(--ps-text-muted);
+                font-size: 0.9rem;
+              "
+            >
+              Yes, DevSync offers single-command helm charts for Kubernetes
+              clusters on-prem.
+            </p>
+          </details>
+          <details class="ps-card" style="cursor: pointer">
+            <summary style="font-weight: 700">
+              What is the latency impact of agent logs?
+            </summary>
+            <p
+              style="
+                margin-top: 1rem;
+                color: var(--ps-text-muted);
+                font-size: 0.9rem;
+              "
+            >
+              DevSync uses a lightweight Rust agent that adds less than 1.5% CPU
+              overhead.
+            </p>
+          </details>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

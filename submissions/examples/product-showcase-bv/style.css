@@ -1,0 +1,256 @@
+/* ============================================================
+   INTERACTIVE PRODUCT SHOWCASE HUB — Style Sheet
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+:root {
+  --ps-bg: #0a0a0f;
+  --ps-surface: #12121e;
+  --ps-elevated: #1a1a2e;
+  --ps-primary: #3b82f6;
+  --ps-accent: #a855f7;
+  --ps-cta: #f97316;
+  --ps-text: #f3f4f6;
+  --ps-text-muted: #9ca3af;
+  --ps-glass: rgba(18, 18, 30, 0.7);
+  --ps-border: rgba(255, 255, 255, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--ps-bg);
+  color: var(--ps-text);
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+.ps-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.ps-section {
+  margin-bottom: 5rem;
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Hero Section with Mesh Background */
+.ps-hero {
+  position: relative;
+  text-align: center;
+  padding: 8rem 2rem;
+  background:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(59, 130, 246, 0.15),
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(168, 85, 247, 0.15),
+      transparent 50%
+    );
+  border-radius: 2rem;
+  border: 1px solid var(--ps-border);
+  margin-bottom: 5rem;
+  overflow: hidden;
+}
+
+.ps-hero h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #fff, var(--ps-text-muted));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: heroFloat 4s ease-in-out infinite alternate;
+}
+
+.ps-hero p {
+  font-size: 1.25rem;
+  color: var(--ps-text-muted);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+/* Feature Grid */
+.ps-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.ps-card {
+  background: var(--ps-glass);
+  border: 1px solid var(--ps-border);
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ps-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--ps-primary);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
+}
+
+/* Tabs */
+.ps-tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.ps-tab-btn {
+  padding: 0.75rem 1.5rem;
+  background: var(--ps-elevated);
+  border: 1px solid var(--ps-border);
+  color: var(--ps-text-muted);
+  border-radius: 9999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.ps-tab-btn.active,
+.ps-tab-btn:hover {
+  background: var(--ps-primary);
+  color: #fff;
+  border-color: var(--ps-primary);
+}
+
+/* Onboarding Stepper */
+.ps-stepper {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 3rem 0;
+}
+
+.ps-stepper::before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  background-color: var(--ps-border);
+  z-index: 1;
+}
+
+.ps-step {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  flex: 1;
+}
+
+.ps-step-num {
+  width: 50px;
+  height: 50px;
+  line-height: 48px;
+  background-color: var(--ps-surface);
+  border: 2px solid var(--ps-border);
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  font-weight: 700;
+  color: var(--ps-text-muted);
+}
+
+.ps-step.active .ps-step-num {
+  border-color: var(--ps-primary);
+  background-color: var(--ps-primary);
+  color: #fff;
+}
+
+/* Buttons */
+.ps-btn {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s;
+}
+
+.ps-btn-cta {
+  background-color: var(--ps-cta);
+  color: #fff;
+}
+
+.ps-btn-primary {
+  background-color: var(--ps-primary);
+  color: #fff;
+}
+
+.ps-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Timeline */
+.ps-timeline {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 2px solid var(--ps-border);
+}
+
+.ps-timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.ps-timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -2.6rem;
+  top: 0.25rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: var(--ps-primary);
+  border: 4px solid var(--ps-bg);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFloat {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ps-grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .ps-hero h1 {
+    font-size: 2.5rem;
+  }
+}
