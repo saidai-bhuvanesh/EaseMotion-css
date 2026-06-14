@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart City Intelligence Dashboard — EaseMotion CSS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="sc-layout">
+      <!-- ── SECTION 1: City Header ── -->
+      <header class="sc-header">
+        <div
+          style="
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+          "
+        >
+          <span>🏙️</span>
+          <span>Metro Intel Command</span>
+        </div>
+        <div
+          style="
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--sc-primary);
+          "
+        >
+          Municipal Services: Operational
+        </div>
+      </header>
+
+      <!-- ── SECTION 2: Urban Indicators ── -->
+      <section class="sc-section">
+        <div class="sc-grid-4">
+          <div class="sc-card">
+            <h3>Transit Flow</h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--sc-primary);
+                margin-top: 1rem;
+              "
+            >
+              92%
+            </div>
+            <p
+              style="
+                color: var(--sc-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Average traffic speed optimal
+            </p>
+          </div>
+          <div class="sc-card">
+            <h3>Air Quality Index</h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--sc-accent);
+                margin-top: 1rem;
+              "
+            >
+              42 AQI
+            </div>
+            <p
+              style="
+                color: var(--sc-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Healthy environmental levels
+            </p>
+          </div>
+          <div class="sc-card">
+            <h3>Active Energy Draw</h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--sc-primary);
+                margin-top: 1rem;
+              "
+            >
+              14.2 GW
+            </div>
+            <p
+              style="
+                color: var(--sc-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Grid consumption rate
+            </p>
+          </div>
+          <div class="sc-card" style="border-color: var(--sc-warning)">
+            <h3>Active Incidents</h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--sc-warning);
+                margin-top: 1rem;
+              "
+            >
+              3
+            </div>
+            <p
+              style="
+                color: var(--sc-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Non-blocking alerts pending
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 3: Transit Registry & Emergency Alerts ── -->
+      <section class="sc-section sc-flex-2">
+        <div>
+          <h3>Metro Transit &amp; Infrastructure Status</h3>
+          <div style="margin-top: 1.5rem">
+            <table class="sc-table">
+              <thead>
+                <tr>
+                  <th>Route ID</th>
+                  <th>Type</th>
+                  <th>Load Status</th>
+                  <th>Average Delay</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>route-subway-red</td>
+                  <td>Subway Link</td>
+                  <td>Medium Load</td>
+                  <td>&lt; 1 min</td>
+                  <td style="color: var(--sc-primary)">Running</td>
+                </tr>
+                <tr style="background-color: rgba(245, 158, 11, 0.05)">
+                  <td>route-express-88</td>
+                  <td>Highway Link</td>
+                  <td>High Load</td>
+                  <td style="color: var(--sc-warning)">12 mins</td>
+                  <td style="color: var(--sc-warning); font-weight: bold">
+                    Congested
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="sc-card">
+          <h3>Emergency Controls</h3>
+          <p
+            style="
+              font-size: 0.9rem;
+              color: var(--sc-text-muted);
+              margin-top: 0.5rem;
+              margin-bottom: 1.5rem;
+            "
+          >
+            Dispatch city response resources to incidents.
+          </p>
+          <button
+            style="
+              width: 100%;
+              padding: 0.75rem;
+              background-color: var(--sc-danger);
+              border: none;
+              color: #fff;
+              font-weight: 700;
+              border-radius: 0.5rem;
+              cursor: pointer;
+              margin-bottom: 1rem;
+            "
+          >
+            DISPATCH responders
+          </button>
+          <button
+            style="
+              width: 100%;
+              padding: 0.75rem;
+              background-color: transparent;
+              border: 1px solid var(--sc-border);
+              color: var(--sc-text);
+              font-weight: 600;
+              border-radius: 0.5rem;
+              cursor: pointer;
+            "
+          >
+            Adjust Grid Draw
+          </button>
+        </div>
+      </section>
+
+      <!-- ── SECTION 4: Live municipal log ── -->
+      <section class="sc-section">
+        <h3>Municipal Grid Stream Console</h3>
+        <div style="margin-top: 1.5rem">
+          <pre><code>$ metro-intelligence --stream --municipal
+[INFO] route-subway-red operating with standard latency margins
+[WARN] Incident reported: route-express-88 vehicle collision blocking east lane
+[INFO] Dispatching response units to highway coordinate (Express-88/L12)</code></pre>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
