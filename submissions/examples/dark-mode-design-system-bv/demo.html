@@ -1,0 +1,1484 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Mode Design System — EaseMotion CSS</title>
+    <meta
+      name="description"
+      content="A comprehensive dark-theme design system reference built entirely with CSS custom properties, glassmorphism, keyframe animations, and zero JavaScript dependencies."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ============================================================
+         SECTION 1 — Design System Header
+         ============================================================ -->
+    <header class="ds-header">
+      <div class="ds-container ds-header__content">
+        <span class="ds-header__badge">
+          <span class="dot"></span>
+          v2.0.0 — Dark Mode Design System
+        </span>
+        <h1 class="ds-header__title">Dark Mode Design System</h1>
+        <p class="ds-header__desc">
+          A complete, production-ready dark-theme component library and design
+          token reference. Zero dependencies — pure CSS.
+        </p>
+        <div class="ds-header__meta">
+          <div class="ds-header__meta-item">
+            <span class="ds-header__meta-value">80+</span>
+            <span class="ds-header__meta-label">CSS Variables</span>
+          </div>
+          <div class="ds-header__meta-item">
+            <span class="ds-header__meta-value">18</span>
+            <span class="ds-header__meta-label">Sections</span>
+          </div>
+          <div class="ds-header__meta-item">
+            <span class="ds-header__meta-value">40+</span>
+            <span class="ds-header__meta-label">Components</span>
+          </div>
+          <div class="ds-header__meta-item">
+            <span class="ds-header__meta-value">8</span>
+            <span class="ds-header__meta-label">Animations</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============================================================
+           SECTION 2 — Color Palette Showcase
+           ============================================================ -->
+      <section class="ds-section" id="colors">
+        <div class="ds-container">
+          <h2 class="ds-section__title">
+            <span class="section-number">01</span>
+            Color Palette
+          </h2>
+          <p class="ds-section__subtitle">
+            Every design token color rendered as interactive swatches. Surfaces,
+            brand, and semantic palettes.
+          </p>
+
+          <h3 class="color-group__title">Surfaces</h3>
+          <div class="color-grid">
+            <div class="color-swatch">
+              <div
+                class="color-swatch__preview"
+                style="background: #0d0d1a"
+              ></div>
+              <div class="color-swatch__info">
+                <div class="color-swatch__name">Base</div>
+                <div class="color-swatch__hex">#0d0d1a</div>
+              </div>
+            </div>
+            <div class="color-swatch">
+              <div
+                class="color-swatch__preview"
+                style="background: #1a1a2e"
+              ></div>
+              <div class="color-swatch__info">
+                <div class="color-swatch__name">Surface 100</div>
+                <div class="color-swatch__hex">#1a1a2e</div>
+              </div>
+            </div>
+            <div class="color-swatch">
+              <div
+                class="color-swatch__preview"
+                style="background: #16213e"
+              ></div>
+              <div class="color-swatch__info">
+                <div class="color-swatch__name">Surface 200</div>
+                <div class="color-swatch__hex">#16213e</div>
+              </div>
+            </div>
+            <div class="color-swatch">
+              <div
+                class="color-swatch__preview"
+                style="background: #1e2a4a"
+              ></div>
+              <div class="color-swatch__info">
+                <div class="color-swatch__name">Surface 300</div>
+                <div class="color-swatch__hex">#1e2a4a</div>
+              </div>
+            </div>
+            <div class="color-swatch">
+              <div
+                class="color-swatch__preview"
+                style="background: #263557"
+              ></div>
+              <div class="color-swatch__info">
+                <div class="color-swatch__name">Surface 400</div>
+                <div class="color-swatch__hex">#263557</div>
+              </div>
+            </div>
+            <div class="color-swatch">
+              <div
+                class="color-swatch__preview"
+                style="background: #2e4063"
+              ></div>
+              <div class="color-swatch__info">
+                <div class="color-swatch__name">Surface 500</div>
+                <div class="color-swatch__hex">#2e4063</div>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="color-group__title">Brand</h3>
+          <div class="color-grid">
+            <div class="color-swatch">
+              <div
+                class="color-swatch__preview"
+                style="background: #0f3460"
+              ></div>
+              <div class="color-swatch__info">
+                <div class="color-swatch__name">Accent Blue</div>
+                <div class="color-swatch__hex">#0f3460</div>
+              </div>
+            </div>
+            <div class="color-swatch">
+              <div
+                class="color-swatch__preview"
+                style="background: #1a5276"
+              ></div>
+              <div class="color-swatch__info">
+                <div class="color-swatch__name">Accent Light</div>
+                <div class="color-swatch__hex">#1a5276</div>
+              </div>
+            </div>
+            <div class="color-swatch">
+              <div
+                class="color-swatch__preview"
+                style="background: #2980b9"
+              ></div>
+              <div class="color-swatch__info">
+                <div class="color-swatch__name">Accent Lighter</div>
+                <div class="color-swatch__hex">#2980b9</div>
+              </div>
+            </div>
+            <div class="color-swatch">
+              <div
+                class="color-swatch__preview"
+                style="background: #e94560"
+              ></div>
+              <div class="color-swatch__info">
+                <div class="color-swatch__name">Highlight</div>
+                <div class="color-swatch__hex">#e94560</div>
+              </div>
+            </div>
+            <div class="color-swatch">
+              <div
+                class="color-swatch__preview"
+                style="background: #ff6b81"
+              ></div>
+              <div class="color-swatch__info">
+                <div class="color-swatch__name">Highlight Light</div>
+                <div class="color-swatch__hex">#ff6b81</div>
+              </div>
+            </div>
+            <div class="color-swatch">
+              <div
+                class="color-swatch__preview"
+                style="background: #c0392b"
+              ></div>
+              <div class="color-swatch__info">
+                <div class="color-swatch__name">Highlight Dark</div>
+                <div class="color-swatch__hex">#c0392b</div>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="color-group__title">Semantic</h3>
+          <div class="color-grid">
+            <div class="color-swatch">
+              <div
+                class="color-swatch__preview"
+                style="background: #00c853"
+              ></div>
+              <div class="color-swatch__info">
+                <div class="color-swatch__name">Success</div>
+                <div class="color-swatch__hex">#00c853</div>
+              </div>
+            </div>
+            <div class="color-swatch">
+              <div
+                class="color-swatch__preview"
+                style="background: #ffc107"
+              ></div>
+              <div class="color-swatch__info">
+                <div class="color-swatch__name">Warning</div>
+                <div class="color-swatch__hex">#ffc107</div>
+              </div>
+            </div>
+            <div class="color-swatch">
+              <div
+                class="color-swatch__preview"
+                style="background: #ef5350"
+              ></div>
+              <div class="color-swatch__info">
+                <div class="color-swatch__name">Error</div>
+                <div class="color-swatch__hex">#ef5350</div>
+              </div>
+            </div>
+            <div class="color-swatch">
+              <div
+                class="color-swatch__preview"
+                style="background: #29b6f6"
+              ></div>
+              <div class="color-swatch__info">
+                <div class="color-swatch__name">Info</div>
+                <div class="color-swatch__hex">#29b6f6</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SECTION 3 — Typography Scale
+           ============================================================ -->
+      <section class="ds-section" id="typography">
+        <div class="ds-container">
+          <h2 class="ds-section__title">
+            <span class="section-number">02</span>
+            Typography Scale
+          </h2>
+          <p class="ds-section__subtitle">
+            Full heading hierarchy, body text, captions, and monospaced code
+            samples using Inter and JetBrains Mono.
+          </p>
+
+          <div class="type-scale-item">
+            <div class="type-scale-meta">
+              <div class="type-scale-meta__label">H1</div>
+              <div class="type-scale-meta__size">3.75rem / 900</div>
+            </div>
+            <span class="type-sample--h1">Display Heading</span>
+          </div>
+
+          <div class="type-scale-item">
+            <div class="type-scale-meta">
+              <div class="type-scale-meta__label">H2</div>
+              <div class="type-scale-meta__size">3rem / 800</div>
+            </div>
+            <span class="type-sample--h2">Section Title</span>
+          </div>
+
+          <div class="type-scale-item">
+            <div class="type-scale-meta">
+              <div class="type-scale-meta__label">H3</div>
+              <div class="type-scale-meta__size">2.25rem / 700</div>
+            </div>
+            <span class="type-sample--h3">Subsection</span>
+          </div>
+
+          <div class="type-scale-item">
+            <div class="type-scale-meta">
+              <div class="type-scale-meta__label">H4</div>
+              <div class="type-scale-meta__size">1.875rem / 600</div>
+            </div>
+            <span class="type-sample--h4">Card Heading</span>
+          </div>
+
+          <div class="type-scale-item">
+            <div class="type-scale-meta">
+              <div class="type-scale-meta__label">H5</div>
+              <div class="type-scale-meta__size">1.5rem / 600</div>
+            </div>
+            <span class="type-sample--h5">Widget Title</span>
+          </div>
+
+          <div class="type-scale-item">
+            <div class="type-scale-meta">
+              <div class="type-scale-meta__label">H6</div>
+              <div class="type-scale-meta__size">1.25rem / 500</div>
+            </div>
+            <span class="type-sample--h6">Small Heading</span>
+          </div>
+
+          <div class="type-scale-item">
+            <div class="type-scale-meta">
+              <div class="type-scale-meta__label">Body</div>
+              <div class="type-scale-meta__size">1rem / 400</div>
+            </div>
+            <span class="type-sample--body"
+              >Body text renders at the base size with comfortable line-height
+              for extended reading.</span
+            >
+          </div>
+
+          <div class="type-scale-item">
+            <div class="type-scale-meta">
+              <div class="type-scale-meta__label">Caption</div>
+              <div class="type-scale-meta__size">0.875rem / 400</div>
+            </div>
+            <span class="type-sample--caption"
+              >Caption text for secondary information and metadata</span
+            >
+          </div>
+
+          <div class="type-scale-item">
+            <div class="type-scale-meta">
+              <div class="type-scale-meta__label">Code</div>
+              <div class="type-scale-meta__size">0.875rem / mono</div>
+            </div>
+            <span class="type-sample--code">const theme = 'dark-mode';</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SECTION 4 — Spacing & Sizing Scale
+           ============================================================ -->
+      <section class="ds-section" id="spacing">
+        <div class="ds-container">
+          <h2 class="ds-section__title">
+            <span class="section-number">03</span>
+            Spacing &amp; Sizing Scale
+          </h2>
+          <p class="ds-section__subtitle">
+            Visual representation of every spacing token from 2xs to 4xl.
+          </p>
+
+          <div class="spacing-scale">
+            <div class="spacing-item">
+              <div class="spacing-item__label">--space-2xs</div>
+              <div class="spacing-item__bar" style="width: 4px"></div>
+              <div class="spacing-item__value">0.25rem</div>
+            </div>
+            <div class="spacing-item">
+              <div class="spacing-item__label">--space-xs</div>
+              <div class="spacing-item__bar" style="width: 8px"></div>
+              <div class="spacing-item__value">0.5rem</div>
+            </div>
+            <div class="spacing-item">
+              <div class="spacing-item__label">--space-sm</div>
+              <div class="spacing-item__bar" style="width: 12px"></div>
+              <div class="spacing-item__value">0.75rem</div>
+            </div>
+            <div class="spacing-item">
+              <div class="spacing-item__label">--space-md</div>
+              <div class="spacing-item__bar" style="width: 16px"></div>
+              <div class="spacing-item__value">1rem</div>
+            </div>
+            <div class="spacing-item">
+              <div class="spacing-item__label">--space-lg</div>
+              <div class="spacing-item__bar" style="width: 24px"></div>
+              <div class="spacing-item__value">1.5rem</div>
+            </div>
+            <div class="spacing-item">
+              <div class="spacing-item__label">--space-xl</div>
+              <div class="spacing-item__bar" style="width: 32px"></div>
+              <div class="spacing-item__value">2rem</div>
+            </div>
+            <div class="spacing-item">
+              <div class="spacing-item__label">--space-2xl</div>
+              <div class="spacing-item__bar" style="width: 48px"></div>
+              <div class="spacing-item__value">3rem</div>
+            </div>
+            <div class="spacing-item">
+              <div class="spacing-item__label">--space-3xl</div>
+              <div class="spacing-item__bar" style="width: 64px"></div>
+              <div class="spacing-item__value">4rem</div>
+            </div>
+            <div class="spacing-item">
+              <div class="spacing-item__label">--space-4xl</div>
+              <div class="spacing-item__bar" style="width: 96px"></div>
+              <div class="spacing-item__value">6rem</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SECTION 5 — Button Component Library
+           ============================================================ -->
+      <section class="ds-section" id="buttons">
+        <div class="ds-container">
+          <h2 class="ds-section__title">
+            <span class="section-number">04</span>
+            Button Component Library
+          </h2>
+          <p class="ds-section__subtitle">
+            Primary, secondary, ghost, danger, and disabled button variants in
+            multiple sizes.
+          </p>
+
+          <h3 class="color-group__title">Variants</h3>
+          <div class="btn-grid">
+            <button class="btn btn--primary">Primary</button>
+            <button class="btn btn--secondary">Secondary</button>
+            <button class="btn btn--ghost">Ghost</button>
+            <button class="btn btn--danger">Danger</button>
+            <button class="btn btn--disabled" disabled>Disabled</button>
+          </div>
+
+          <h3 class="color-group__title">Sizes</h3>
+          <div class="btn-grid">
+            <button class="btn btn--primary btn--sm">Small</button>
+            <button class="btn btn--primary">Default</button>
+            <button class="btn btn--primary btn--lg">Large</button>
+          </div>
+
+          <h3 class="color-group__title">With Icons</h3>
+          <div class="btn-grid">
+            <button class="btn btn--primary">⚡ Quick Action</button>
+            <button class="btn btn--secondary">📦 Export</button>
+            <button class="btn btn--ghost">🔗 Share Link</button>
+            <button class="btn btn--danger">🗑️ Delete</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SECTION 6 — Card Variants
+           ============================================================ -->
+      <section class="ds-section" id="cards">
+        <div class="ds-container">
+          <h2 class="ds-section__title">
+            <span class="section-number">05</span>
+            Card Variants
+          </h2>
+          <p class="ds-section__subtitle">
+            Five distinct card styles — default, elevated, outlined,
+            interactive, and glassmorphic.
+          </p>
+
+          <div class="card-grid">
+            <div class="card card--default">
+              <span class="card__tag">Default</span>
+              <h3 class="card__title">Default Card</h3>
+              <p class="card__body">
+                Subtle background with a thin border. Ideal for content that
+                doesn't need emphasis.
+              </p>
+            </div>
+
+            <div class="card card--elevated">
+              <span class="card__tag">Elevated</span>
+              <h3 class="card__title">Elevated Card</h3>
+              <p class="card__body">
+                Raised with a prominent shadow. Draws attention and lifts
+                further on hover.
+              </p>
+            </div>
+
+            <div class="card card--outlined">
+              <span class="card__tag">Outlined</span>
+              <h3 class="card__title">Outlined Card</h3>
+              <p class="card__body">
+                Transparent background with a visible border. Clean and minimal
+                aesthetic.
+              </p>
+            </div>
+
+            <div class="card card--interactive">
+              <span class="card__tag">Interactive</span>
+              <h3 class="card__title">Interactive Card</h3>
+              <p class="card__body">
+                Responds to hover with color shift, glow, and subtle scale
+                transform.
+              </p>
+            </div>
+
+            <div class="card card--glass">
+              <span class="card__tag">Glassmorphic</span>
+              <h3 class="card__title">Glass Card</h3>
+              <p class="card__body">
+                Frosted glass effect using backdrop-filter blur and translucent
+                backgrounds.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SECTION 7 — Form Elements
+           ============================================================ -->
+      <section class="ds-section" id="forms">
+        <div class="ds-container">
+          <h2 class="ds-section__title">
+            <span class="section-number">06</span>
+            Form Elements
+          </h2>
+          <p class="ds-section__subtitle">
+            Inputs, textareas, selects, checkboxes, radio buttons, and toggle
+            switches.
+          </p>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" for="input-text">Text Input</label>
+              <input
+                class="form-input"
+                type="text"
+                id="input-text"
+                placeholder="Enter your name…"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="input-email">Email Input</label>
+              <input
+                class="form-input"
+                type="email"
+                id="input-email"
+                placeholder="you@example.com"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="input-pass">Password</label>
+              <input
+                class="form-input"
+                type="password"
+                id="input-pass"
+                placeholder="••••••••"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="input-select">Select</label>
+              <select class="form-select" id="input-select">
+                <option value="">Choose an option…</option>
+                <option value="1">Option Alpha</option>
+                <option value="2">Option Beta</option>
+                <option value="3">Option Gamma</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="input-textarea">Textarea</label>
+              <textarea
+                class="form-textarea"
+                id="input-textarea"
+                placeholder="Write your message…"
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Checkboxes</label>
+              <label class="form-check">
+                <input type="checkbox" checked />
+                Dark mode enabled
+              </label>
+              <label class="form-check">
+                <input type="checkbox" />
+                Enable notifications
+              </label>
+              <label class="form-check">
+                <input type="checkbox" checked />
+                Auto-save drafts
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Radio Buttons</label>
+              <label class="form-check">
+                <input type="radio" name="theme" checked />
+                Dark Theme
+              </label>
+              <label class="form-check">
+                <input type="radio" name="theme" />
+                Light Theme
+              </label>
+              <label class="form-check">
+                <input type="radio" name="theme" />
+                System Default
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Toggle Switches</label>
+              <label class="toggle">
+                <input type="checkbox" checked />
+                <span class="toggle__track"></span>
+                Animations
+              </label>
+              <label class="toggle">
+                <input type="checkbox" />
+                <span class="toggle__track"></span>
+                Sound Effects
+              </label>
+              <label class="toggle">
+                <input type="checkbox" checked />
+                <span class="toggle__track"></span>
+                Reduced Motion
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SECTION 8 — Navigation Patterns
+           ============================================================ -->
+      <section class="ds-section" id="navigation">
+        <div class="ds-container">
+          <h2 class="ds-section__title">
+            <span class="section-number">07</span>
+            Navigation Patterns
+          </h2>
+          <p class="ds-section__subtitle">
+            Tabs, breadcrumbs, and pagination — the core navigation primitives.
+          </p>
+
+          <h3 class="color-group__title">Tabs</h3>
+          <div class="tabs" role="tablist">
+            <button class="tab tab--active" role="tab" aria-selected="true">
+              Overview
+            </button>
+            <button class="tab" role="tab">Components</button>
+            <button class="tab" role="tab">Tokens</button>
+            <button class="tab" role="tab">Guidelines</button>
+            <button class="tab" role="tab">Changelog</button>
+          </div>
+
+          <h3 class="color-group__title">Breadcrumbs</h3>
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="#" class="breadcrumbs__link">Home</a>
+            <span class="breadcrumbs__sep">›</span>
+            <a href="#" class="breadcrumbs__link">Design System</a>
+            <span class="breadcrumbs__sep">›</span>
+            <a href="#" class="breadcrumbs__link">Components</a>
+            <span class="breadcrumbs__sep">›</span>
+            <span class="breadcrumbs__current">Buttons</span>
+          </nav>
+
+          <h3 class="color-group__title">Pagination</h3>
+          <nav class="pagination" aria-label="Pagination">
+            <button class="page-btn">‹ Prev</button>
+            <button class="page-btn page-btn--active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">4</button>
+            <button class="page-btn">5</button>
+            <button class="page-btn">…</button>
+            <button class="page-btn">12</button>
+            <button class="page-btn">Next ›</button>
+          </nav>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SECTION 9 — Badge & Tag Collection
+           ============================================================ -->
+      <section class="ds-section" id="badges">
+        <div class="ds-container">
+          <h2 class="ds-section__title">
+            <span class="section-number">08</span>
+            Badges &amp; Tags
+          </h2>
+          <p class="ds-section__subtitle">
+            Status indicators, labels, and removable tags.
+          </p>
+
+          <h3 class="color-group__title">Badges</h3>
+          <div class="badge-grid">
+            <span class="badge badge--default">Default</span>
+            <span class="badge badge--primary">Primary</span>
+            <span class="badge badge--success">✓ Active</span>
+            <span class="badge badge--warning">⚠ Pending</span>
+            <span class="badge badge--error">✕ Failed</span>
+            <span class="badge badge--info">ℹ Info</span>
+            <span class="badge badge--highlight">★ Featured</span>
+          </div>
+
+          <h3 class="color-group__title">Tags</h3>
+          <div class="badge-grid">
+            <span class="tag">CSS <span class="tag__close">×</span></span>
+            <span class="tag"
+              >Design System <span class="tag__close">×</span></span
+            >
+            <span class="tag">Dark Mode <span class="tag__close">×</span></span>
+            <span class="tag"
+              >Glassmorphism <span class="tag__close">×</span></span
+            >
+            <span class="tag"
+              >Custom Properties <span class="tag__close">×</span></span
+            >
+            <span class="tag"
+              >Accessibility <span class="tag__close">×</span></span
+            >
+            <span class="tag"
+              >Animations <span class="tag__close">×</span></span
+            >
+            <span class="tag"
+              >Responsive <span class="tag__close">×</span></span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SECTION 10 — Alert / Toast Components
+           ============================================================ -->
+      <section class="ds-section" id="alerts">
+        <div class="ds-container">
+          <h2 class="ds-section__title">
+            <span class="section-number">09</span>
+            Alerts &amp; Toasts
+          </h2>
+          <p class="ds-section__subtitle">
+            Contextual feedback messages for success, warning, error, and info.
+          </p>
+
+          <div class="alert-stack">
+            <div class="alert alert--success" role="alert">
+              <span class="alert__icon">✓</span>
+              <div class="alert__content">
+                <div class="alert__title">Success</div>
+                <div class="alert__message">
+                  Your changes have been saved successfully.
+                </div>
+              </div>
+              <button class="alert__close" aria-label="Close">×</button>
+            </div>
+
+            <div class="alert alert--warning" role="alert">
+              <span class="alert__icon">⚠</span>
+              <div class="alert__content">
+                <div class="alert__title">Warning</div>
+                <div class="alert__message">
+                  API rate limit approaching — 89% of quota used.
+                </div>
+              </div>
+              <button class="alert__close" aria-label="Close">×</button>
+            </div>
+
+            <div class="alert alert--error" role="alert">
+              <span class="alert__icon">✕</span>
+              <div class="alert__content">
+                <div class="alert__title">Error</div>
+                <div class="alert__message">
+                  Failed to connect to the database. Please check configuration.
+                </div>
+              </div>
+              <button class="alert__close" aria-label="Close">×</button>
+            </div>
+
+            <div class="alert alert--info" role="alert">
+              <span class="alert__icon">ℹ</span>
+              <div class="alert__content">
+                <div class="alert__title">Information</div>
+                <div class="alert__message">
+                  A new version of the design system is available (v2.1.0).
+                </div>
+              </div>
+              <button class="alert__close" aria-label="Close">×</button>
+            </div>
+          </div>
+
+          <h3 class="color-group__title">Toast Notifications</h3>
+          <div class="toast-demo">
+            <div class="toast">
+              <span class="toast__icon">✓</span>
+              File uploaded successfully
+            </div>
+            <div class="toast">
+              <span class="toast__icon">🔔</span>
+              You have 3 new notifications
+            </div>
+            <div class="toast">
+              <span class="toast__icon">⏳</span>
+              Processing your request…
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SECTION 11 — Table Component
+           ============================================================ -->
+      <section class="ds-section" id="table">
+        <div class="ds-container">
+          <h2 class="ds-section__title">
+            <span class="section-number">10</span>
+            Table Component
+          </h2>
+          <p class="ds-section__subtitle">
+            Data table with sorting indicators, status badges, and hover rows.
+          </p>
+
+          <div class="table-wrapper">
+            <table class="ds-table">
+              <thead>
+                <tr>
+                  <th class="sorted">
+                    Component <span class="sort-icon">▲</span>
+                  </th>
+                  <th>Category <span class="sort-icon">▲▼</span></th>
+                  <th>Status <span class="sort-icon">▲▼</span></th>
+                  <th>Version <span class="sort-icon">▲▼</span></th>
+                  <th>Last Updated <span class="sort-icon">▲▼</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Button</td>
+                  <td>Actions</td>
+                  <td>
+                    <span class="table-status">
+                      <span
+                        class="table-status__dot table-status__dot--active"
+                      ></span>
+                      Active
+                    </span>
+                  </td>
+                  <td><span class="badge badge--primary">v2.1</span></td>
+                  <td>2 hours ago</td>
+                </tr>
+                <tr>
+                  <td>Card</td>
+                  <td>Layout</td>
+                  <td>
+                    <span class="table-status">
+                      <span
+                        class="table-status__dot table-status__dot--active"
+                      ></span>
+                      Active
+                    </span>
+                  </td>
+                  <td><span class="badge badge--primary">v2.0</span></td>
+                  <td>1 day ago</td>
+                </tr>
+                <tr>
+                  <td>Modal</td>
+                  <td>Overlays</td>
+                  <td>
+                    <span class="table-status">
+                      <span
+                        class="table-status__dot table-status__dot--pending"
+                      ></span>
+                      Review
+                    </span>
+                  </td>
+                  <td><span class="badge badge--warning">v1.9</span></td>
+                  <td>3 days ago</td>
+                </tr>
+                <tr>
+                  <td>Tooltip</td>
+                  <td>Feedback</td>
+                  <td>
+                    <span class="table-status">
+                      <span
+                        class="table-status__dot table-status__dot--active"
+                      ></span>
+                      Active
+                    </span>
+                  </td>
+                  <td><span class="badge badge--primary">v2.0</span></td>
+                  <td>5 days ago</td>
+                </tr>
+                <tr>
+                  <td>DatePicker</td>
+                  <td>Forms</td>
+                  <td>
+                    <span class="table-status">
+                      <span
+                        class="table-status__dot table-status__dot--inactive"
+                      ></span>
+                      Deprecated
+                    </span>
+                  </td>
+                  <td><span class="badge badge--error">v1.2</span></td>
+                  <td>2 weeks ago</td>
+                </tr>
+                <tr>
+                  <td>Avatar</td>
+                  <td>Data Display</td>
+                  <td>
+                    <span class="table-status">
+                      <span
+                        class="table-status__dot table-status__dot--active"
+                      ></span>
+                      Active
+                    </span>
+                  </td>
+                  <td><span class="badge badge--primary">v2.1</span></td>
+                  <td>4 hours ago</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SECTION 12 — Modal / Dialog Showcase
+           ============================================================ -->
+      <section class="ds-section" id="modal">
+        <div class="ds-container">
+          <h2 class="ds-section__title">
+            <span class="section-number">11</span>
+            Modal / Dialog
+          </h2>
+          <p class="ds-section__subtitle">
+            Inline preview of a modal dialog with header, body, and footer
+            actions.
+          </p>
+
+          <div class="modal-showcase">
+            <div class="modal-backdrop"></div>
+            <div class="modal-dialog">
+              <div class="modal-header">
+                <h3 class="modal-header__title">Confirm Action</h3>
+                <button class="modal-header__close" aria-label="Close modal">
+                  ×
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>
+                  Are you sure you want to deploy this design system update to
+                  production? This action will affect all consumers of the token
+                  library.
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn--ghost">Cancel</button>
+                <button class="btn btn--primary">Deploy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SECTION 13 — Progress Indicators
+           ============================================================ -->
+      <section class="ds-section" id="progress">
+        <div class="ds-container">
+          <h2 class="ds-section__title">
+            <span class="section-number">12</span>
+            Progress Indicators
+          </h2>
+          <p class="ds-section__subtitle">
+            Linear bars, circular gauges, and skeleton loading placeholders.
+          </p>
+
+          <h3 class="color-group__title">Progress Bars</h3>
+          <div class="progress-grid">
+            <div class="progress-bar-wrap">
+              <div class="progress-bar-label">
+                <span>Token Coverage</span><span>78%</span>
+              </div>
+              <div class="progress-bar">
+                <div
+                  class="progress-bar__fill progress-bar__fill--accent"
+                  style="width: 78%"
+                ></div>
+              </div>
+            </div>
+
+            <div class="progress-bar-wrap">
+              <div class="progress-bar-label">
+                <span>Component Adoption</span><span>92%</span>
+              </div>
+              <div class="progress-bar">
+                <div
+                  class="progress-bar__fill progress-bar__fill--success"
+                  style="width: 92%"
+                ></div>
+              </div>
+            </div>
+
+            <div class="progress-bar-wrap">
+              <div class="progress-bar-label">
+                <span>Accessibility Score</span><span>65%</span>
+              </div>
+              <div class="progress-bar">
+                <div
+                  class="progress-bar__fill progress-bar__fill--highlight"
+                  style="width: 65%"
+                ></div>
+              </div>
+            </div>
+
+            <div class="progress-bar-wrap">
+              <div class="progress-bar-label">
+                <span>Loading…</span><span>∞</span>
+              </div>
+              <div class="progress-bar progress-bar--indeterminate">
+                <div
+                  class="progress-bar__fill progress-bar__fill--accent"
+                  style="width: 25%"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="color-group__title">Circular Progress</h3>
+          <div class="avatar-row">
+            <div class="progress-circular">
+              <svg viewBox="0 0 80 80">
+                <circle
+                  class="progress-circular__track"
+                  cx="40"
+                  cy="40"
+                  r="34"
+                />
+                <circle
+                  class="progress-circular__fill"
+                  cx="40"
+                  cy="40"
+                  r="34"
+                  stroke="var(--accent-blue-lighter)"
+                  stroke-dasharray="213.6"
+                  stroke-dashoffset="46.9"
+                />
+              </svg>
+              <span class="progress-circular__label">78%</span>
+            </div>
+
+            <div class="progress-circular">
+              <svg viewBox="0 0 80 80">
+                <circle
+                  class="progress-circular__track"
+                  cx="40"
+                  cy="40"
+                  r="34"
+                />
+                <circle
+                  class="progress-circular__fill"
+                  cx="40"
+                  cy="40"
+                  r="34"
+                  stroke="var(--color-success)"
+                  stroke-dasharray="213.6"
+                  stroke-dashoffset="17.1"
+                />
+              </svg>
+              <span class="progress-circular__label">92%</span>
+            </div>
+
+            <div class="progress-circular">
+              <svg viewBox="0 0 80 80">
+                <circle
+                  class="progress-circular__track"
+                  cx="40"
+                  cy="40"
+                  r="34"
+                />
+                <circle
+                  class="progress-circular__fill"
+                  cx="40"
+                  cy="40"
+                  r="34"
+                  stroke="var(--highlight)"
+                  stroke-dasharray="213.6"
+                  stroke-dashoffset="74.8"
+                />
+              </svg>
+              <span class="progress-circular__label">65%</span>
+            </div>
+          </div>
+
+          <h3 class="color-group__title">Skeleton Loading</h3>
+          <div class="card card--default" style="max-width: 380px">
+            <div
+              style="
+                display: flex;
+                gap: 12px;
+                align-items: center;
+                margin-bottom: 16px;
+              "
+            >
+              <div class="skeleton skeleton--avatar"></div>
+              <div style="flex: 1">
+                <div class="skeleton skeleton--title"></div>
+                <div class="skeleton skeleton--text" style="width: 40%"></div>
+              </div>
+            </div>
+            <div class="skeleton skeleton--text"></div>
+            <div class="skeleton skeleton--text"></div>
+            <div class="skeleton skeleton--text" style="width: 75%"></div>
+            <div class="skeleton skeleton--card" style="margin-top: 12px"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SECTION 14 — Avatar & User Components
+           ============================================================ -->
+      <section class="ds-section" id="avatars">
+        <div class="ds-container">
+          <h2 class="ds-section__title">
+            <span class="section-number">13</span>
+            Avatars &amp; User Components
+          </h2>
+          <p class="ds-section__subtitle">
+            User avatars in multiple sizes, with status indicators and group
+            stacking.
+          </p>
+
+          <h3 class="color-group__title">Sizes</h3>
+          <div class="avatar-row">
+            <div class="avatar avatar--sm avatar--a">S</div>
+            <div class="avatar avatar--md avatar--b">MD</div>
+            <div class="avatar avatar--lg avatar--c">LG</div>
+            <div class="avatar avatar--xl avatar--d">XL</div>
+          </div>
+
+          <h3 class="color-group__title">With Status</h3>
+          <div class="avatar-row">
+            <div class="avatar avatar--lg avatar--a">
+              JD
+              <span class="avatar__status avatar__status--online"></span>
+            </div>
+            <div class="avatar avatar--lg avatar--b">
+              AK
+              <span class="avatar__status avatar__status--away"></span>
+            </div>
+            <div class="avatar avatar--lg avatar--c">
+              MR
+              <span class="avatar__status avatar__status--offline"></span>
+            </div>
+          </div>
+
+          <h3 class="color-group__title">Avatar Group</h3>
+          <div class="avatar-group">
+            <div class="avatar avatar--md avatar--a">A</div>
+            <div class="avatar avatar--md avatar--b">B</div>
+            <div class="avatar avatar--md avatar--c">C</div>
+            <div class="avatar avatar--md avatar--d">D</div>
+            <span class="avatar-group__more">+5</span>
+          </div>
+
+          <h3 class="color-group__title">User Cards</h3>
+          <div class="card-grid">
+            <div class="user-card">
+              <div class="avatar avatar--lg avatar--a">
+                JD
+                <span class="avatar__status avatar__status--online"></span>
+              </div>
+              <div class="user-card__info">
+                <div class="user-card__name">Jane Doe</div>
+                <div class="user-card__role">Lead Designer</div>
+              </div>
+              <span class="badge badge--success">Online</span>
+            </div>
+
+            <div class="user-card">
+              <div class="avatar avatar--lg avatar--b">
+                AK
+                <span class="avatar__status avatar__status--away"></span>
+              </div>
+              <div class="user-card__info">
+                <div class="user-card__name">Alex Kim</div>
+                <div class="user-card__role">Frontend Engineer</div>
+              </div>
+              <span class="badge badge--warning">Away</span>
+            </div>
+
+            <div class="user-card">
+              <div class="avatar avatar--lg avatar--c">
+                MR
+                <span class="avatar__status avatar__status--offline"></span>
+              </div>
+              <div class="user-card__info">
+                <div class="user-card__name">Morgan Rivera</div>
+                <div class="user-card__role">Product Manager</div>
+              </div>
+              <span class="badge badge--default">Offline</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SECTION 15 — Layout Grid Demonstrations
+           ============================================================ -->
+      <section class="ds-section" id="grid">
+        <div class="ds-container">
+          <h2 class="ds-section__title">
+            <span class="section-number">14</span>
+            Layout Grid Demonstrations
+          </h2>
+          <p class="ds-section__subtitle">
+            Common grid patterns — 2-column, 3-column, 4-column, sidebar, and
+            holy grail layouts.
+          </p>
+
+          <div class="grid-label">2-Column</div>
+          <div class="grid-demo grid-demo--2">
+            <div class="grid-cell">1 / 2</div>
+            <div class="grid-cell">2 / 2</div>
+          </div>
+
+          <div class="grid-label">3-Column</div>
+          <div class="grid-demo grid-demo--3">
+            <div class="grid-cell">1 / 3</div>
+            <div class="grid-cell">2 / 3</div>
+            <div class="grid-cell">3 / 3</div>
+          </div>
+
+          <div class="grid-label">4-Column</div>
+          <div class="grid-demo grid-demo--4">
+            <div class="grid-cell">1 / 4</div>
+            <div class="grid-cell">2 / 4</div>
+            <div class="grid-cell">3 / 4</div>
+            <div class="grid-cell">4 / 4</div>
+          </div>
+
+          <div class="grid-label">Sidebar Layout (1fr 3fr)</div>
+          <div class="grid-demo grid-demo--sidebar">
+            <div class="grid-cell">Sidebar</div>
+            <div class="grid-cell">Main Content</div>
+          </div>
+
+          <div class="grid-label">Holy Grail (1fr 3fr 1fr)</div>
+          <div class="grid-demo grid-demo--holy-grail">
+            <div class="grid-cell">Left</div>
+            <div class="grid-cell">Center</div>
+            <div class="grid-cell">Right</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SECTION 16 — Motion / Animation Reference
+           ============================================================ -->
+      <section class="ds-section" id="motion">
+        <div class="ds-container">
+          <h2 class="ds-section__title">
+            <span class="section-number">15</span>
+            Motion &amp; Animation Reference
+          </h2>
+          <p class="ds-section__subtitle">
+            Live animation previews for every keyframe defined in the design
+            system.
+          </p>
+
+          <div class="motion-grid">
+            <div class="motion-card">
+              <div
+                class="motion-card__preview motion-card__preview--fade"
+              ></div>
+              <div class="motion-card__name">gentleFade</div>
+              <div class="motion-card__timing">ease-decelerate · 2s</div>
+            </div>
+
+            <div class="motion-card">
+              <div
+                class="motion-card__preview motion-card__preview--slide"
+              ></div>
+              <div class="motion-card__name">slideIn</div>
+              <div class="motion-card__timing">ease-decelerate · 2s</div>
+            </div>
+
+            <div class="motion-card">
+              <div
+                class="motion-card__preview motion-card__preview--scale"
+              ></div>
+              <div class="motion-card__name">scaleUp</div>
+              <div class="motion-card__timing">ease-spring · 2s</div>
+            </div>
+
+            <div class="motion-card">
+              <div
+                class="motion-card__preview motion-card__preview--bounce"
+              ></div>
+              <div class="motion-card__name">bounceIn</div>
+              <div class="motion-card__timing">ease · 2s</div>
+            </div>
+
+            <div class="motion-card">
+              <div
+                class="motion-card__preview motion-card__preview--spin"
+              ></div>
+              <div class="motion-card__name">spin</div>
+              <div class="motion-card__timing">linear · 2s</div>
+            </div>
+
+            <div class="motion-card">
+              <div
+                class="motion-card__preview motion-card__preview--float"
+              ></div>
+              <div class="motion-card__name">float</div>
+              <div class="motion-card__timing">ease-in-out · 3s</div>
+            </div>
+
+            <div class="motion-card">
+              <div
+                class="motion-card__preview motion-card__preview--pulse"
+              ></div>
+              <div class="motion-card__name">pulse</div>
+              <div class="motion-card__timing">ease-in-out · 2s</div>
+            </div>
+
+            <div class="motion-card">
+              <div
+                class="motion-card__preview motion-card__preview--shimmer"
+              ></div>
+              <div class="motion-card__name">shimmerLoad</div>
+              <div class="motion-card__timing">ease · 1.5s</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SECTION 17 — Accessibility Checklist
+           ============================================================ -->
+      <section class="ds-section" id="a11y">
+        <div class="ds-container">
+          <h2 class="ds-section__title">
+            <span class="section-number">16</span>
+            Accessibility Checklist
+          </h2>
+          <p class="ds-section__subtitle">
+            WCAG 2.1 compliance audit panel for design system components.
+          </p>
+
+          <div class="a11y-panel">
+            <div class="a11y-panel__header">
+              <h3 class="a11y-panel__title">WCAG 2.1 AA Audit</h3>
+              <div class="a11y-score">
+                <span>Score: 94/100</span>
+                <span class="badge badge--success">Pass</span>
+              </div>
+            </div>
+            <ul class="a11y-list">
+              <li class="a11y-item">
+                <span class="a11y-item__check a11y-item__check--pass">✓</span>
+                Color contrast ratio ≥ 4.5:1 for normal text
+              </li>
+              <li class="a11y-item">
+                <span class="a11y-item__check a11y-item__check--pass">✓</span>
+                Color contrast ratio ≥ 3:1 for large text
+              </li>
+              <li class="a11y-item">
+                <span class="a11y-item__check a11y-item__check--pass">✓</span>
+                All interactive elements have visible focus indicators
+              </li>
+              <li class="a11y-item">
+                <span class="a11y-item__check a11y-item__check--pass">✓</span>
+                Form inputs have associated labels
+              </li>
+              <li class="a11y-item">
+                <span class="a11y-item__check a11y-item__check--pass">✓</span>
+                ARIA roles applied to navigation components
+              </li>
+              <li class="a11y-item">
+                <span class="a11y-item__check a11y-item__check--pass">✓</span>
+                Sufficient touch target size (≥ 44×44px)
+              </li>
+              <li class="a11y-item">
+                <span class="a11y-item__check a11y-item__check--warn">!</span>
+                prefers-reduced-motion media query recommended
+              </li>
+              <li class="a11y-item">
+                <span class="a11y-item__check a11y-item__check--pass">✓</span>
+                Semantic HTML elements used throughout
+              </li>
+              <li class="a11y-item">
+                <span class="a11y-item__check a11y-item__check--pass">✓</span>
+                Skip-to-content link available
+              </li>
+              <li class="a11y-item">
+                <span class="a11y-item__check a11y-item__check--warn">!</span>
+                Screen reader testing pending for modal component
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SECTION 18 — Code Snippet Display
+           ============================================================ -->
+      <section class="ds-section" id="code">
+        <div class="ds-container">
+          <h2 class="ds-section__title">
+            <span class="section-number">17</span>
+            Code Snippet Display
+          </h2>
+          <p class="ds-section__subtitle">
+            Syntax-highlighted code blocks with the design system's monospace
+            styling.
+          </p>
+
+          <div class="code-block" style="margin-bottom: 24px">
+            <div class="code-block__header">
+              <div class="code-block__dots">
+                <span class="code-block__dot code-block__dot--red"></span>
+                <span class="code-block__dot code-block__dot--yellow"></span>
+                <span class="code-block__dot code-block__dot--green"></span>
+              </div>
+              <span class="code-block__lang">CSS</span>
+            </div>
+            <div class="code-block__body">
+              <pre><span class="code-comment">/* Dark Mode Design System Tokens */</span>
+<span class="code-keyword">:root</span> {
+  <span class="code-property">--surface-base</span>: <span class="code-value">#0d0d1a</span>;
+  <span class="code-property">--surface-100</span>: <span class="code-value">#1a1a2e</span>;
+  <span class="code-property">--accent-blue</span>: <span class="code-value">#0f3460</span>;
+  <span class="code-property">--highlight</span>: <span class="code-value">#e94560</span>;
+  <span class="code-property">--text-primary</span>: <span class="code-value">#f0f0f8</span>;
+  <span class="code-property">--font-sans</span>: <span class="code-string">"Inter"</span>, sans-serif;
+  <span class="code-property">--ease-spring</span>: <span class="code-value">cubic-bezier(0.34, 1.56, 0.64, 1)</span>;
+}</pre>
+            </div>
+          </div>
+
+          <div class="code-block" style="margin-bottom: 24px">
+            <div class="code-block__header">
+              <div class="code-block__dots">
+                <span class="code-block__dot code-block__dot--red"></span>
+                <span class="code-block__dot code-block__dot--yellow"></span>
+                <span class="code-block__dot code-block__dot--green"></span>
+              </div>
+              <span class="code-block__lang">HTML</span>
+            </div>
+            <div class="code-block__body">
+              <pre><span class="code-comment">&lt;!-- Using a design system button --&gt;</span>
+<span class="code-keyword">&lt;button</span> <span class="code-property">class</span>=<span class="code-string">"btn btn--primary btn--lg"</span><span class="code-keyword">&gt;</span>
+  ⚡ Deploy Now
+<span class="code-keyword">&lt;/button&gt;</span>
+
+<span class="code-comment">&lt;!-- Glassmorphic card --&gt;</span>
+<span class="code-keyword">&lt;div</span> <span class="code-property">class</span>=<span class="code-string">"card card--glass"</span><span class="code-keyword">&gt;</span>
+  <span class="code-keyword">&lt;h3</span> <span class="code-property">class</span>=<span class="code-string">"card__title"</span><span class="code-keyword">&gt;</span>Frosted<span class="code-keyword">&lt;/h3&gt;</span>
+  <span class="code-keyword">&lt;p</span> <span class="code-property">class</span>=<span class="code-string">"card__body"</span><span class="code-keyword">&gt;</span>Content here<span class="code-keyword">&lt;/p&gt;</span>
+<span class="code-keyword">&lt;/div&gt;</span></pre>
+            </div>
+          </div>
+
+          <div class="code-block">
+            <div class="code-block__header">
+              <div class="code-block__dots">
+                <span class="code-block__dot code-block__dot--red"></span>
+                <span class="code-block__dot code-block__dot--yellow"></span>
+                <span class="code-block__dot code-block__dot--green"></span>
+              </div>
+              <span class="code-block__lang">JavaScript</span>
+            </div>
+            <div class="code-block__body">
+              <pre><span class="code-comment">// Reading design tokens at runtime</span>
+<span class="code-keyword">const</span> <span class="code-property">styles</span> = <span class="code-value">getComputedStyle</span>(document.documentElement);
+<span class="code-keyword">const</span> <span class="code-property">highlight</span> = styles.<span class="code-value">getPropertyValue</span>(<span class="code-string">'--highlight'</span>);
+<span class="code-keyword">const</span> <span class="code-property">surface</span> = styles.<span class="code-value">getPropertyValue</span>(<span class="code-string">'--surface-100'</span>);
+
+console.<span class="code-value">log</span>(<span class="code-string">'Highlight:'</span>, highlight); <span class="code-comment">// #e94560</span></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="ds-footer">
+      <div class="ds-container">
+        <p class="ds-footer__text">
+          Dark Mode Design System — Built with
+          <span class="ds-footer__heart">♥</span> using EaseMotion CSS · Zero
+          Dependencies · v2.0.0
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
