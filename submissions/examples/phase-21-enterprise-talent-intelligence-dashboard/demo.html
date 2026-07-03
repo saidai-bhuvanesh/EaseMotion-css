@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enterprise Talent Intelligence Dashboard - Phase 21</title>
-  <meta name="description" content="Interactive customer-grade AI talent hiring panel and skill matrix viewer.">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
@@ -13,16 +12,18 @@
   <div class="ambient-bg"><div class="blob blob-1"></div><div class="blob blob-2"></div></div>
   <div class="app-container">
     <aside class="sidebar" id="sidebar">
-      <div class="sidebar-header"><div class="logo"><span class="logo-text">COGNITIVE // 21</span></div><button class="sidebar-toggle" id="sidebar-toggle">☰</button></div>
+      <div class="sidebar-header">
+        <div class="logo"><span class="logo-text">COGNITIVE // 21</span></div>
+        <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+      </div>
       <nav class="sidebar-nav">
         <a href="#workspace" class="nav-item active">Intelligent Workspace</a>
-        <a href="#semantic" class="nav-item">Semantic Search</a>
-        <a href="#workflow" class="nav-item">AI Workflows</a>
+        <a href="#analytics" class="nav-item">Telemetry</a>
       </nav>
       <div class="sidebar-footer">
         <div class="status-indicator">
           <div class="status-dot"></div>
-          <span>Agents Orchestrating</span>
+          <span>Active Orchestrator</span>
         </div>
       </div>
     </aside>
@@ -31,61 +32,49 @@
         <div class="top-bar-left">
           <span class="badge-tag">Phase 21</span>
           <h1>Enterprise Talent Intelligence Dashboard</h1>
-          <p class="subtitle">Interactive customer-grade AI talent hiring panel and skill matrix viewer.</p>
-        </div>
-        <div class="top-bar-right">
-          <div class="search-command">
-            <span class="search-icon">🔍</span>
-            <input type="text" placeholder="Ask AI Assistant or search...">
-            <span class="shortcut">⌘K</span>
-          </div>
         </div>
       </header>
       
-      <section class="hero-section" id="workspace">
-        <div class="hero-grid">
-          <div class="hero-card">
-            <h3>Knowledge Synthesis</h3>
-            <div class="hero-val">120</div>
-            <div class="hero-trend success">Active items scanned</div>
-          </div>
-          <div class="hero-card">
-            <h3>Workflow Automation</h3>
-            <div class="hero-val">95%</div>
-            <div class="hero-trend">Tasks autonomously completed</div>
-          </div>
-          <div class="hero-card">
-            <h3>Cognitive Load Reduction</h3>
-            <div class="hero-val">8.4h</div>
-            <div class="hero-trend info">Hours saved via AI assistance</div>
-          </div>
+      <section class="workspace-section" id="workspace">
+        <div class="talent-container">
+  <div class="talent-sidebar">
+    <h3>Candidates</h3>
+    <div class="candidate-list">
+      <div class="candidate-card active">
+        <div class="avatar">JD</div>
+        <div class="candidate-info">
+          <h4>Jane Doe</h4>
+          <span class="match-score">98% Match</span>
         </div>
-      </section>
-      
-      <section class="sections-area" id="reasoning">
-        <h2 class="section-title">🧠 Agent Reasoning Timeline</h2>
-        <div class="sections-grid">
-          <div class="section-card">
-            <span class="severity-badge info">ANALYSIS</span>
-            <h4>System Telemetry Summary</h4>
-            <div class="section-content">Agent extracted core metrics and updated the metrics registry. Cross-referencing complete.</div>
-          </div>
-          <div class="section-card alert-card">
-            <span class="severity-badge warning">AMBIGUITY</span>
-            <h4>Resource Optimization</h4>
-            <div class="section-content">Semantic engine detected conflicting operational instructions. Human-in-the-loop review requested.</div>
-          </div>
-          <div class="section-card">
-            <span class="severity-badge success">AUTOMATION</span>
-            <h4>Agent Orchestration</h4>
-            <div class="section-content">Automated multi-agent routing completed successfully with latency indicators within nominal bounds.</div>
-          </div>
+      </div>
+      <div class="candidate-card">
+        <div class="avatar">JS</div>
+        <div class="candidate-info">
+          <h4>John Smith</h4>
+          <span class="match-score">89% Match</span>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="talent-detail">
+    <div class="profile-header">
+      <h2>Jane Doe</h2>
+      <span class="badge">Senior UX Engineer</span>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-bar"><span>CSS Architecture</span><div class="bar-outer"><div class="bar-inner" style="width:95%"></div></div></div>
+      <div class="skill-bar"><span>Responsive Design</span><div class="bar-outer"><div class="bar-inner" style="width:90%"></div></div></div>
+      <div class="skill-bar"><span>Accessibility (a11y)</span><div class="bar-outer"><div class="bar-inner" style="width:85%"></div></div></div>
+    </div>
+  </div>
+</div>
       </section>
     </main>
   </div>
   <script>
-    document.getElementById('sidebar-toggle').addEventListener('click', () => document.getElementById('sidebar').classList.toggle('collapsed'));
+    document.getElementById('sidebar-toggle').addEventListener('click', () => {
+      document.getElementById('sidebar').classList.toggle('collapsed');
+    });
   </script>
 </body>
 </html>
