@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autonomous Fleet Routing & Dispatch Portal - Phase 40</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="cognitive-grid"></div>
+  <div class="ambient-bg"><div class="blob blob-1"></div><div class="blob blob-2"></div></div>
+  <div class="app-container">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo"><span class="logo-text">COGNITIVE // 40</span></div>
+        <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#workspace" class="nav-item active">Intelligent Workspace</a>
+        <a href="#analytics" class="nav-item">Telemetry</a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="status-indicator">
+          <div class="status-dot"></div>
+          <span>Active Orchestrator</span>
+        </div>
+      </div>
+    </aside>
+    <main class="main-content">
+      <header class="top-bar">
+        <div class="top-bar-left">
+          <span class="badge-tag">Phase 40</span>
+          <h1>Autonomous Fleet Routing & Dispatch Portal</h1>
+        </div>
+      </header>
+      
+      <section class="workspace-section" id="workspace">
+        <div class="fleet-portal">
+  <h2>Live Delivery Truck Status</h2>
+  <div class="transit-list">
+    <div class="transit-item">
+      <div class="truck-label">Truck #12 (Active Route)</div>
+      <div class="truck-details">
+        <span class="status font-mono">Transit</span>
+        <span>ETA: 1.2 Hours</span>
+      </div>
+    </div>
+  </div>
+</div>
+      </section>
+    </main>
+  </div>
+  <script>
+    document.getElementById('sidebar-toggle').addEventListener('click', () => {
+      document.getElementById('sidebar').classList.toggle('collapsed');
+    });
+  </script>
+</body>
+</html>
