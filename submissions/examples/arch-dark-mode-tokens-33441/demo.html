@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Token Architecture Demo</title>
+    <!-- Import core framework styles -->
+    <link rel="stylesheet" href="../../../easemotion.css">
+    
+    <!-- Load our proposed dark mode tokens -->
+    <link rel="stylesheet" href="proposed-variables-addon.css">
+    
+    <style>
+        body {
+            /* These utilize the tokens that will be seamlessly swapped */
+            background-color: var(--ease-color-bg, #ffffff);
+            color: var(--ease-color-text, #0f172a);
+            font-family: system-ui, -apple-system, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .demo-card {
+            background-color: var(--ease-color-surface, #f8fafc);
+            border: 1px solid var(--ease-border-color, rgba(0,0,0,0.1));
+            box-shadow: var(--ease-shadow-md);
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 100%;
+            transition: all 0.3s;
+        }
+
+        .theme-toggle {
+            margin-bottom: 2rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="themeToggle" class="theme-toggle">Toggle Theme</button>
+
+    <div class="demo-card">
+        <h2>Dark Mode Architecture</h2>
+        <p>Notice how the background color, the card surface color, the text color, the border, and the shadow all adapt instantly when you toggle the theme.</p>
+        <p>This is achieved entirely through CSS variables in <code>proposed-variables-addon.css</code>. No JavaScript or component-level CSS changes are required for these elements to adapt.</p>
+    </div>
+
+    <script>
+        const btn = document.getElementById('themeToggle');
+        btn.addEventListener('click', () => {
+            const html = document.documentElement;
+            // Toggle data-theme between light and dark
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.setAttribute('data-theme', 'light');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+            }
+        });
+    </script>
+</body>
+</html>

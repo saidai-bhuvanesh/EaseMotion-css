@@ -1,0 +1,59 @@
+/* 
+ * PROPOSED ADDITION FOR MAINTAINERS
+ * 
+ * Append the following block to the end of `core/variables.css`
+ * to implement the dark mode token layer requested in #33441.
+ */
+
+/* ─── Dark Mode Token Overrides ─────────────────────────────────────────── */
+
+/* 1. OS-level Dark Mode Preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ease-color-bg:              #0f172a;
+    --ease-color-surface:         #1e293b;
+    --ease-color-text:            #f8fafc;
+    
+    --ease-color-neutral-100:     #1e293b;
+    --ease-color-neutral-900:     #f8fafc;
+    
+    --ease-border-color:          rgba(255, 255, 255, 0.1);
+
+    /* Shadows need to be darker/more opaque on dark backgrounds */
+    --ease-shadow-sm:             0 1px 4px rgba(0, 0, 0, 0.4);
+    --ease-shadow-md:             0 4px 20px rgba(0, 0, 0, 0.5);
+    --ease-shadow-lg:             0 8px 40px rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* 2. Manual Data-Attribute Override */
+[data-theme="dark"] {
+    --ease-color-bg:              #0f172a;
+    --ease-color-surface:         #1e293b;
+    --ease-color-text:            #f8fafc;
+    
+    --ease-color-neutral-100:     #1e293b;
+    --ease-color-neutral-900:     #f8fafc;
+    
+    --ease-border-color:          rgba(255, 255, 255, 0.1);
+
+    --ease-shadow-sm:             0 1px 4px rgba(0, 0, 0, 0.4);
+    --ease-shadow-md:             0 4px 20px rgba(0, 0, 0, 0.5);
+    --ease-shadow-lg:             0 8px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* 3. Force Light Mode Override */
+[data-theme="light"] {
+    --ease-color-bg:              #ffffff;
+    --ease-color-surface:         #f8fafc;
+    --ease-color-text:            #0f172a;
+    
+    --ease-color-neutral-100:     #f1f5f9;
+    --ease-color-neutral-900:     #0f172a;
+    
+    --ease-border-color:          rgba(0, 0, 0, 0.1);
+
+    --ease-shadow-sm:             0 1px 4px rgba(0, 0, 0, 0.05);
+    --ease-shadow-md:             0 4px 20px rgba(0, 0, 0, 0.1);
+    --ease-shadow-lg:             0 8px 40px rgba(0, 0, 0, 0.15);
+}
