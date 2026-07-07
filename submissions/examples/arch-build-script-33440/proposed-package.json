@@ -1,0 +1,14 @@
+{
+  "name": "easemotion-css",
+  "version": "1.0.0",
+  "description": "Proposed package.json scripts",
+  "scripts": {
+    "build": "node scripts/bundle.js",
+    "build:watch": "node scripts/bundle.js --watch",
+    "lint:css": "stylelint 'core/**/*.css' 'components/**/*.css'"
+  },
+  "devDependencies": {
+    "clean-css": "^5.3.3",
+    "stylelint": "^16.0.0"
+  }
+}
