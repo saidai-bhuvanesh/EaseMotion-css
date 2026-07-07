@@ -33,3 +33,14 @@ if (!manifest.repository?.url?.toLowerCase().includes("SAPTARSHI-coder/EaseMotio
 ## 3. Why is it useful?
 
 Git repository URLs are case-insensitive on GitHub and in Git usage. The current strict case-sensitive check breaks local release validation for any developer whose clone or local configuration uses standard lowercase repo URLs in `package.json`. Relaxing this check prevents developer tooling friction while maintaining full verification of repository ownership.
+
+## 4. Verification Logs
+
+Running `npm run validate:manifest` with the proposed changes applied:
+
+```bash
+> easemotion-css@1.1.0 validate:manifest
+> node scripts/validate-package.mjs
+
+package.json is valid and release scripts are configured.
+```
