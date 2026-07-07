@@ -1,0 +1,5 @@
+{
+  "core": ["variables", "base"],
+  "components": ["buttons", "cards"],
+  "animations": ["fade"]
+}
