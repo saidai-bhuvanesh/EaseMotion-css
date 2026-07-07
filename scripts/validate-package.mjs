@@ -38,7 +38,8 @@ if (manifest.name !== "easemotion-css") {
   fail('expected package name to be "easemotion-css"');
 }
 
-if (!manifest.repository?.url?.includes("SAPTARSHI-coder/EaseMotion-css")) {
+const repoUrl = manifest.repository?.url || "";
+if (!repoUrl.toLowerCase().includes("saptarshi-coder/easemotion-css")) {
   fail("repository.url must point to SAPTARSHI-coder/EaseMotion-css");
 }
 
