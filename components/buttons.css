@@ -114,7 +114,7 @@
 
 /* Ghost */
 .ease-btn-ghost {
-  --ease-btn-loading-color: var(--ease-color-neutral-700, #334155);
+  --ease-btn-loading-color: currentColor;
 
   background-color: transparent;
   color: var(--ease-color-neutral-700, #334155);
@@ -125,6 +125,29 @@
   .ease-btn-ghost:hover {
     background-color: var(--ease-color-neutral-100, #f1f5f9);
     color: var(--ease-color-neutral-900, #0f172a);
+  }
+}
+
+/* Dark mode support for Ghost Button */
+@media (prefers-color-scheme: dark) {
+  .ease-btn-ghost {
+    color: var(--ease-color-neutral-300, #cbd5e1);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .ease-btn-ghost:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+    }
+  }
+}
+
+[data-theme="dark"] .ease-btn-ghost {
+  color: var(--ease-color-neutral-300, #cbd5e1);
+}
+@media (hover: hover) and (pointer: fine) {
+  [data-theme="dark"] .ease-btn-ghost:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
   }
 }
 
