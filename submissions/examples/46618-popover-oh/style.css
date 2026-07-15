@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+:root{--bg-primary:#0a0e17;--bg-surface:rgba(26,36,56,0.6);--border-color:rgba(255,255,255,0.08);--color-primary:#3b82f6;--color-text:#f3f4f6;--color-text-muted:#9ca3af}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background-color:var(--bg-primary);color:var(--color-text);font-family:var(--font-sans);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:2rem}
+.container{max-width:700px;width:100%;backdrop-filter:blur(20px);background:var(--bg-surface);border:1px solid var(--border-color);border-radius:24px;padding:2.5rem;box-shadow:0 25px 50px -12px rgba(0,0,0,0.5)}
+h1{font-size:1.75rem;font-weight:700;margin-bottom:0.5rem;background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center}
+.subtitle{color:var(--color-text-muted);margin-bottom:2rem;font-size:1rem;text-align:center}
+.display-area{padding:2rem;margin-bottom:1.5rem;border-radius:12px;border:1px dashed var(--border-color);background:rgba(0,0,0,0.15)}
+.popover-container{position:relative;display:flex;justify-content:center}
+.trigger-btn{padding:0.875rem 1.75rem;background:linear-gradient(135deg,var(--color-primary),#a78bfa);border:none;border-radius:10px;color:white;font-family:var(--font-sans);font-size:1rem;font-weight:600;cursor:pointer;transition:all 0.3s ease}
+.trigger-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(59,130,246,0.3)}
+.popover{position:absolute;bottom:calc(100% + 12px);left:50%;transform:translateX(-50%) scale(0.8);width:200px;background:var(--bg-surface);border:1px solid var(--border-color);border-radius:16px;padding:1rem;opacity:0;visibility:hidden;transition:all 0.4s ease;z-index:100}
+.popover-container:hover .popover{opacity:1;visibility:visible;transform:translateX(-50%) scale(1)}
+.popover h4{font-size:1rem;font-weight:700;margin-bottom:0.5rem;color:var(--color-primary)}
+.popover p{font-size:0.875rem;color:var(--color-text-muted);line-height:1.5}
+@media(prefers-reduced-motion:reduce){.trigger-btn,.popover{transition:none}.popover{opacity:1;visibility:visible;transform:translateX(-50%) scale(1)}}
