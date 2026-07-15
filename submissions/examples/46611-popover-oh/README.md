@@ -1,0 +1,1 @@
+# Popover Component\n\nThis submission implements a popover for issue **#46611**.\n\n## Features\n\n- Animated popover\n- Hover trigger\n- Smooth transitions\n- Bouncy easing\n\n## Usage\n\n\n\n## Acceptance Criteria\n\n- ✅ Animated popover\n- ✅ Hover trigger\n- ✅ Smooth transitions\n- ✅ README.md included
