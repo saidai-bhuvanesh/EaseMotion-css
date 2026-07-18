@@ -351,4 +351,26 @@
     padding: var(--ease-space-4, 1rem);
   }
 }
+
+/* ── Print Styles ──────────────────────────────────────────────────────── */
+@media print {
+  .ease-card {
+    background: #fff !important;
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+  }
+
+  .ease-card-body {
+    color: #000 !important;
+  }
+
+  .ease-card-header h2,
+  .ease-card-header h3,
+  .ease-card-title {
+    color: #000 !important;
+  }
+
+  .ease-card-footer {
+    border-top-color: #ccc !important;
+  }
 }
