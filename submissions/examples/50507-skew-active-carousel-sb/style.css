@@ -1,0 +1,355 @@
+/* ============================================================
+   EaseMotion CSS - Skew-Active Carousel for Interactive Interface
+   Pure CSS carousel with skew transition effects
+   ============================================================ */
+
+/* ── CSS Custom Properties ──────────────────────────────────── */
+.ease-skew-carousel-sb {
+  --ease-carousel-duration: 0.7s;
+  --ease-carousel-ease: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-skew-angle: 3deg;
+  
+  /* Interactive Interface Colors */
+  --ease-carousel-bg: #0f172a;
+  --ease-carousel-bg-card: #1e293b;
+  --ease-carousel-bg-card-hover: #334155;
+  --ease-carousel-text: #e2e8f0;
+  --ease-carousel-text-muted: #94a3b8;
+  --ease-carousel-text-heading: #f8fafc;
+  --ease-carousel-accent: #8b5cf6;
+  --ease-carousel-accent-light: #c4b5fd;
+  --ease-carousel-secondary: #06b6d4;
+  --ease-carousel-border: #475569;
+  
+  /* Sizing */
+  --ease-carousel-radius: 20px;
+  --ease-carousel-padding: 32px;
+}
+
+/* ── Base Carousel Container ───────────────────────────────── */
+.ease-skew-carousel-sb {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Carousel Track ───────────────────────────────────────── */
+.ease-skew-track-sb {
+  display: flex;
+  transition: transform var(--ease-carousel-duration) var(--ease-carousel-ease);
+  will-change: transform;
+}
+
+/* ── Carousel Slides ──────────────────────────────────────── */
+.ease-skew-slide-sb {
+  min-width: 100%;
+  padding: var(--ease-carousel-padding);
+  box-sizing: border-box;
+  background: var(--ease-carousel-bg);
+}
+
+/* ── Skew Active Card ─────────────────────────────────────── */
+.ease-skew-card-sb {
+  background: var(--ease-carousel-bg-card);
+  border-radius: var(--ease-carousel-radius);
+  padding: 40px;
+  border: 1px solid var(--ease-carousel-border);
+  position: relative;
+  overflow: hidden;
+  transform: skewX(calc(var(--ease-skew-angle) * -1));
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ease-skew-card-sb::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--ease-carousel-accent), var(--ease-carousel-secondary));
+}
+
+/* ── Skew Entrance Animation ──────────────────────────────── */
+.ease-skew-slide-sb {
+  animation: ease-skew-entrance-sb var(--ease-carousel-duration) var(--ease-carousel-ease) forwards;
+}
+
+@keyframes ease-skew-entrance-sb {
+  0% {
+    opacity: 0;
+    transform: skewX(calc(var(--ease-skew-angle) * 2)) translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: skewX(0) translateX(0);
+  }
+}
+
+/* ── Content Grid ─────────────────────────────────────────── */
+.ease-skew-grid-sb {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: center;
+  transform: skewX(var(--ease-skew-angle));
+}
+
+/* ── Typography ─────────────────────────────────────────── */
+.ease-skew-badge-sb {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--ease-carousel-accent);
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  width: fit-content;
+}
+
+.ease-skew-title-sb {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--ease-carousel-text-heading);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.ease-skew-desc-sb {
+  font-size: 15px;
+  color: var(--ease-carousel-text-muted);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+/* ── Interactive Cards ───────────────────────────────────── */
+.ease-interactive-stack-sb {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ease-interactive-card-sb {
+  background: var(--ease-carousel-bg-card-hover);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.ease-interactive-card-sb:hover {
+  border-color: var(--ease-carousel-accent);
+  transform: translateX(8px);
+  background: linear-gradient(90deg, var(--ease-carousel-bg-card-hover), transparent);
+}
+
+.ease-interactive-icon-sb {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--ease-carousel-accent), var(--ease-carousel-secondary));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.ease-interactive-content-sb {
+  flex: 1;
+}
+
+.ease-interactive-title-sb {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ease-carousel-text);
+}
+
+.ease-interactive-subtitle-sb {
+  font-size: 12px;
+  color: var(--ease-carousel-text-muted);
+  margin-top: 2px;
+}
+
+.ease-interactive-arrow-sb {
+  font-size: 18px;
+  color: var(--ease-carousel-text-muted);
+  transition: all 0.3s ease;
+}
+
+.ease-interactive-card-sb:hover .ease-interactive-arrow-sb {
+  color: var(--ease-carousel-accent);
+  transform: translateX(4px);
+}
+
+/* ── Feature Tags ─────────────────────────────────────────── */
+.ease-tag-container-sb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.ease-tag-sb {
+  padding: 6px 12px;
+  background: var(--ease-carousel-bg-card-hover);
+  border: 1px solid var(--ease-carousel-border);
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--ease-carousel-text);
+  transition: all 0.3s ease;
+}
+
+.ease-tag-sb:hover {
+  border-color: var(--ease-carousel-accent);
+  color: var(--ease-carousel-accent-light);
+}
+
+/* ── Progress Bar ─────────────────────────────────────────── */
+.ease-progress-container-sb {
+  margin-top: 24px;
+}
+
+.ease-progress-label-sb {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--ease-carousel-text-muted);
+  margin-bottom: 8px;
+}
+
+.ease-progress-bar-sb {
+  height: 8px;
+  background: var(--ease-carousel-bg-card-hover);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.ease-progress-fill-sb {
+  height: 100%;
+  background: linear-gradient(90deg, var(--ease-carousel-accent), var(--ease-carousel-secondary));
+  border-radius: 4px;
+  animation: ease-progress-sb 1.5s ease-out forwards;
+}
+
+@keyframes ease-progress-sb {
+  from { width: 0; }
+  to { width: var(--progress, 75%); }
+}
+
+/* ── Navigation Dots ─────────────────────────────────────── */
+.ease-skew-nav-sb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.ease-skew-dots-sb {
+  display: flex;
+  gap: 10px;
+}
+
+.ease-skew-dot-sb {
+  width: 12px;
+  height: 12px;
+  background: var(--ease-carousel-border);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: skewX(var(--ease-skew-angle));
+}
+
+.ease-skew-dot-sb:hover {
+  background: var(--ease-carousel-accent-light);
+}
+
+.ease-skew-dot-sb:focus-visible {
+  outline: 2px solid var(--ease-carousel-accent);
+  outline-offset: 2px;
+}
+
+/* ── Radio Button Hack ────────────────────────────────────── */
+.ease-skew-carousel-sb input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#skew1-sb:checked ~ .ease-skew-track-sb { transform: translateX(0); }
+#skew2-sb:checked ~ .ease-skew-track-sb { transform: translateX(-100%); }
+#skew3-sb:checked ~ .ease-skew-track-sb { transform: translateX(-200%); }
+#skew4-sb:checked ~ .ease-skew-track-sb { transform: translateX(-300%); }
+
+#skew1-sb:checked ~ .ease-skew-nav-sb label[for="skew1-sb"],
+#skew2-sb:checked ~ .ease-skew-nav-sb label[for="skew2-sb"],
+#skew3-sb:checked ~ .ease-skew-nav-sb label[for="skew3-sb"],
+#skew4-sb:checked ~ .ease-skew-nav-sb label[for="skew4-sb"] {
+  background: var(--ease-carousel-accent);
+  transform: skewX(var(--ease-skew-angle)) scale(1.2);
+}
+
+/* ── Reduced Motion ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .ease-skew-track-sb {
+    transition: none;
+  }
+  
+  .ease-skew-slide-sb,
+  .ease-skew-card-sb {
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
+  
+  .ease-skew-grid-sb {
+    transform: none;
+  }
+  
+  .ease-progress-fill-sb {
+    animation: none;
+  }
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .ease-skew-grid-sb {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .ease-skew-title-sb {
+    font-size: 24px;
+  }
+  
+  .ease-skew-card-sb {
+    padding: 24px;
+    transform: none;
+  }
+  
+  .ease-skew-grid-sb {
+    transform: none;
+  }
+  
+  .ease-skew-dot-sb {
+    transform: none;
+  }
+}
+
+/* ── Focus Visible ────────────────────────────────────────── */
+*:focus-visible {
+  outline: 2px solid var(--ease-carousel-accent);
+  outline-offset: 2px;
+}
