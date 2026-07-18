@@ -52,4 +52,20 @@
   .bg-dark .ease-breadcrumb-active {
     color: #9ca3af;
   }
+
+  /* ── Print Styles ──────────────────────────────────────────────────────── */
+  @media print {
+    .ease-breadcrumb-link {
+      color: #333 !important;
+      text-decoration: underline;
+    }
+
+    .ease-breadcrumb-separator {
+      color: #666 !important;
+    }
+
+    .ease-breadcrumb-active {
+      color: #000 !important;
+    }
+  }
 }
