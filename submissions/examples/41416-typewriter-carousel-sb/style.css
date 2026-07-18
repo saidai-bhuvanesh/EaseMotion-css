@@ -1,0 +1,335 @@
+/* ============================================================
+   EaseMotion CSS - Typewriter Carousel Component
+   Animated text carousel with typewriter effect
+   ============================================================ */
+
+/* ── Base Styles ───────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shell {
+  padding: 2rem;
+  max-width: 700px;
+}
+
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.eyebrow {
+  color: #06b6d4;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #0f172a;
+}
+
+p {
+  color: #64748b;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+h3 {
+  font-size: 0.875rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+/* ── Demo Section ──────────────────────────────────────────── */
+.demo-section {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.demo-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* ── Typewriter Carousel Base ──────────────────────────────── */
+.ease-typewriter-carousel-sb {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0.75rem 0;
+}
+
+.ease-typewriter-track-sb {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.ease-typewriter-item-sb {
+  flex-shrink: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  position: absolute;
+  white-space: nowrap;
+  color: #0f172a;
+  font-weight: 600;
+  font-size: 1.25rem;
+  animation: ease-typewriter-reveal-sb 0.5s ease forwards;
+}
+
+.ease-typewriter-item-sb:first-child {
+  position: relative;
+}
+
+/* ── Typewriter Cursor ─────────────────────────────────────── */
+.ease-typewriter-cursor-sb {
+  width: 2px;
+  height: 1.2em;
+  background: #06b6d4;
+  margin-left: 4px;
+  animation: ease-typewriter-blink-sb 1s step-end infinite;
+}
+
+@keyframes ease-typewriter-blink-sb {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+/* ── Typewriter Animation ─────────────────────────────────── */
+.ease-typewriter-item-sb {
+  animation: ease-typewriter-cycle-sb 8s ease-in-out infinite;
+}
+
+.ease-typewriter-item-sb:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.ease-typewriter-item-sb:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.ease-typewriter-item-sb:nth-child(3) {
+  animation-delay: 4s;
+}
+
+.ease-typewriter-item-sb:nth-child(4) {
+  animation-delay: 6s;
+}
+
+@keyframes ease-typewriter-cycle-sb {
+  0%, 20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  25%, 45% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  50%, 70% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  75%, 95% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes ease-typewriter-reveal-sb {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Progress Indicator ───────────────────────────────────── */
+.ease-typewriter-progress-sb .ease-typewriter-progress-sb {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #e2e8f0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.ease-typewriter-progress-bar-sb {
+  height: 100%;
+  background: linear-gradient(90deg, #06b6d4, #22d3ee);
+  width: 0;
+  animation: ease-typewriter-progress-fill-sb 2s ease-in-out infinite;
+}
+
+@keyframes ease-typewriter-progress-fill-sb {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+/* ── Large Variant ────────────────────────────────────────── */
+.ease-typewriter-large-sb {
+  min-height: 64px;
+}
+
+.ease-typewriter-large-sb .ease-typewriter-item-sb {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.ease-typewriter-large-sb .ease-typewriter-cursor-sb {
+  height: 2rem;
+  width: 3px;
+}
+
+/* ── Inline Variant ───────────────────────────────────────── */
+.ease-typewriter-inline-sb {
+  display: inline-flex;
+  min-height: auto;
+  padding: 0;
+}
+
+.ease-typewriter-inline-sb .ease-typewriter-track-sb {
+  display: inline-flex;
+}
+
+.ease-typewriter-inline-sb .ease-typewriter-item-sb {
+  position: relative;
+  font-size: inherit;
+  font-weight: inherit;
+  color: #06b6d4;
+}
+
+/* ── Hero Banner ───────────────────────────────────────────── */
+.hero-banner {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border-radius: 16px;
+  color: white;
+}
+
+.hero-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-prefix {
+  color: white;
+}
+
+.hero-banner p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.ease-typewriter-inline-sb {
+  color: #22d3ee;
+}
+
+/* ── Tagline Section ───────────────────────────────────────── */
+.tagline-section {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  border-radius: 16px;
+  color: white;
+}
+
+.tagline-suffix {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 0.5rem;
+}
+
+.tagline-section .ease-typewriter-carousel-sb {
+  min-height: auto;
+  justify-content: center;
+}
+
+.tagline-section .ease-typewriter-item-sb {
+  color: white;
+  text-align: center;
+}
+
+.tagline-section .ease-typewriter-cursor-sb {
+  background: white;
+}
+
+.tagline-section p {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+/* ── Reduced Motion ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .ease-typewriter-item-sb {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .ease-typewriter-item-sb:not(:first-child) {
+    display: none;
+  }
+  
+  .ease-typewriter-cursor-sb {
+    animation: ease-typewriter-blink-sb 1s step-end infinite;
+  }
+  
+  .ease-typewriter-progress-bar-sb {
+    animation: none;
+    width: 50%;
+  }
+}
