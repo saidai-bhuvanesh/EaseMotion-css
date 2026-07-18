@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elastic Bounce Tabs - Dashboard Analytics</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="card">
+      <p class="eyebrow">EaseMotion CSS</p>
+      <h1>Elastic Bounce Tabs</h1>
+      <p>Interactive tabs with elastic bounce animations for dashboard analytics interfaces.</p>
+
+      <!-- Example 1: Dashboard Tabs -->
+      <div class="demo-section">
+        <h3>Dashboard Analytics</h3>
+        <div class="elastic-tabs-sb dashboard-tabs-sb" role="tablist" aria-label="Dashboard analytics">
+          <div class="tabs-list-sb">
+            <button class="tabs-trigger-sb" role="tab" aria-selected="true" aria-controls="panel-overview" id="tab-overview">
+              <span class="icon-sb">📊</span> Overview
+            </button>
+            <button class="tabs-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-revenue" id="tab-revenue" tabindex="-1">
+              <span class="icon-sb">💰</span> Revenue
+            </button>
+            <button class="tabs-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-users" id="tab-users" tabindex="-1">
+              <span class="icon-sb">👥</span> Users
+            </button>
+            <button class="tabs-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-reports" id="tab-reports" tabindex="-1">
+              <span class="icon-sb">📈</span> Reports
+            </button>
+          </div>
+          
+          <div class="tabs-content-sb">
+            <div class="tabs-panel-sb" role="tabpanel" id="panel-overview" aria-labelledby="tab-overview" aria-hidden="false">
+              <h4>Performance Overview</h4>
+              <div class="stat-grid-sb">
+                <div class="stat-card-sb">
+                  <div class="stat-value-sb">2,847</div>
+                  <div class="stat-label-sb">Total Visitors</div>
+                </div>
+                <div class="stat-card-sb">
+                  <div class="stat-value-sb">18.3%</div>
+                  <div class="stat-label-sb">Growth Rate</div>
+                </div>
+                <div class="stat-card-sb">
+                  <div class="stat-value-sb">$12,459</div>
+                  <div class="stat-label-sb">Revenue</div>
+                </div>
+                <div class="stat-card-sb">
+                  <div class="stat-value-sb">4.2min</div>
+                  <div class="stat-label-sb">Avg. Session</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="tabs-panel-sb" role="tabpanel" id="panel-revenue" aria-labelledby="tab-revenue" aria-hidden="true">
+              <h4>Revenue Analytics</h4>
+              <div class="stat-grid-sb">
+                <div class="stat-card-sb">
+                  <div class="stat-value-sb">$48.2K</div>
+                  <div class="stat-label-sb">Total Revenue</div>
+                </div>
+                <div class="stat-card-sb">
+                  <div class="stat-value-sb">+23.5%</div>
+                  <div class="stat-label-sb">Monthly Growth</div>
+                </div>
+                <div class="stat-card-sb">
+                  <div class="stat-value-sb">$1,249</div>
+                  <div class="stat-label-sb">Avg. Order</div>
+                </div>
+                <div class="stat-card-sb">
+                  <div class="stat-value-sb">38</div>
+                  <div class="stat-label-sb">Transactions</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="tabs-panel-sb" role="tabpanel" id="panel-users" aria-labelledby="tab-users" aria-hidden="true">
+              <h4>User Metrics</h4>
+              <div class="stat-grid-sb">
+                <div class="stat-card-sb">
+                  <div class="stat-value-sb">12,847</div>
+                  <div class="stat-label-sb">Active Users</div>
+                </div>
+                <div class="stat-card-sb">
+                  <div class="stat-value-sb">89.2%</div>
+                  <div class="stat-label-sb">Retention</div>
+                </div>
+                <div class="stat-card-sb">
+                  <div class="stat-value-sb">3.8</div>
+                  <div class="stat-label-sb">Avg. Rating</div>
+                </div>
+                <div class="stat-card-sb">
+                  <div class="stat-value-sb">2,341</div>
+                  <div class="stat-label-sb">New Signups</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="tabs-panel-sb" role="tabpanel" id="panel-reports" aria-labelledby="tab-reports" aria-hidden="true">
+              <h4>Generated Reports</h4>
+              <div class="stat-grid-sb">
+                <div class="stat-card-sb">
+                  <div class="stat-value-sb">156</div>
+                  <div class="stat-label-sb">Reports</div>
+                </div>
+                <div class="stat-card-sb">
+                  <div class="stat-value-sb">98%</div>
+                  <div class="stat-label-sb">Accuracy</div>
+                </div>
+                <div class="stat-card-sb">
+                  <div class="stat-value-sb">24h</div>
+                  <div class="stat-label-sb">Avg. Generation</div>
+                </div>
+                <div class="stat-card-sb">
+                  <div class="stat-value-sb">PDF, CSV</div>
+                  <div class="stat-label-sb">Formats</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Example 2: Underline Style -->
+      <div class="demo-section">
+        <h3>Underline Style</h3>
+        <div class="elastic-tabs-sb underline-tabs-sb" role="tablist" aria-label="Underline tabs">
+          <div class="tabs-list-sb">
+            <button class="tabs-trigger-sb" role="tab" aria-selected="true" aria-controls="panel-home" id="tab-home">
+              Home
+            </button>
+            <button class="tabs-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-about" id="tab-about" tabindex="-1">
+              About
+            </button>
+            <button class="tabs-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-contact" id="tab-contact" tabindex="-1">
+              Contact
+            </button>
+          </div>
+          
+          <div class="tabs-content-sb">
+            <div class="tabs-panel-sb" role="tabpanel" id="panel-home" aria-labelledby="tab-home" aria-hidden="false">
+              <p>Welcome to the Home section. This tab uses an underline indicator with elastic bounce animation.</p>
+            </div>
+            <div class="tabs-panel-sb" role="tabpanel" id="panel-about" aria-labelledby="tab-about" aria-hidden="true">
+              <p>About us content goes here. The underline slides in with a smooth bounce effect.</p>
+            </div>
+            <div class="tabs-panel-sb" role="tabpanel" id="panel-contact" aria-labelledby="tab-contact" aria-hidden="true">
+              <p>Contact information and form would be displayed in this panel.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Example 3: Pill Style -->
+      <div class="demo-section">
+        <h3>Pill Style</h3>
+        <div class="elastic-tabs-sb pill-tabs-sb" role="tablist" aria-label="Pill tabs">
+          <div class="tabs-list-sb">
+            <button class="tabs-trigger-sb" role="tab" aria-selected="true" aria-controls="panel-feed" id="tab-feed">
+              Feed
+            </button>
+            <button class="tabs-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-trending" id="tab-trending" tabindex="-1">
+              Trending
+            </button>
+            <button class="tabs-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-saved" id="tab-saved" tabindex="-1">
+              Saved
+            </button>
+          </div>
+          
+          <div class="tabs-content-sb">
+            <div class="tabs-panel-sb" role="tabpanel" id="panel-feed" aria-labelledby="tab-feed" aria-hidden="false">
+              <p>Your personalized feed with recent updates and content.</p>
+            </div>
+            <div class="tabs-panel-sb" role="tabpanel" id="panel-trending" aria-labelledby="tab-trending" aria-hidden="true">
+              <p>Trending content across the platform with real-time updates.</p>
+            </div>
+            <div class="tabs-panel-sb" role="tabpanel" id="panel-saved" aria-labelledby="tab-saved" aria-hidden="true">
+              <p>Your saved items and bookmarked content.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Minimal JavaScript for tab functionality (required for accessibility)
+    document.querySelectorAll('.elastic-tabs-sb').forEach(tabGroup => {
+      const triggers = tabGroup.querySelectorAll('.tabs-trigger-sb');
+      const panels = tabGroup.querySelectorAll('.tabs-panel-sb');
+      
+      triggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          const targetId = trigger.getAttribute('aria-controls');
+          
+          // Update triggers
+          triggers.forEach(t => {
+            t.setAttribute('aria-selected', 'false');
+            t.setAttribute('tabindex', '-1');
+          });
+          trigger.setAttribute('aria-selected', 'true');
+          trigger.setAttribute('tabindex', '0');
+          
+          // Update panels
+          panels.forEach(panel => {
+            panel.setAttribute('aria-hidden', 'true');
+          });
+          document.getElementById(targetId).setAttribute('aria-hidden', 'false');
+        });
+        
+        // Keyboard navigation
+        trigger.addEventListener('keydown', (e) => {
+          const currentIndex = Array.from(triggers).indexOf(trigger);
+          let newIndex;
+          
+          if (e.key === 'ArrowRight') {
+            newIndex = (currentIndex + 1) % triggers.length;
+          } else if (e.key === 'ArrowLeft') {
+            newIndex = (currentIndex - 1 + triggers.length) % triggers.length;
+          } else if (e.key === 'Home') {
+            newIndex = 0;
+          } else if (e.key === 'End') {
+            newIndex = triggers.length - 1;
+          } else {
+            return;
+          }
+          
+          e.preventDefault();
+          triggers[newIndex].click();
+          triggers[newIndex].focus();
+        });
+      });
+    });
+  </script>
+</body>
+</html>

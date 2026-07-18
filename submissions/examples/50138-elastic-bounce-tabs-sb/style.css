@@ -1,0 +1,312 @@
+/* ============================================================
+   EaseMotion CSS - Elastic Bounce Tabs for Dashboard Analytics
+   A pure CSS animated tabs component with elastic bounce interaction
+   ============================================================ */
+
+/* ── CSS Custom Properties ──────────────────────────────────── */
+.elastic-tabs-sb {
+  /* Timing */
+  --tabs-transition-duration: 0.4s;
+  --tabs-bounce-duration: 0.6s;
+  
+  /* Easing */
+  --tabs-ease-default: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --tabs-ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  
+  /* Scale */
+  --tabs-active-scale: 1.05;
+  --tabs-hover-scale: 1.02;
+  
+  /* Colors */
+  --tabs-bg: #1e293b;
+  --tabs-bg-active: #3b82f6;
+  --tabs-bg-hover: #334155;
+  --tabs-text: #94a3b8;
+  --tabs-text-active: #ffffff;
+  --tabs-border: #475569;
+  --tabs-indicator: #3b82f6;
+  
+  /* Sizing */
+  --tabs-border-radius: 8px;
+  --tabs-padding-x: 20px;
+  --tabs-padding-y: 12px;
+  --tabs-gap: 4px;
+}
+
+/* ── Base Tabs Container ───────────────────────────────────── */
+.elastic-tabs-sb {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ── Tab List ──────────────────────────────────────────────── */
+.tabs-list-sb {
+  display: flex;
+  gap: var(--tabs-gap);
+  padding: var(--tabs-gap);
+  background: var(--tabs-bg);
+  border-radius: var(--tabs-border-radius);
+  position: relative;
+  flex-wrap: wrap;
+}
+
+/* ── Tab Buttons ────────────────────────────────────────────── */
+.tabs-trigger-sb {
+  position: relative;
+  padding: var(--tabs-padding-y) var(--tabs-padding-x);
+  border: none;
+  background: transparent;
+  color: var(--tabs-text);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: calc(var(--tabs-border-radius) - 4px);
+  transition: all var(--tabs-transition-duration) var(--tabs-ease-default);
+  z-index: 1;
+  outline: none;
+}
+
+.tabs-trigger-sb:hover {
+  color: var(--tabs-text-active);
+  background: var(--tabs-bg-hover);
+  transform: scale(var(--tabs-hover-scale));
+}
+
+.tabs-trigger-sb:focus-visible {
+  box-shadow: 0 0 0 2px var(--tabs-indicator);
+}
+
+.tabs-trigger-sb[aria-selected="true"] {
+  color: var(--tabs-text-active);
+  background: var(--tabs-bg-active);
+  transform: scale(var(--tabs-active-scale));
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+/* ── Elastic Bounce Animation ──────────────────────────────── */
+@keyframes elastic-bounce-in-sb {
+  0% {
+    transform: scale(0.8) translateY(4px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1) translateY(-2px);
+  }
+  70% {
+    transform: scale(0.95) translateY(1px);
+  }
+  85% {
+    transform: scale(1.03) translateY(-0.5px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes elastic-bounce-out-sb {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(1.08) translateY(-2px);
+  }
+  50% {
+    transform: scale(0.92) translateY(3px);
+  }
+  70% {
+    transform: scale(1.04) translateY(-1px);
+  }
+  100% {
+    transform: scale(0.9) translateY(4px);
+    opacity: 0.5;
+  }
+}
+
+.tabs-trigger-sb[aria-selected="true"] {
+  animation: elastic-bounce-in-sb var(--tabs-bounce-duration) var(--tabs-ease-bounce) forwards;
+}
+
+.tabs-trigger-sb:not([aria-selected="true"]) {
+  animation: elastic-bounce-out-sb var(--tabs-transition-duration) ease-out forwards;
+}
+
+/* ── Tab Panels ─────────────────────────────────────────────── */
+.tabs-content-sb {
+  margin-top: 16px;
+  position: relative;
+}
+
+.tabs-panel-sb {
+  display: none;
+  padding: 24px;
+  background: var(--tabs-bg);
+  border-radius: var(--tabs-border-radius);
+  color: var(--tabs-text);
+  animation: fade-in-sb 0.3s ease-out forwards;
+}
+
+.tabs-panel-sb[aria-hidden="false"] {
+  display: block;
+}
+
+@keyframes fade-in-sb {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Dashboard Analytics Styling ───────────────────────────── */
+.dashboard-tabs-sb {
+  --tabs-bg: #0f172a;
+  --tabs-bg-active: #1e40af;
+  --tabs-bg-hover: #1e293b;
+  --tabs-indicator: #60a5fa;
+}
+
+.dashboard-tabs-sb .tabs-panel-sb {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border: 1px solid var(--tabs-border);
+}
+
+.dashboard-tabs-sb .tabs-trigger-sb[aria-selected="true"] {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.5);
+}
+
+/* ── Stat Cards Inside Panels ─────────────────────────────── */
+.stat-grid-sb {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.stat-card-sb {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+.stat-value-sb {
+  font-size: 28px;
+  font-weight: 700;
+  color: #60a5fa;
+  margin-bottom: 4px;
+}
+
+.stat-label-sb {
+  font-size: 12px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── Icon Styling ──────────────────────────────────────────── */
+.tabs-trigger-sb svg,
+.tabs-trigger-sb .icon-sb {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Underline Indicator Style ────────────────────────────── */
+.underline-tabs-sb {
+  --tabs-bg: transparent;
+  --tabs-bg-active: transparent;
+  --tabs-bg-hover: rgba(59, 130, 246, 0.1);
+  --tabs-border-radius: 0;
+  --tabs-padding-y: 10px;
+  --tabs-border: transparent;
+}
+
+.underline-tabs-sb .tabs-list-sb {
+  background: transparent;
+  border-bottom: 2px solid var(--tabs-border);
+  padding: 0;
+  gap: 0;
+}
+
+.underline-tabs-sb .tabs-trigger-sb {
+  border-radius: 0;
+  position: relative;
+}
+
+.underline-tabs-sb .tabs-trigger-sb::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--tabs-indicator);
+  transform: scaleX(0);
+  transition: transform var(--tabs-transition-duration) var(--tabs-ease-bounce);
+}
+
+.underline-tabs-sb .tabs-trigger-sb[aria-selected="true"]::after {
+  transform: scaleX(1);
+}
+
+.underline-tabs-sb .tabs-trigger-sb[aria-selected="true"] {
+  background: transparent;
+  transform: scale(1);
+  box-shadow: none;
+}
+
+/* ── Pill Style Tabs ─────────────────────────────────────── */
+.pill-tabs-sb .tabs-list-sb {
+  border-radius: 24px;
+  padding: 6px;
+}
+
+.pill-tabs-sb .tabs-trigger-sb {
+  border-radius: 20px;
+}
+
+.pill-tabs-sb .tabs-trigger-sb[aria-selected="true"] {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.4);
+}
+
+/* ── Reduced Motion ──────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .tabs-trigger-sb {
+    animation: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  
+  .tabs-trigger-sb[aria-selected="true"] {
+    transform: scale(1);
+  }
+  
+  .tabs-panel-sb {
+    animation: none;
+  }
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .tabs-trigger-sb {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+  
+  .stat-grid-sb {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
