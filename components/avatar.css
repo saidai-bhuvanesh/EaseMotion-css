@@ -130,4 +130,30 @@
   height: 4rem;
   font-size: 1rem;
 }
+
+/* ── Print Styles ──────────────────────────────────────────────────────── */
+@media print {
+  .ease-avatar,
+  .ease-avatar-sm,
+  .ease-avatar-lg,
+  .ease-avatar-xl {
+    background: #f0f0f0 !important;
+    border: 1px solid #ccc !important;
+    color: #333 !important;
+  }
+
+  .ease-avatar-group {
+    display: inline-flex;
+  }
+
+  .ease-avatar-group-item {
+    background: #f0f0f0 !important;
+    border: 1px solid #ccc !important;
+    color: #333 !important;
+  }
+
+  .ease-avatar-group-count {
+    background: #e0e0e0 !important;
+    color: #333 !important;
+  }
 }
