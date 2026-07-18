@@ -1,0 +1,436 @@
+/* ============================================================
+   EaseMotion CSS - Horizontal Roll Tabs for E-Commerce Checkout
+   A pure CSS animated tabs component with horizontal roll transition
+   ============================================================ */
+
+/* ── CSS Custom Properties ──────────────────────────────────── */
+.ease-roll-tabs-sb {
+  /* Timing */
+  --ease-roll-duration: 0.4s;
+  --ease-roll-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Colors */
+  --ease-roll-bg: #ffffff;
+  --ease-roll-bg-active: #6366f1;
+  --ease-roll-bg-hover: #f1f5f9;
+  --ease-roll-text: #64748b;
+  --ease-roll-text-active: #ffffff;
+  --ease-roll-border: #e2e8f0;
+  --ease-roll-indicator: #6366f1;
+  
+  /* Sizing */
+  --ease-roll-radius: 8px;
+  --ease-roll-padding-x: 20px;
+  --ease-roll-padding-y: 14px;
+  --ease-roll-gap: 4px;
+}
+
+/* ── Base Tabs Container ───────────────────────────────────── */
+.ease-roll-tabs-sb {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ── Tab List ──────────────────────────────────────────────── */
+.ease-roll-list-sb {
+  display: flex;
+  gap: var(--ease-roll-gap);
+  background: var(--ease-roll-bg);
+  border: 1px solid var(--ease-roll-border);
+  border-radius: var(--ease-roll-radius);
+  padding: var(--ease-roll-gap);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Tab Buttons ────────────────────────────────────────────── */
+.ease-roll-trigger-sb {
+  position: relative;
+  flex: 1;
+  padding: var(--ease-roll-padding-y) var(--ease-roll-padding-x);
+  border: none;
+  background: transparent;
+  color: var(--ease-roll-text);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: calc(var(--ease-roll-radius) - 4px);
+  transition: color 0.3s ease;
+  z-index: 1;
+  outline: none;
+  text-align: center;
+}
+
+.ease-roll-trigger-sb:hover {
+  color: var(--ease-roll-indicator);
+}
+
+.ease-roll-trigger-sb:focus-visible {
+  box-shadow: 0 0 0 2px var(--ease-roll-indicator);
+}
+
+.ease-roll-trigger-sb[aria-selected="true"] {
+  color: var(--ease-roll-text-active);
+}
+
+/* ── Horizontal Roll Animation ─────────────────────────────── */
+@keyframes ease-roll-in-sb {
+  0% {
+    transform: translateX(-100%) scale(0.9);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(10%) scale(1.02);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes ease-roll-out-sb {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-10%) scale(0.98);
+  }
+  100% {
+    transform: translateX(100%) scale(0.9);
+    opacity: 0;
+  }
+}
+
+@keyframes ease-roll-bg-sb {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.ease-roll-indicator-sb {
+  position: absolute;
+  top: var(--ease-roll-gap);
+  bottom: var(--ease-roll-gap);
+  width: calc(100% / 3 - var(--ease-roll-gap) * 2);
+  background: var(--ease-roll-bg-active);
+  border-radius: calc(var(--ease-roll-radius) - 6px);
+  transition: transform var(--ease-roll-duration) var(--ease-roll-ease);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+  z-index: 0;
+}
+
+.ease-roll-indicator-sb[data-position="0"] { transform: translateX(0); }
+.ease-roll-indicator-sb[data-position="1"] { transform: translateX(calc(100% + var(--ease-roll-gap))); }
+.ease-roll-indicator-sb[data-position="2"] { transform: translateX(calc(200% + var(--ease-roll-gap) * 2)); }
+.ease-roll-indicator-sb[data-position="3"] { transform: translateX(calc(300% + var(--ease-roll-gap) * 3)); }
+
+.ease-roll-trigger-sb[aria-selected="true"] ~ .ease-roll-indicator-sb {
+  animation: ease-roll-bg-sb var(--ease-roll-duration) var(--ease-roll-ease) forwards;
+}
+
+/* ── Tab Panels ─────────────────────────────────────────────── */
+.ease-roll-content-sb {
+  margin-top: 20px;
+  position: relative;
+  min-height: 200px;
+}
+
+.ease-roll-panel-sb {
+  display: none;
+  padding: 24px;
+  background: var(--ease-roll-bg);
+  border: 1px solid var(--ease-roll-border);
+  border-radius: var(--ease-roll-radius);
+  color: var(--ease-roll-text);
+  animation: ease-panel-roll-sb 0.5s ease-out forwards;
+}
+
+.ease-roll-panel-sb[aria-hidden="false"] {
+  display: block;
+}
+
+@keyframes ease-panel-roll-sb {
+  from {
+    opacity: 0;
+    transform: translateX(30px) rotateY(-5deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotateY(0);
+  }
+}
+
+/* ── E-Commerce Checkout Styling ──────────────────────────── */
+.ease-checkout-tabs-sb {
+  --ease-roll-bg: #fafafa;
+  --ease-roll-bg-active: #4f46e5;
+  --ease-roll-bg-hover: rgba(79, 70, 229, 0.1);
+  --ease-roll-indicator: #4f46e5;
+  --ease-roll-border: #e5e7eb;
+}
+
+.ease-checkout-tabs-sb .ease-roll-panel-sb {
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Checkout Form Steps ──────────────────────────────────── */
+.ease-checkout-steps-sb {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ease-step-sb {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid var(--ease-roll-border);
+}
+
+.ease-step-number-sb {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--ease-roll-indicator);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.ease-step-content-sb {
+  flex: 1;
+}
+
+.ease-step-title-sb {
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.ease-step-desc-sb {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* ── Form Elements ──────────────────────────────────────── */
+.ease-form-group-sb {
+  margin-bottom: 16px;
+}
+
+.ease-form-label-sb {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.ease-form-input-sb {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--ease-roll-border);
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ease-form-input-sb:focus {
+  outline: none;
+  border-color: var(--ease-roll-indicator);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* ── Cart Summary ───────────────────────────────────────── */
+.ease-cart-summary-sb {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.ease-cart-item-sb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--ease-roll-border);
+}
+
+.ease-cart-item-sb:last-child {
+  border-bottom: none;
+}
+
+.ease-cart-name-sb {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.ease-cart-price-sb {
+  font-weight: 600;
+  color: var(--ease-roll-indicator);
+}
+
+.ease-cart-total-sb {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16px;
+  margin-top: 8px;
+  border-top: 2px solid var(--ease-roll-border);
+  font-weight: 700;
+  font-size: 18px;
+  color: #1f2937;
+}
+
+/* ── Progress Steps ─────────────────────────────────────── */
+.ease-progress-steps-sb {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.ease-progress-steps-sb::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--ease-roll-border);
+  z-index: 0;
+}
+
+.ease-progress-step-sb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 1;
+}
+
+.ease-progress-dot-sb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--ease-roll-bg);
+  border: 2px solid var(--ease-roll-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ease-roll-text);
+  transition: all 0.3s ease;
+}
+
+.ease-progress-step-sb.active .ease-progress-dot-sb {
+  background: var(--ease-roll-indicator);
+  border-color: var(--ease-roll-indicator);
+  color: white;
+}
+
+.ease-progress-step-sb.completed .ease-progress-dot-sb {
+  background: #22c55e;
+  border-color: #22c55e;
+  color: white;
+}
+
+.ease-progress-label-sb {
+  font-size: 12px;
+  color: var(--ease-roll-text);
+  text-align: center;
+}
+
+.ease-progress-step-sb.active .ease-progress-label-sb {
+  color: var(--ease-roll-indicator);
+  font-weight: 500;
+}
+
+/* ── Simple Tabs Style ──────────────────────────────────── */
+.ease-simple-roll-sb {
+  --ease-roll-bg: transparent;
+  --ease-roll-bg-active: #6366f1;
+  --ease-roll-border: transparent;
+  --ease-roll-radius: 0;
+  --ease-roll-padding-x: 16px;
+  --ease-roll-padding-y: 12px;
+}
+
+.ease-simple-roll-sb .ease-roll-list-sb {
+  border: none;
+  padding: 0;
+  border-bottom: 2px solid var(--ease-roll-border);
+}
+
+.ease-simple-roll-sb .ease-roll-indicator-sb {
+  top: auto;
+  bottom: -2px;
+  height: 2px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* ── Icon Support ──────────────────────────────────────────── */
+.ease-roll-trigger-sb svg,
+.ease-roll-trigger-sb .ease-icon-sb {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+  width: 18px;
+  height: 18px;
+}
+
+/* ── Reduced Motion ──────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .ease-roll-indicator-sb {
+    transition: none;
+  }
+  
+  .ease-roll-panel-sb {
+    animation: none;
+  }
+  
+  .ease-roll-trigger-sb {
+    transition: none;
+  }
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .ease-roll-trigger-sb {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  
+  .ease-roll-list-sb {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  
+  .ease-cart-item-sb {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  
+  .ease-progress-label-sb {
+    display: none;
+  }
+}

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horizontal Roll Tabs - E-Commerce Checkout</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="card">
+      <p class="eyebrow">EaseMotion CSS</p>
+      <h1>Horizontal Roll Tabs</h1>
+      <p>Interactive tabs with horizontal roll transitions for e-commerce checkout flows.</p>
+
+      <!-- Example 1: Checkout Flow -->
+      <div class="demo-section">
+        <h3>E-Commerce Checkout</h3>
+        <div class="ease-roll-tabs-sb ease-checkout-tabs-sb" role="tablist" aria-label="Checkout process">
+          <div class="ease-roll-list-sb">
+            <button class="ease-roll-trigger-sb" role="tab" aria-selected="true" aria-controls="panel-cart" id="tab-cart" data-index="0">
+              <span class="ease-icon-sb">🛒</span> Cart
+            </button>
+            <button class="ease-roll-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-shipping" id="tab-shipping" tabindex="-1" data-index="1">
+              <span class="ease-icon-sb">🚚</span> Shipping
+            </button>
+            <button class="ease-roll-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-payment" id="tab-payment" tabindex="-1" data-index="2">
+              <span class="ease-icon-sb">💳</span> Payment
+            </button>
+          </div>
+          
+          <div class="ease-roll-content-sb">
+            <div class="ease-roll-panel-sb" role="tabpanel" id="panel-cart" aria-labelledby="tab-cart" aria-hidden="false">
+              <h4>Shopping Cart</h4>
+              <div class="ease-cart-summary-sb">
+                <div class="ease-cart-item-sb">
+                  <span class="ease-cart-name-sb">Premium Widget Pro</span>
+                  <span class="ease-cart-price-sb">$49.99</span>
+                </div>
+                <div class="ease-cart-item-sb">
+                  <span class="ease-cart-name-sb">Deluxe Accessory Pack</span>
+                  <span class="ease-cart-price-sb">$24.99</span>
+                </div>
+                <div class="ease-cart-item-sb">
+                  <span class="ease-cart-name-sb">Express Shipping</span>
+                  <span class="ease-cart-price-sb">$9.99</span>
+                </div>
+                <div class="ease-cart-total-sb">
+                  <span>Total</span>
+                  <span>$84.97</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="ease-roll-panel-sb" role="tabpanel" id="panel-shipping" aria-labelledby="tab-shipping" aria-hidden="true">
+              <h4>Shipping Information</h4>
+              <div class="ease-checkout-steps-sb">
+                <div class="ease-form-group-sb">
+                  <label class="ease-form-label-sb">Full Name</label>
+                  <input type="text" class="ease-form-input-sb" placeholder="John Doe">
+                </div>
+                <div class="ease-form-group-sb">
+                  <label class="ease-form-label-sb">Email Address</label>
+                  <input type="email" class="ease-form-input-sb" placeholder="john@example.com">
+                </div>
+                <div class="ease-form-group-sb">
+                  <label class="ease-form-label-sb">Shipping Address</label>
+                  <input type="text" class="ease-form-input-sb" placeholder="123 Main St">
+                </div>
+                <div class="ease-form-group-sb" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                  <div>
+                    <label class="ease-form-label-sb">City</label>
+                    <input type="text" class="ease-form-input-sb" placeholder="New York">
+                  </div>
+                  <div>
+                    <label class="ease-form-label-sb">ZIP Code</label>
+                    <input type="text" class="ease-form-input-sb" placeholder="10001">
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="ease-roll-panel-sb" role="tabpanel" id="panel-payment" aria-labelledby="tab-payment" aria-hidden="true">
+              <h4>Payment Method</h4>
+              <div class="ease-checkout-steps-sb">
+                <div class="ease-form-group-sb">
+                  <label class="ease-form-label-sb">Card Number</label>
+                  <input type="text" class="ease-form-input-sb" placeholder="4242 4242 4242 4242">
+                </div>
+                <div class="ease-form-group-sb" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                  <div>
+                    <label class="ease-form-label-sb">Expiry Date</label>
+                    <input type="text" class="ease-form-input-sb" placeholder="MM/YY">
+                  </div>
+                  <div>
+                    <label class="ease-form-label-sb">CVV</label>
+                    <input type="text" class="ease-form-input-sb" placeholder="123">
+                  </div>
+                </div>
+                <div class="ease-form-group-sb">
+                  <label class="ease-form-label-sb">Name on Card</label>
+                  <input type="text" class="ease-form-input-sb" placeholder="John Doe">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Example 2: Progress Steps -->
+      <div class="demo-section">
+        <h3>Progress Steps with Roll</h3>
+        <div class="ease-roll-tabs-sb" role="tablist" aria-label="Multi-step process">
+          <div class="ease-roll-list-sb">
+            <button class="ease-roll-trigger-sb" role="tab" aria-selected="true" aria-controls="panel-step1" id="tab-step1" data-index="0">
+              <span class="ease-icon-sb">1</span> Account
+            </button>
+            <button class="ease-roll-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-step2" id="tab-step2" tabindex="-1" data-index="1">
+              <span class="ease-icon-sb">2</span> Profile
+            </button>
+            <button class="ease-roll-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-step3" id="tab-step3" tabindex="-1" data-index="2">
+              <span class="ease-icon-sb">3</span> Settings
+            </button>
+          </div>
+          
+          <div class="ease-roll-content-sb">
+            <div class="ease-roll-panel-sb" role="tabpanel" id="panel-step1" aria-labelledby="tab-step1" aria-hidden="false">
+              <h4>Step 1: Account</h4>
+              <div class="ease-checkout-steps-sb">
+                <div class="ease-step-sb">
+                  <div class="ease-step-number-sb">1</div>
+                  <div class="ease-step-content-sb">
+                    <div class="ease-step-title-sb">Create Your Account</div>
+                    <div class="ease-step-desc-sb">Sign up with your email to get started with our platform.</div>
+                  </div>
+                </div>
+                <div class="ease-step-sb">
+                  <div class="ease-step-number-sb">2</div>
+                  <div class="ease-step-content-sb">
+                    <div class="ease-step-title-sb">Verify Email</div>
+                    <div class="ease-step-desc-sb">Check your inbox for a verification link.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="ease-roll-panel-sb" role="tabpanel" id="panel-step2" aria-labelledby="tab-step2" aria-hidden="true">
+              <h4>Step 2: Profile</h4>
+              <div class="ease-checkout-steps-sb">
+                <div class="ease-step-sb">
+                  <div class="ease-step-number-sb">1</div>
+                  <div class="ease-step-content-sb">
+                    <div class="ease-step-title-sb">Complete Profile</div>
+                    <div class="ease-step-desc-sb">Add your personal information and preferences.</div>
+                  </div>
+                </div>
+                <div class="ease-step-sb">
+                  <div class="ease-step-number-sb">2</div>
+                  <div class="ease-step-content-sb">
+                    <div class="ease-step-title-sb">Upload Avatar</div>
+                    <div class="ease-step-desc-sb">Add a profile picture to personalize your account.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="ease-roll-panel-sb" role="tabpanel" id="panel-step3" aria-labelledby="tab-step3" aria-hidden="true">
+              <h4>Step 3: Settings</h4>
+              <div class="ease-checkout-steps-sb">
+                <div class="ease-step-sb">
+                  <div class="ease-step-number-sb">1</div>
+                  <div class="ease-step-content-sb">
+                    <div class="ease-step-title-sb">Configure Preferences</div>
+                    <div class="ease-step-desc-sb">Set your notification and privacy preferences.</div>
+                  </div>
+                </div>
+                <div class="ease-step-sb">
+                  <div class="ease-step-number-sb">2</div>
+                  <div class="ease-step-content-sb">
+                    <div class="ease-step-title-sb">Review & Complete</div>
+                    <div class="ease-step-desc-sb">Review your settings and complete the setup.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Example 3: Simple Roll Tabs -->
+      <div class="demo-section">
+        <h3>Simple Navigation Style</h3>
+        <div class="ease-roll-tabs-sb ease-simple-roll-sb" role="tablist" aria-label="Simple navigation">
+          <div class="ease-roll-list-sb">
+            <button class="ease-roll-trigger-sb" role="tab" aria-selected="true" aria-controls="panel-info" id="tab-info" data-index="0">
+              Information
+            </button>
+            <button class="ease-roll-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-reviews" id="tab-reviews" tabindex="-1" data-index="1">
+              Reviews
+            </button>
+            <button class="ease-roll-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-shipping-info" id="tab-shipping-info" tabindex="-1" data-index="2">
+              Shipping
+            </button>
+          </div>
+          
+          <div class="ease-roll-content-sb">
+            <div class="ease-roll-panel-sb" role="tabpanel" id="panel-info" aria-labelledby="tab-info" aria-hidden="false">
+              <h4>Product Information</h4>
+              <p>This product is made with premium materials and designed for durability. It features a sleek design that fits any modern workspace.</p>
+            </div>
+            <div class="ease-roll-panel-sb" role="tabpanel" id="panel-reviews" aria-labelledby="tab-reviews" aria-hidden="true">
+              <h4>Customer Reviews</h4>
+              <p>Great product! Exactly what I was looking for. The quality exceeds expectations and delivery was fast.</p>
+            </div>
+            <div class="ease-roll-panel-sb" role="tabpanel" id="panel-shipping-info" aria-labelledby="tab-shipping-info" aria-hidden="true">
+              <h4>Shipping Information</h4>
+              <p>Free standard shipping on orders over $50. Express shipping available for an additional fee. Estimated delivery: 3-5 business days.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Tab functionality for horizontal roll animation
+    document.querySelectorAll('.ease-roll-tabs-sb').forEach(tabGroup => {
+      const triggers = tabGroup.querySelectorAll('.ease-roll-trigger-sb');
+      const panels = tabGroup.querySelectorAll('.ease-roll-panel-sb');
+      
+      triggers.forEach((trigger, index) => {
+        trigger.addEventListener('click', () => {
+          // Update triggers
+          triggers.forEach((t, i) => {
+            t.setAttribute('aria-selected', 'false');
+            t.setAttribute('tabindex', '-1');
+          });
+          trigger.setAttribute('aria-selected', 'true');
+          trigger.setAttribute('tabindex', '0');
+          
+          // Update panels
+          panels.forEach(panel => {
+            panel.setAttribute('aria-hidden', 'true');
+          });
+          const targetId = trigger.getAttribute('aria-controls');
+          document.getElementById(targetId).setAttribute('aria-hidden', 'false');
+        });
+        
+        // Keyboard navigation
+        trigger.addEventListener('keydown', (e) => {
+          const currentIndex = Array.from(triggers).indexOf(trigger);
+          let newIndex;
+          
+          if (e.key === 'ArrowRight') {
+            newIndex = (currentIndex + 1) % triggers.length;
+          } else if (e.key === 'ArrowLeft') {
+            newIndex = (currentIndex - 1 + triggers.length) % triggers.length;
+          } else if (e.key === 'Home') {
+            newIndex = 0;
+          } else if (e.key === 'End') {
+            newIndex = triggers.length - 1;
+          } else {
+            return;
+          }
+          
+          e.preventDefault();
+          triggers[newIndex].click();
+          triggers[newIndex].focus();
+        });
+      });
+    });
+  </script>
+</body>
+</html>
