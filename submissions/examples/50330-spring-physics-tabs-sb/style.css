@@ -1,0 +1,428 @@
+/* ============================================================
+   EaseMotion CSS - Spring Physics Tabs for Interactive Interface
+   A pure CSS animated tabs component with spring physics interaction
+   ============================================================ */
+
+/* ── CSS Custom Properties ──────────────────────────────────── */
+.ease-spring-tabs-sb {
+  /* Timing */
+  --ease-spring-duration: 0.5s;
+  --ease-spring-ease: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+  /* Physics */
+  --ease-spring-tension: 300;
+  --ease-spring-friction: 20;
+  
+  /* Colors */
+  --ease-spring-bg: #0f0f23;
+  --ease-spring-bg-active: #6366f1;
+  --ease-spring-bg-hover: rgba(99, 102, 241, 0.15);
+  --ease-spring-text: #a1a1aa;
+  --ease-spring-text-active: #ffffff;
+  --ease-spring-border: #27272a;
+  --ease-spring-indicator: #6366f1;
+  
+  /* Sizing */
+  --ease-spring-radius: 16px;
+  --ease-spring-padding-x: 24px;
+  --ease-spring-padding-y: 14px;
+  --ease-spring-gap: 6px;
+}
+
+/* ── Base Tabs Container ───────────────────────────────────── */
+.ease-spring-tabs-sb {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ── Tab List ──────────────────────────────────────────────── */
+.ease-spring-list-sb {
+  display: flex;
+  gap: var(--ease-spring-gap);
+  padding: var(--ease-spring-gap);
+  background: var(--ease-spring-bg);
+  border: 1px solid var(--ease-spring-border);
+  border-radius: var(--ease-spring-radius);
+  position: relative;
+  flex-wrap: wrap;
+}
+
+/* ── Tab Buttons ────────────────────────────────────────────── */
+.ease-spring-trigger-sb {
+  position: relative;
+  flex: 1;
+  min-width: 120px;
+  padding: var(--ease-spring-padding-y) var(--ease-spring-padding-x);
+  border: none;
+  background: transparent;
+  color: var(--ease-spring-text);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: calc(var(--ease-spring-radius) - 6px);
+  transition: color 0.2s ease;
+  z-index: 1;
+  outline: none;
+  text-align: center;
+}
+
+.ease-spring-trigger-sb:hover {
+  color: var(--ease-spring-text-active);
+}
+
+.ease-spring-trigger-sb:focus-visible {
+  box-shadow: 0 0 0 2px var(--ease-spring-indicator);
+}
+
+.ease-spring-trigger-sb[aria-selected="true"] {
+  color: var(--ease-spring-text-active);
+}
+
+/* ── Spring Physics Animation ─────────────────────────────── */
+@keyframes ease-spring-in-sb {
+  0% {
+    transform: scale(0.8) translateY(10px);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1.1) translateY(-5px);
+  }
+  60% {
+    transform: scale(0.95) translateY(2px);
+  }
+  80% {
+    transform: scale(1.02) translateY(-1px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes ease-spring-out-sb {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(1.05) translateY(-3px);
+  }
+  100% {
+    transform: scale(0.9) translateY(8px);
+    opacity: 0;
+  }
+}
+
+@keyframes ease-spring-bg-sb {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  75% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.ease-spring-bg-sb {
+  position: absolute;
+  top: var(--ease-spring-gap);
+  left: var(--ease-spring-gap);
+  bottom: var(--ease-spring-gap);
+  background: var(--ease-spring-bg-active);
+  border-radius: calc(var(--ease-spring-radius) - 8px);
+  transition: transform var(--ease-spring-duration) var(--ease-spring-ease);
+  z-index: 0;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+}
+
+.ease-spring-bg-sb[data-position="0"] { 
+  transform: translateX(0); 
+  width: calc(33.333% - var(--ease-spring-gap) * 0.667);
+}
+.ease-spring-bg-sb[data-position="1"] { 
+  transform: translateX(calc(100% + var(--ease-spring-gap))); 
+  width: calc(33.333% - var(--ease-spring-gap) * 0.667);
+}
+.ease-spring-bg-sb[data-position="2"] { 
+  transform: translateX(calc(200% + var(--ease-spring-gap) * 2)); 
+  width: calc(33.333% - var(--ease-spring-gap) * 0.667);
+}
+.ease-spring-bg-sb[data-position="3"] { 
+  transform: translateX(calc(300% + var(--ease-spring-gap) * 3)); 
+  width: calc(25% - var(--ease-spring-gap) * 0.75);
+}
+.ease-spring-bg-sb[data-position="4"] { 
+  transform: translateX(calc(400% + var(--ease-spring-gap) * 4)); 
+  width: calc(20% - var(--ease-spring-gap) * 0.8);
+}
+
+.ease-spring-trigger-sb[aria-selected="true"] ~ .ease-spring-bg-sb {
+  animation: ease-spring-bg-sb var(--ease-spring-duration) var(--ease-spring-ease) forwards;
+}
+
+/* ── Tab Panels ─────────────────────────────────────────────── */
+.ease-spring-content-sb {
+  margin-top: 20px;
+  position: relative;
+}
+
+.ease-spring-panel-sb {
+  display: none;
+  padding: 28px;
+  background: var(--ease-spring-bg);
+  border: 1px solid var(--ease-spring-border);
+  border-radius: var(--ease-spring-radius);
+  color: var(--ease-spring-text);
+  animation: ease-spring-panel-sb 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.ease-spring-panel-sb[aria-hidden="false"] {
+  display: block;
+}
+
+@keyframes ease-spring-panel-sb {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── Interactive Interface Styling ─────────────────────────── */
+.ease-interactive-tabs-sb {
+  --ease-spring-bg: #18181b;
+  --ease-spring-bg-active: #7c3aed;
+  --ease-spring-indicator: #a78bfa;
+}
+
+.ease-interactive-tabs-sb .ease-spring-panel-sb {
+  background: linear-gradient(135deg, #1f1f23 0%, #18181b 100%);
+}
+
+/* ── Interactive Cards ──────────────────────────────────── */
+.ease-interactive-grid-sb {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.ease-interactive-card-sb {
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: 12px;
+  padding: 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.ease-interactive-card-sb:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.2);
+}
+
+.ease-interactive-icon-sb {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+.ease-interactive-title-sb {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.ease-interactive-desc-sb {
+  font-size: 14px;
+  color: #a1a1aa;
+  line-height: 1.6;
+}
+
+/* ── Creative Portfolio Styling ──────────────────────────── */
+.ease-portfolio-tabs-sb {
+  --ease-spring-bg: #fafafa;
+  --ease-spring-bg-active: #ec4899;
+  --ease-spring-bg-hover: rgba(236, 72, 153, 0.1);
+  --ease-spring-text: #6b7280;
+  --ease-spring-text-active: #ffffff;
+  --ease-spring-border: #e5e7eb;
+  --ease-spring-indicator: #ec4899;
+}
+
+.ease-portfolio-tabs-sb .ease-spring-bg-sb {
+  background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%);
+  box-shadow: 0 4px 20px rgba(236, 72, 153, 0.4);
+}
+
+.ease-portfolio-tabs-sb .ease-spring-panel-sb {
+  background: #ffffff;
+  border-color: #e5e7eb;
+}
+
+.ease-portfolio-tabs-sb .ease-interactive-grid-sb .ease-interactive-card-sb {
+  background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+  border-color: rgba(236, 72, 153, 0.2);
+}
+
+.ease-portfolio-tabs-sb .ease-interactive-card-sb:hover {
+  box-shadow: 0 12px 40px rgba(236, 72, 153, 0.25);
+}
+
+.ease-portfolio-tabs-sb .ease-interactive-title-sb {
+  color: #1f2937;
+}
+
+.ease-portfolio-tabs-sb .ease-interactive-desc-sb {
+  color: #6b7280;
+}
+
+/* ── Portfolio Gallery ──────────────────────────────────── */
+.ease-portfolio-grid-sb {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.ease-portfolio-item-sb {
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ease-portfolio-item-sb:hover {
+  transform: scale(1.05) rotate(1deg);
+}
+
+.ease-portfolio-overlay-sb {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  color: white;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.ease-portfolio-item-sb:hover .ease-portfolio-overlay-sb {
+  transform: translateY(0);
+}
+
+/* ── Stats Display ──────────────────────────────────────── */
+.ease-stats-row-sb {
+  display: flex;
+  gap: 24px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.ease-stat-item-sb {
+  text-align: center;
+  flex: 1;
+  min-width: 100px;
+}
+
+.ease-stat-value-sb {
+  font-size: 36px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ease-stat-label-sb {
+  font-size: 13px;
+  color: #a1a1aa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+/* ── Spring Bounce Effect ──────────────────────────────── */
+.ease-spring-bounce-sb .ease-spring-trigger-sb[aria-selected="true"] {
+  animation: ease-spring-in-sb var(--ease-spring-duration) var(--ease-spring-ease) forwards;
+}
+
+.ease-spring-bounce-sb .ease-spring-trigger-sb:not([aria-selected="true"]) {
+  animation: ease-spring-out-sb 0.3s ease-out forwards;
+}
+
+/* ── Icon Support ──────────────────────────────────────────── */
+.ease-spring-trigger-sb svg,
+.ease-spring-trigger-sb .ease-icon-sb {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+  width: 18px;
+  height: 18px;
+}
+
+/* ── Reduced Motion ──────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .ease-spring-bg-sb {
+    transition: none;
+  }
+  
+  .ease-spring-panel-sb {
+    animation: none;
+  }
+  
+  .ease-spring-trigger-sb {
+    transition: none;
+  }
+  
+  .ease-spring-bounce-sb .ease-spring-trigger-sb {
+    animation: none;
+  }
+  
+  .ease-portfolio-item-sb,
+  .ease-interactive-card-sb {
+    transition: none;
+  }
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .ease-spring-trigger-sb {
+    min-width: 100px;
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+  
+  .ease-interactive-grid-sb {
+    grid-template-columns: 1fr;
+  }
+  
+  .ease-portfolio-grid-sb {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .ease-stats-row-sb {
+    gap: 16px;
+  }
+  
+  .ease-stat-value-sb {
+    font-size: 28px;
+  }
+}
