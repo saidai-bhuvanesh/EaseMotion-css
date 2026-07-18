@@ -1,0 +1,397 @@
+/* ============================================================
+   EaseMotion CSS - Slide-Up Carousel for SaaS Showcase
+   A pure CSS animated carousel component with slide-up transitions
+   ============================================================ */
+
+/* ── CSS Custom Properties ──────────────────────────────────── */
+.ease-carousel-sb {
+  /* Timing */
+  --ease-carousel-duration: 0.6s;
+  --ease-carousel-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-carousel-interval: 5s;
+  
+  /* Colors - SaaS Default */
+  --ease-carousel-bg: #f8fafc;
+  --ease-carousel-bg-card: #ffffff;
+  --ease-carousel-text: #475569;
+  --ease-carousel-text-heading: #0f172a;
+  --ease-carousel-accent: #6366f1;
+  --ease-carousel-accent-light: #a5b4fc;
+  --ease-carousel-border: #e2e8f0;
+  
+  /* Sizing */
+  --ease-carousel-radius: 20px;
+  --ease-carousel-padding: 32px;
+}
+
+/* ── Base Carousel Container ───────────────────────────────── */
+.ease-carousel-sb {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Carousel Track ───────────────────────────────────────── */
+.ease-carousel-track-sb {
+  display: flex;
+  transition: transform var(--ease-carousel-duration) var(--ease-carousel-ease);
+  will-change: transform;
+}
+
+/* ── Carousel Slides ──────────────────────────────────────── */
+.ease-carousel-slide-sb {
+  min-width: 100%;
+  padding: var(--ease-carousel-padding);
+  background: var(--ease-carousel-bg);
+  box-sizing: border-box;
+}
+
+/* ── Carousel Content Cards ───────────────────────────────── */
+.ease-carousel-card-sb {
+  background: var(--ease-carousel-bg-card);
+  border-radius: var(--ease-carousel-radius);
+  padding: 40px;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--ease-carousel-border);
+  animation: ease-slide-up-sb 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes ease-slide-up-sb {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Slide Content Layout ─────────────────────────────────── */
+.ease-slide-content-sb {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.ease-slide-text-sb {
+  animation: ease-fade-in-sb 0.8s ease-out forwards;
+}
+
+@keyframes ease-fade-in-sb {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.ease-slide-visual-sb {
+  animation: ease-zoom-in-sb 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+@keyframes ease-zoom-in-sb {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ── Typography ──────────────────────────────────────────── */
+.ease-slide-badge-sb {
+  display: inline-block;
+  padding: 6px 14px;
+  background: linear-gradient(135deg, var(--ease-carousel-accent), var(--ease-carousel-accent-light));
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.ease-slide-title-sb {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--ease-carousel-text-heading);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.ease-slide-desc-sb {
+  font-size: 16px;
+  color: var(--ease-carousel-text);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+/* ── Feature List ────────────────────────────────────────── */
+.ease-feature-list-sb {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+}
+
+.ease-feature-item-sb {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  color: var(--ease-carousel-text);
+  font-size: 14px;
+}
+
+.ease-feature-icon-sb {
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, var(--ease-carousel-accent), var(--ease-carousel-accent-light));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+/* ── CTA Button ───────────────────────────────────────────── */
+.ease-cta-button-sb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, var(--ease-carousel-accent), var(--ease-carousel-accent-light));
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+}
+
+.ease-cta-button-sb:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+}
+
+/* ── Visual Mockup ────────────────────────────────────────── */
+.ease-mockup-sb {
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.ease-mockup-screen-sb {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.ease-mockup-bar-sb {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.ease-mockup-bar-sb:last-child {
+  width: 70%;
+  margin-bottom: 0;
+}
+
+.ease-mockup-bar-sb:nth-child(2) {
+  width: 85%;
+}
+
+.ease-mockup-bar-sb:nth-child(1) {
+  width: 60%;
+}
+
+/* ── Navigation Controls ──────────────────────────────────── */
+.ease-carousel-nav-sb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.ease-carousel-dots-sb {
+  display: flex;
+  gap: 8px;
+}
+
+.ease-carousel-dot-sb {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ease-carousel-border);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ease-carousel-dot-sb:hover {
+  background: var(--ease-carousel-accent-light);
+}
+
+.ease-carousel-dot-sb[aria-selected="true"] {
+  background: var(--ease-carousel-accent);
+  transform: scale(1.2);
+}
+
+/* ── Radio Button Hack ────────────────────────────────────── */
+.ease-carousel-sb input[type="radio"] {
+  display: none;
+}
+
+#slide1-sb:checked ~ .ease-carousel-track-sb { transform: translateY(0); }
+#slide2-sb:checked ~ .ease-carousel-track-sb { transform: translateY(-100%); }
+#slide3-sb:checked ~ .ease-carousel-track-sb { transform: translateY(-200%); }
+
+#slide1-sb:checked ~ .ease-carousel-nav-sb label[for="slide1-sb"],
+#slide2-sb:checked ~ .ease-carousel-nav-sb label[for="slide2-sb"],
+#slide3-sb:checked ~ .ease-carousel-nav-sb label[for="slide3-sb"] {
+  background: var(--ease-carousel-accent);
+  transform: scale(1.2);
+}
+
+/* ── Auto-Play Animation ─────────────────────────────────── */
+@keyframes ease-carousel-autoplay-sb {
+  0%, 25% { transform: translateY(0); }
+  33.33%, 58.33% { transform: translateY(-100%); }
+  66.66%, 91.66% { transform: translateY(-200%); }
+  100% { transform: translateY(-300%); }
+}
+
+.ease-carousel-autoplay-sb .ease-carousel-track-sb {
+  animation: ease-carousel-autoplay-sb calc(var(--ease-carousel-interval) * 3) ease-in-out infinite;
+}
+
+/* ── SaaS Showcase Styling ──────────────────────────────── */
+.ease-saas-carousel-sb {
+  --ease-carousel-bg: #0f172a;
+  --ease-carousel-bg-card: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  --ease-carousel-text: #94a3b8;
+  --ease-carousel-text-heading: #f1f5f9;
+  --ease-carousel-accent: #818cf8;
+  --ease-carousel-accent-light: #c7d2fe;
+  --ease-carousel-border: #334155;
+}
+
+.ease-saas-carousel-sb .ease-carousel-card-sb {
+  background: var(--ease-carousel-bg-card);
+  border-color: var(--ease-carousel-border);
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(129, 140, 248, 0.1);
+}
+
+.ease-saas-carousel-sb .ease-mockup-sb {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+.ease-saas-carousel-sb .ease-mockup-screen-sb {
+  background: #0f172a;
+  border: 1px solid var(--ease-carousel-border);
+}
+
+.ease-saas-carousel-sb .ease-cta-button-sb {
+  box-shadow: 0 4px 14px rgba(129, 140, 248, 0.4);
+}
+
+.ease-saas-carousel-sb .ease-cta-button-sb:hover {
+  box-shadow: 0 6px 20px rgba(129, 140, 248, 0.5);
+}
+
+/* ── Stats Display ────────────────────────────────────────── */
+.ease-stats-grid-sb {
+  display: flex;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.ease-stat-sb {
+  text-align: center;
+  padding: 16px 20px;
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: 12px;
+}
+
+.ease-stat-number-sb {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ease-carousel-accent);
+}
+
+.ease-stat-label-sb {
+  font-size: 12px;
+  color: var(--ease-carousel-text);
+  margin-top: 4px;
+}
+
+/* ── Reduced Motion ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .ease-carousel-track-sb {
+    transition: none;
+  }
+  
+  .ease-carousel-autoplay-sb .ease-carousel-track-sb {
+    animation: none;
+  }
+  
+  .ease-carousel-card-sb,
+  .ease-slide-text-sb,
+  .ease-slide-visual-sb {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .ease-slide-content-sb {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .ease-slide-title-sb {
+    font-size: 28px;
+  }
+  
+  .ease-carousel-card-sb {
+    padding: 24px;
+  }
+  
+  .ease-carousel-slide-sb {
+    padding: 20px;
+  }
+  
+  .ease-stats-grid-sb {
+    flex-wrap: wrap;
+  }
+  
+  .ease-stat-sb {
+    flex: 1;
+    min-width: 100px;
+  }
+}
