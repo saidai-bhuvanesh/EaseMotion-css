@@ -1,0 +1,499 @@
+/* ============================================================
+   EaseMotion CSS - CSS Pulse-Active Popover for E-Commerce
+   Pulse-active popover component for checkout layouts
+   ============================================================ */
+
+/* ── Base Styles ───────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shell {
+  padding: 2rem;
+  max-width: 700px;
+}
+
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.eyebrow {
+  color: #8b5cf6;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #0f172a;
+}
+
+p {
+  color: #64748b;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+h3 {
+  font-size: 0.875rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* ── Demo Section ──────────────────────────────────────────── */
+.demo-section {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.demo-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* ── Icon Base ──────────────────────────────────────────────── */
+.icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: currentColor;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  vertical-align: middle;
+}
+
+.icon.info {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z'/%3E%3C/svg%3E");
+}
+
+.icon.help {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z'/%3E%3C/svg%3E");
+}
+
+.icon.close {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E");
+}
+
+.icon.alert {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z'/%3E%3C/svg%3E");
+}
+
+.icon.check {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+}
+
+/* ── Popover Trigger ───────────────────────────────────────── */
+.ease-popover-trigger-sb {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  color: #475569;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ease-popover-trigger-sb:hover {
+  background: #e2e8f0;
+  border-color: #cbd5e1;
+}
+
+.ease-popover-trigger-sb:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+}
+
+/* ── Popover Container ──────────────────────────────────────── */
+.popover-demo {
+  position: relative;
+  display: inline-block;
+}
+
+/* ── Popover Base ───────────────────────────────────────────── */
+.ease-popover-sb {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  width: 280px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e2e8f0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 100;
+}
+
+.ease-popover-sb::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-right: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.ease-popover-trigger-sb:focus-visible + .ease-popover-sb,
+.ease-popover-trigger-sb:hover + .ease-popover-sb,
+.ease-popover-sb:hover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) scale(1);
+}
+
+/* ── Popover Header ────────────────────────────────────────── */
+.ease-popover-header-sb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.ease-popover-header-sb h4 {
+  margin: 0;
+}
+
+.ease-popover-close-sb {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #94a3b8;
+  transition: all 0.2s ease;
+}
+
+.ease-popover-close-sb:hover {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+/* ── Popover Body ──────────────────────────────────────────── */
+.ease-popover-body-sb {
+  padding: 1rem;
+}
+
+.ease-popover-body-sb p {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.ease-popover-body-sb p:last-child {
+  margin-bottom: 0;
+}
+
+.ease-popover-body-sb ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.ease-popover-body-sb li {
+  margin-bottom: 0.25rem;
+}
+
+/* ── Popover Variants ──────────────────────────────────────── */
+.ease-popover-success-sb {
+  border-color: #bbf7d0;
+}
+
+.ease-popover-success-sb::before {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.ease-popover-success-sb .ease-popover-body-sb {
+  color: #166534;
+}
+
+.ease-popover-success-sb .check-icon {
+  color: #22c55e;
+}
+
+.ease-popover-info-sb {
+  border-color: #bfdbfe;
+}
+
+.ease-popover-info-sb::before {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.ease-popover-warning-sb {
+  border-color: #fed7aa;
+}
+
+.ease-popover-warning-sb::before {
+  background: #fffbeb;
+  border-color: #fed7aa;
+}
+
+.ease-popover-discount-sb {
+  border-color: #c4b5fd;
+  width: 220px;
+}
+
+.ease-popover-discount-sb::before {
+  background: #faf5ff;
+  border-color: #c4b5fd;
+}
+
+/* ── Pulse Animations ─────────────────────────────────────── */
+.ease-pulse-sb {
+  animation: ease-pulse-effect-sb 2s ease-in-out infinite;
+}
+
+@keyframes ease-pulse-effect-sb {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.ease-pulse-text-sb {
+  animation: ease-pulse-text-sb 1.5s ease-in-out infinite;
+  font-weight: 600;
+}
+
+@keyframes ease-pulse-text-sb {
+  0%, 100% {
+    color: inherit;
+  }
+  50% {
+    color: #8b5cf6;
+  }
+}
+
+.ease-pulse-success-sb {
+  animation: ease-pulse-success-effect-sb 2s ease-in-out infinite;
+}
+
+@keyframes ease-pulse-success-effect-sb {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+  }
+}
+
+.ease-pulse-warning-sb {
+  animation: ease-pulse-warning-effect-sb 2s ease-in-out infinite;
+}
+
+@keyframes ease-pulse-warning-effect-sb {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(251, 146, 60, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(251, 146, 60, 0);
+  }
+}
+
+/* ── Cart Preview ──────────────────────────────────────────── */
+.cart-preview {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.item-name {
+  flex: 1;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.item-price {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: #0f172a;
+}
+
+/* ── Status Badge ──────────────────────────────────────────── */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: #f0fdf4;
+  border-radius: 50px;
+  font-weight: 500;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.payment-status {
+  position: relative;
+  display: inline-block;
+}
+
+.payment-status .ease-popover-sb {
+  bottom: calc(100% + 15px);
+  left: 0;
+  transform: translateX(0) scale(0.9);
+}
+
+.payment-status .ease-popover-sb:hover {
+  transform: translateX(0) scale(1);
+}
+
+.payment-status .ease-popover-sb::before {
+  left: 30px;
+}
+
+/* ── Discount Demo ──────────────────────────────────────────── */
+.discount-demo {
+  position: relative;
+  display: inline-block;
+}
+
+.ease-input-popover-sb {
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  width: 200px;
+  transition: all 0.2s ease;
+}
+
+.ease-input-popover-sb:focus {
+  outline: none;
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.discount-input {
+  position: relative;
+}
+
+.discount-input .ease-popover-sb {
+  bottom: calc(100% + 8px);
+  left: 0;
+}
+
+.discount-input .ease-popover-sb::before {
+  left: 20px;
+}
+
+/* ── Stock Indicator ───────────────────────────────────────── */
+.stock-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #fffbeb;
+  border-radius: 12px;
+  border: 1px solid #fed7aa;
+  position: relative;
+}
+
+.stock-dot {
+  width: 12px;
+  height: 12px;
+  background: #f59e0b;
+  border-radius: 50%;
+}
+
+.stock-indicator span:not(.stock-dot) {
+  color: #92400e;
+  font-weight: 500;
+}
+
+.stock-indicator .ease-popover-sb {
+  bottom: calc(100% + 10px);
+  left: 100%;
+  transform: translateX(-100%) scale(0.9);
+}
+
+.stock-indicator .ease-popover-sb:hover {
+  transform: translateX(-100%) scale(1);
+}
+
+.stock-indicator .ease-popover-sb::before {
+  left: auto;
+  right: 30px;
+}
+
+/* ── Reduced Motion ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .ease-pulse-sb,
+  .ease-pulse-text-sb,
+  .ease-pulse-success-sb,
+  .ease-pulse-warning-sb,
+  .ease-popover-sb {
+    animation: none;
+    transition: none;
+  }
+}

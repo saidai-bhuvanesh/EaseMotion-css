@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Pulse-Active Popover for E-Commerce Checkout</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="card" aria-label="Pulse-Active Popover demo">
+        <p class="eyebrow">EaseMotion CSS</p>
+        <h1>CSS Pulse-Active Popover</h1>
+        <p>Pulse-active popover component for e-commerce checkout layouts.</p>
+        
+        <div class="demo-section">
+          <h3>Basic Popover</h3>
+          <div class="popover-demo">
+            <button class="ease-popover-trigger-sb" aria-describedby="popover-1" aria-expanded="false">
+              <span class="icon info"></span>
+              Info
+            </button>
+            <div class="ease-popover-sb" id="popover-1" role="tooltip">
+              <div class="ease-popover-header-sb">
+                <h4>Product Details</h4>
+                <button class="ease-popover-close-sb" aria-label="Close popover">
+                  <span class="icon close"></span>
+                </button>
+              </div>
+              <div class="ease-popover-body-sb">
+                <p>This premium product includes:</p>
+                <ul>
+                  <li>Free shipping</li>
+                  <li>30-day returns</li>
+                  <li>2-year warranty</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="demo-section">
+          <h3>Checkout Cart Summary</h3>
+          <div class="cart-preview">
+            <div class="cart-item">
+              <span class="item-name">Premium Widget</span>
+              <span class="item-price">$49.99</span>
+              <button class="ease-popover-trigger-sb" aria-describedby="popover-cart" aria-expanded="false">
+                <span class="icon help"></span>
+              </button>
+              <div class="ease-popover-sb ease-popover-success-sb" id="popover-cart" role="tooltip">
+                <div class="ease-popover-body-sb">
+                  <p><span class="check-icon">✓</span> Eligible for free shipping on orders over $50</p>
+                </div>
+              </div>
+            </div>
+            <div class="cart-total">
+              <span>Total:</span>
+              <span class="ease-pulse-sb">$49.99</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="demo-section">
+          <h3>Payment Status Popover</h3>
+          <div class="payment-status">
+            <div class="status-badge ease-pulse-success-sb">
+              <span class="icon check"></span>
+              Payment Confirmed
+            </div>
+            <div class="ease-popover-sb ease-popover-info-sb" id="popover-payment" role="tooltip">
+              <div class="ease-popover-header-sb">
+                <h4>Order #12345</h4>
+              </div>
+              <div class="ease-popover-body-sb">
+                <p>Your payment of $49.99 has been processed successfully.</p>
+                <p class="ease-pulse-text-sb">Order will be shipped within 24 hours.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="demo-section">
+          <h3>Discount Code Popover</h3>
+          <div class="discount-demo">
+            <div class="discount-input">
+              <input type="text" placeholder="Enter code" class="ease-input-popover-sb" aria-describedby="popover-discount" />
+              <div class="ease-popover-sb ease-popover-discount-sb" id="popover-discount" role="tooltip">
+                <div class="ease-popover-body-sb">
+                  <p class="ease-pulse-text-sb">Save 20% with code SAVE20!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="demo-section">
+          <h3>Stock Availability</h3>
+          <div class="stock-indicator">
+            <span class="stock-dot ease-pulse-warning-sb"></span>
+            <span>Only 3 left in stock!</span>
+            <button class="ease-popover-trigger-sb" aria-describedby="popover-stock" aria-expanded="false">
+              <span class="icon alert"></span>
+            </button>
+            <div class="ease-popover-sb ease-popover-warning-sb" id="popover-stock" role="tooltip">
+              <div class="ease-popover-header-sb">
+                <h4>Low Stock Alert</h4>
+              </div>
+              <div class="ease-popover-body-sb">
+                <p>Hurry! This item is selling fast.</p>
+                <p class="ease-pulse-text-sb">Estimated restock: 2 days</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
