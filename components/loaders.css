@@ -54,4 +54,16 @@
   .ease-loader-dot:nth-child(3) {
     animation-delay: 0.4s;
   }
+
+  /* ── Print Styles ──────────────────────────────────────────────────────── */
+  @media print {
+    .ease-loader,
+    .ease-loader-spin,
+    .ease-loader-pulse,
+    .ease-loader-ping,
+    .ease-loader-dots,
+    .ease-loader-dot {
+      display: none !important;
+    }
+  }
 }
