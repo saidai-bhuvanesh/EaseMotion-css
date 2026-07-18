@@ -1,0 +1,341 @@
+/* ============================================================
+   EaseMotion CSS - Scale-Hover Carousel for Interactive Interface
+   Pure CSS carousel with scale and hover effects
+   ============================================================ */
+
+/* ── CSS Custom Properties ──────────────────────────────────── */
+.ease-scale-carousel-sb {
+  --ease-carousel-duration: 0.6s;
+  --ease-carousel-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-scale-min: 0.9;
+  --ease-scale-max: 1.05;
+  
+  /* Colors - Creative Theme */
+  --ease-carousel-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --ease-carousel-bg-card: #ffffff;
+  --ease-carousel-text: #4a5568;
+  --ease-carousel-text-muted: #718096;
+  --ease-carousel-text-heading: #1a202c;
+  --ease-carousel-accent: #667eea;
+  --ease-carousel-accent-light: #a3bffa;
+  --ease-carousel-secondary: #f093fb;
+  --ease-carousel-border: #e2e8f0;
+  
+  /* Sizing */
+  --ease-carousel-radius: 24px;
+  --ease-carousel-padding: 40px;
+}
+
+/* ── Base Carousel Container ───────────────────────────────── */
+.ease-scale-carousel-sb {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  position: relative;
+  overflow: hidden;
+  background: var(--ease-carousel-bg);
+  border-radius: var(--ease-carousel-radius);
+  padding: var(--ease-carousel-padding);
+  box-sizing: border-box;
+}
+
+/* ── Carousel Track ───────────────────────────────────────── */
+.ease-scale-track-sb {
+  display: flex;
+  transition: transform var(--ease-carousel-duration) var(--ease-carousel-ease);
+  will-change: transform;
+}
+
+/* ── Carousel Slides ──────────────────────────────────────── */
+.ease-scale-slide-sb {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+/* ── Scale Card ─────────────────────────────────────────── */
+.ease-scale-card-sb {
+  background: var(--ease-carousel-bg-card);
+  border-radius: 20px;
+  padding: 36px;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  transform: scale(var(--ease-scale-min));
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  position: relative;
+}
+
+.ease-scale-slide-sb:hover .ease-scale-card-sb {
+  transform: scale(var(--ease-scale-max));
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+/* ── Scale Entrance Animation ──────────────────────────────── */
+.ease-scale-slide-sb {
+  animation: ease-scale-entrance-sb var(--ease-carousel-duration) var(--ease-carousel-ease) forwards;
+}
+
+@keyframes ease-scale-entrance-sb {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ── Content Grid ─────────────────────────────────────────── */
+.ease-scale-grid-sb {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+/* ── Typography ─────────────────────────────────────────── */
+.ease-scale-badge-sb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, var(--ease-carousel-accent), var(--ease-carousel-secondary));
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.ease-scale-title-sb {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--ease-carousel-text-heading);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.ease-scale-desc-sb {
+  font-size: 15px;
+  color: var(--ease-carousel-text-muted);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+/* ── Feature Cards ─────────────────────────────────────────── */
+.ease-feature-grid-sb {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.ease-feature-item-sb {
+  background: #f7fafc;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.ease-feature-item-sb:hover {
+  border-color: var(--ease-carousel-accent-light);
+  transform: translateY(-2px);
+}
+
+.ease-feature-icon-sb {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--ease-carousel-accent), var(--ease-carousel-secondary));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.ease-feature-text-sb {
+  flex: 1;
+}
+
+.ease-feature-title-sb {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ease-carousel-text-heading);
+}
+
+.ease-feature-desc-sb {
+  font-size: 11px;
+  color: var(--ease-carousel-text-muted);
+  margin-top: 2px;
+}
+
+/* ── Image Placeholder ─────────────────────────────────────── */
+.ease-image-container-sb {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ease-image-placeholder-sb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--ease-carousel-text-muted);
+}
+
+.ease-image-icon-sb {
+  font-size: 48px;
+  opacity: 0.5;
+}
+
+.ease-image-text-sb {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ── Floating Elements ────────────────────────────────────── */
+.ease-float-element-sb {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--ease-carousel-accent), var(--ease-carousel-secondary));
+  opacity: 0.1;
+  animation: ease-float-sb 6s ease-in-out infinite;
+}
+
+.ease-float-element-sb:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  top: -30px;
+  right: -30px;
+  animation-delay: 0s;
+}
+
+.ease-float-element-sb:nth-child(2) {
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  left: -20px;
+  animation-delay: -2s;
+}
+
+@keyframes ease-float-sb {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+/* ── Navigation Dots ─────────────────────────────────────── */
+.ease-scale-nav-sb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.ease-scale-dots-sb {
+  display: flex;
+  gap: 8px;
+}
+
+.ease-scale-dot-sb {
+  width: 14px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 2px solid white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+.ease-scale-dot-sb:hover {
+  background: rgba(255, 255, 255, 0.7);
+  transform: scale(1.2);
+}
+
+.ease-scale-dot-sb:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* ── Radio Button Hack ────────────────────────────────────── */
+.ease-scale-carousel-sb input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#scale1-sb:checked ~ .ease-scale-track-sb { transform: translateX(0); }
+#scale2-sb:checked ~ .ease-scale-track-sb { transform: translateX(-100%); }
+#scale3-sb:checked ~ .ease-scale-track-sb { transform: translateX(-200%); }
+#scale4-sb:checked ~ .ease-scale-track-sb { transform: translateX(-300%); }
+
+#scale1-sb:checked ~ .ease-scale-nav-sb label[for="scale1-sb"],
+#scale2-sb:checked ~ .ease-scale-nav-sb label[for="scale2-sb"],
+#scale3-sb:checked ~ .ease-scale-nav-sb label[for="scale3-sb"],
+#scale4-sb:checked ~ .ease-scale-nav-sb label[for="scale4-sb"] {
+  background: white;
+  transform: scale(1.3);
+}
+
+/* ── Reduced Motion ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .ease-scale-track-sb {
+    transition: none;
+  }
+  
+  .ease-scale-slide-sb,
+  .ease-scale-card-sb {
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
+  
+  .ease-float-element-sb {
+    animation: none;
+  }
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .ease-scale-grid-sb {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .ease-scale-title-sb {
+    font-size: 24px;
+  }
+  
+  .ease-scale-card-sb {
+    padding: 24px;
+    transform: none;
+  }
+  
+  .ease-feature-grid-sb {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Focus Visible ────────────────────────────────────────── */
+*:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
