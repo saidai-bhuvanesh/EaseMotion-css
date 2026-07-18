@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Floating Orbit Tabs - Neumorphic & Cyberpunk</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="card">
+      <p class="eyebrow">EaseMotion CSS</p>
+      <h1>Floating Orbit Tabs</h1>
+      <p>Interactive tabs with floating orbit animations for neumorphic and cyberpunk interfaces.</p>
+
+      <!-- Example 1: Neumorphic Soft -->
+      <div class="demo-section">
+        <h3>Neumorphic Soft</h3>
+        <div class="ease-orbit-tabs-sb ease-neumorphic-tabs-sb" role="tablist" aria-label="Neumorphic interface">
+          <div class="ease-orbit-list-sb">
+            <button class="ease-orbit-trigger-sb" role="tab" aria-selected="true" aria-controls="panel-home" id="tab-home" data-index="0">
+              <span class="ease-icon-sb">🏠</span> Home
+            </button>
+            <button class="ease-orbit-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-about" id="tab-about" tabindex="-1" data-index="1">
+              <span class="ease-icon-sb">ℹ️</span> About
+            </button>
+            <button class="ease-orbit-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-services" id="tab-services" tabindex="-1" data-index="2">
+              <span class="ease-icon-sb">⚙️</span> Services
+            </button>
+          </div>
+          
+          <div class="ease-orbit-content-sb">
+            <div class="ease-orbit-panel-sb" role="tabpanel" id="panel-home" aria-labelledby="tab-home" aria-hidden="false">
+              <h4>Welcome Home</h4>
+              <div class="ease-soft-grid-sb">
+                <div class="ease-soft-card-sb">
+                  <div class="ease-soft-icon-sb">🎯</div>
+                  <div class="ease-soft-title-sb">Precision</div>
+                  <div class="ease-soft-desc-sb">Delivering high-quality solutions with attention to detail.</div>
+                </div>
+                <div class="ease-soft-card-sb">
+                  <div class="ease-soft-icon-sb">🚀</div>
+                  <div class="ease-soft-title-sb">Speed</div>
+                  <div class="ease-soft-desc-sb">Fast delivery without compromising on quality.</div>
+                </div>
+                <div class="ease-soft-card-sb">
+                  <div class="ease-soft-icon-sb">💡</div>
+                  <div class="ease-soft-title-sb">Innovation</div>
+                  <div class="ease-soft-desc-sb">Creative solutions for complex challenges.</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="ease-orbit-panel-sb" role="tabpanel" id="panel-about" aria-labelledby="tab-about" aria-hidden="true">
+              <h4>About Us</h4>
+              <div class="ease-soft-grid-sb">
+                <div class="ease-soft-card-sb">
+                  <div class="ease-soft-icon-sb">👥</div>
+                  <div class="ease-soft-title-sb">Our Team</div>
+                  <div class="ease-soft-desc-sb">A dedicated team of professionals.</div>
+                </div>
+                <div class="ease-soft-card-sb">
+                  <div class="ease-soft-icon-sb">🎯</div>
+                  <div class="ease-soft-title-sb">Our Mission</div>
+                  <div class="ease-soft-desc-sb">To deliver exceptional value to our clients.</div>
+                </div>
+                <div class="ease-soft-card-sb">
+                  <div class="ease-soft-icon-sb">🌟</div>
+                  <div class="ease-soft-title-sb">Our Values</div>
+                  <div class="ease-soft-desc-sb">Integrity, excellence, and innovation.</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="ease-orbit-panel-sb" role="tabpanel" id="panel-services" aria-labelledby="tab-services" aria-hidden="true">
+              <h4>Our Services</h4>
+              <div class="ease-soft-grid-sb">
+                <div class="ease-soft-card-sb">
+                  <div class="ease-soft-icon-sb">💻</div>
+                  <div class="ease-soft-title-sb">Development</div>
+                  <div class="ease-soft-desc-sb">Full-stack web and mobile development.</div>
+                </div>
+                <div class="ease-soft-card-sb">
+                  <div class="ease-soft-icon-sb">🎨</div>
+                  <div class="ease-soft-title-sb">Design</div>
+                  <div class="ease-soft-desc-sb">UI/UX design and branding services.</div>
+                </div>
+                <div class="ease-soft-card-sb">
+                  <div class="ease-soft-icon-sb">📊</div>
+                  <div class="ease-soft-title-sb">Consulting</div>
+                  <div class="ease-soft-desc-sb">Strategic technology consulting.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Example 2: Cyberpunk Neon -->
+      <div class="demo-section">
+        <h3>Cyberpunk Neon</h3>
+        <div class="ease-orbit-tabs-sb ease-cyberpunk-tabs-sb" role="tablist" aria-label="Cyberpunk interface">
+          <div class="ease-orbit-list-sb">
+            <button class="ease-orbit-trigger-sb" role="tab" aria-selected="true" aria-controls="panel-systems" id="tab-systems" data-index="0">
+              <span class="ease-icon-sb">⚡</span> Systems
+            </button>
+            <button class="ease-orbit-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-network" id="tab-network" tabindex="-1" data-index="1">
+              <span class="ease-icon-sb">🌐</span> Network
+            </button>
+            <button class="ease-orbit-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-security" id="tab-security" tabindex="-1" data-index="2">
+              <span class="ease-icon-sb">🔐</span> Security
+            </button>
+          </div>
+          
+          <div class="ease-orbit-content-sb">
+            <div class="ease-orbit-panel-sb" role="tabpanel" id="panel-systems" aria-labelledby="tab-systems" aria-hidden="false">
+              <h4>System Status</h4>
+              <div class="ease-cyber-grid-sb">
+                <div class="ease-cyber-card-sb">
+                  <div class="ease-cyber-icon-sb">🖥️</div>
+                  <div class="ease-cyber-title-sb">Core Systems</div>
+                  <div class="ease-cyber-desc-sb">Main processing units online and operational.</div>
+                </div>
+                <div class="ease-cyber-card-sb">
+                  <div class="ease-cyber-icon-sb">🔧</div>
+                  <div class="ease-cyber-title-sb">Maintenance</div>
+                  <div class="ease-cyber-desc-sb">Scheduled updates in progress.</div>
+                </div>
+                <div class="ease-cyber-card-sb">
+                  <div class="ease-cyber-icon-sb">📡</div>
+                  <div class="ease-cyber-title-sb">Communications</div>
+                  <div class="ease-cyber-desc-sb">Signal strength: Optimal.</div>
+                </div>
+              </div>
+              <div class="ease-orbit-stats-sb">
+                <div class="ease-orbit-stat-sb">
+                  <div class="ease-orbit-stat-value-sb">99.9%</div>
+                  <div class="ease-orbit-stat-label-sb">Uptime</div>
+                </div>
+                <div class="ease-orbit-stat-sb">
+                  <div class="ease-orbit-stat-value-sb">12ms</div>
+                  <div class="ease-orbit-stat-label-sb">Latency</div>
+                </div>
+                <div class="ease-orbit-stat-sb">
+                  <div class="ease-orbit-stat-value-sb">847</div>
+                  <div class="ease-orbit-stat-label-sb">Processes</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="ease-orbit-panel-sb" role="tabpanel" id="panel-network" aria-labelledby="tab-network" aria-hidden="true">
+              <h4>Network Status</h4>
+              <div class="ease-cyber-grid-sb">
+                <div class="ease-cyber-card-sb">
+                  <div class="ease-cyber-icon-sb">📶</div>
+                  <div class="ease-cyber-title-sb">Bandwidth</div>
+                  <div class="ease-cyber-desc-sb">Current load: 45% capacity.</div>
+                </div>
+                <div class="ease-cyber-card-sb">
+                  <div class="ease-cyber-icon-sb">🔗</div>
+                  <div class="ease-cyber-title-sb">Connections</div>
+                  <div class="ease-cyber-desc-sb">Active nodes: 1,247.</div>
+                </div>
+                <div class="ease-cyber-card-sb">
+                  <div class="ease-cyber-icon-sb">📊</div>
+                  <div class="ease-cyber-title-sb">Traffic</div>
+                  <div class="ease-cyber-desc-sb">Analysis: 24GB processed.</div>
+                </div>
+              </div>
+              <div class="ease-orbit-stats-sb">
+                <div class="ease-orbit-stat-sb">
+                  <div class="ease-orbit-stat-value-sb">10Gbps</div>
+                  <div class="ease-orbit-stat-label-sb">Speed</div>
+                </div>
+                <div class="ease-orbit-stat-sb">
+                  <div class="ease-orbit-stat-value-sb">1.2K</div>
+                  <div class="ease-orbit-stat-label-sb">Connections</div>
+                </div>
+                <div class="ease-orbit-stat-sb">
+                  <div class="ease-orbit-stat-value-sb">99.5%</div>
+                  <div class="ease-orbit-stat-label-sb">Reliability</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="ease-orbit-panel-sb" role="tabpanel" id="panel-security" aria-labelledby="tab-security" aria-hidden="true">
+              <h4>Security Status</h4>
+              <div class="ease-cyber-grid-sb">
+                <div class="ease-cyber-card-sb">
+                  <div class="ease-cyber-icon-sb">🛡️</div>
+                  <div class="ease-cyber-title-sb">Firewall</div>
+                  <div class="ease-cyber-desc-sb">All protocols active and monitoring.</div>
+                </div>
+                <div class="ease-cyber-card-sb">
+                  <div class="ease-cyber-icon-sb">🔍</div>
+                  <div class="ease-cyber-title-sb">Scanning</div>
+                  <div class="ease-cyber-desc-sb">Threat detection: No anomalies.</div>
+                </div>
+                <div class="ease-cyber-card-sb">
+                  <div class="ease-cyber-icon-sb">📝</div>
+                  <div class="ease-cyber-title-sb">Logs</div>
+                  <div class="ease-cyber-desc-sb">Audit trail: Clean.</div>
+                </div>
+              </div>
+              <div class="ease-orbit-stats-sb">
+                <div class="ease-orbit-stat-sb">
+                  <div class="ease-orbit-stat-value-sb">24/7</div>
+                  <div class="ease-orbit-stat-label-sb">Monitoring</div>
+                </div>
+                <div class="ease-orbit-stat-sb">
+                  <div class="ease-orbit-stat-value-sb">256-bit</div>
+                  <div class="ease-orbit-stat-label-sb">Encryption</div>
+                </div>
+                <div class="ease-orbit-stat-sb">
+                  <div class="ease-orbit-stat-value-sb">0</div>
+                  <div class="ease-orbit-stat-label-sb">Threats</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Tab functionality for floating orbit tabs
+    document.querySelectorAll('.ease-orbit-tabs-sb').forEach(tabGroup => {
+      const triggers = tabGroup.querySelectorAll('.ease-orbit-trigger-sb');
+      const panels = tabGroup.querySelectorAll('.ease-orbit-panel-sb');
+      
+      triggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          // Update triggers
+          triggers.forEach(t => {
+            t.setAttribute('aria-selected', 'false');
+            t.setAttribute('tabindex', '-1');
+          });
+          trigger.setAttribute('aria-selected', 'true');
+          trigger.setAttribute('tabindex', '0');
+          
+          // Update panels
+          panels.forEach(panel => {
+            panel.setAttribute('aria-hidden', 'true');
+          });
+          const targetId = trigger.getAttribute('aria-controls');
+          document.getElementById(targetId).setAttribute('aria-hidden', 'false');
+        });
+        
+        // Keyboard navigation
+        trigger.addEventListener('keydown', (e) => {
+          const currentIndex = Array.from(triggers).indexOf(trigger);
+          let newIndex;
+          
+          if (e.key === 'ArrowRight') {
+            newIndex = (currentIndex + 1) % triggers.length;
+          } else if (e.key === 'ArrowLeft') {
+            newIndex = (currentIndex - 1 + triggers.length) % triggers.length;
+          } else if (e.key === 'Home') {
+            newIndex = 0;
+          } else if (e.key === 'End') {
+            newIndex = triggers.length - 1;
+          } else {
+            return;
+          }
+          
+          e.preventDefault();
+          triggers[newIndex].click();
+          triggers[newIndex].focus();
+        });
+      });
+    });
+  </script>
+</body>
+</html>
