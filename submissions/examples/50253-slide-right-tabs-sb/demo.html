@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slide-Right Tabs - Responsive Dashboard</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="card">
+      <p class="eyebrow">EaseMotion CSS</p>
+      <h1>Slide-Right Tabs</h1>
+      <p>Interactive tabs with smooth slide-right transitions for responsive dashboard interfaces.</p>
+
+      <!-- Example 1: Dashboard Tabs -->
+      <div class="demo-section">
+        <h3>Responsive Dashboard</h3>
+        <div class="ease-slide-tabs-sb ease-dashboard-tabs-sb" role="tablist" aria-label="Dashboard analytics">
+          <div class="ease-tabs-list-sb">
+            <button class="ease-tabs-trigger-sb" role="tab" aria-selected="true" aria-controls="panel-analytics" id="tab-analytics">
+              <span class="ease-icon-sb">📊</span> Analytics
+            </button>
+            <button class="ease-tabs-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-sales" id="tab-sales" tabindex="-1">
+              <span class="ease-icon-sb">💵</span> Sales
+            </button>
+            <button class="ease-tabs-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-products" id="tab-products" tabindex="-1">
+              <span class="ease-icon-sb">📦</span> Products
+            </button>
+            <button class="ease-tabs-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-customers" id="tab-customers" tabindex="-1">
+              <span class="ease-icon-sb">👥</span> Customers
+            </button>
+          </div>
+          
+          <div class="ease-tabs-content-sb">
+            <div class="ease-tabs-panel-sb" role="tabpanel" id="panel-analytics" aria-labelledby="tab-analytics" aria-hidden="false">
+              <h4>Analytics Overview</h4>
+              <div class="ease-dashboard-grid-sb">
+                <div class="ease-widget-card-sb">
+                  <div class="ease-widget-icon-sb">👁️</div>
+                  <div class="ease-widget-value-sb">24,521</div>
+                  <div class="ease-widget-label-sb">Total Views</div>
+                  <span class="ease-widget-change-sb ease-widget-change-pos-sb">+12.5%</span>
+                </div>
+                <div class="ease-widget-card-sb">
+                  <div class="ease-widget-icon-sb">🕐</div>
+                  <div class="ease-widget-value-sb">4:32</div>
+                  <div class="ease-widget-label-sb">Avg. Time</div>
+                  <span class="ease-widget-change-sb ease-widget-change-pos-sb">+8.2%</span>
+                </div>
+                <div class="ease-widget-card-sb">
+                  <div class="ease-widget-icon-sb">📥</div>
+                  <div class="ease-widget-value-sb">1,842</div>
+                  <div class="ease-widget-label-sb">Downloads</div>
+                  <span class="ease-widget-change-sb ease-widget-change-pos-sb">+23.1%</span>
+                </div>
+                <div class="ease-widget-card-sb">
+                  <div class="ease-widget-icon-sb">⭐</div>
+                  <div class="ease-widget-value-sb">4.8</div>
+                  <div class="ease-widget-label-sb">Rating</div>
+                  <span class="ease-widget-change-sb ease-widget-change-pos-sb">+0.2</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="ease-tabs-panel-sb" role="tabpanel" id="panel-sales" aria-labelledby="tab-sales" aria-hidden="true">
+              <h4>Sales Performance</h4>
+              <div class="ease-dashboard-grid-sb">
+                <div class="ease-widget-card-sb">
+                  <div class="ease-widget-icon-sb">💰</div>
+                  <div class="ease-widget-value-sb">$48.2K</div>
+                  <div class="ease-widget-label-sb">Revenue</div>
+                  <span class="ease-widget-change-sb ease-widget-change-pos-sb">+18.3%</span>
+                </div>
+                <div class="ease-widget-card-sb">
+                  <div class="ease-widget-icon-sb">🧾</div>
+                  <div class="ease-widget-value-sb">342</div>
+                  <div class="ease-widget-label-sb">Orders</div>
+                  <span class="ease-widget-change-sb ease-widget-change-pos-sb">+15.7%</span>
+                </div>
+                <div class="ease-widget-card-sb">
+                  <div class="ease-widget-icon-sb">🔄</div>
+                  <div class="ease-widget-value-sb">8.4%</div>
+                  <div class="ease-widget-label-sb">Return Rate</div>
+                  <span class="ease-widget-change-sb ease-widget-change-neg-sb">-2.1%</span>
+                </div>
+                <div class="ease-widget-card-sb">
+                  <div class="ease-widget-icon-sb">🎯</div>
+                  <div class="ease-widget-value-sb">67%</div>
+                  <div class="ease-widget-label-sb">Goal Met</div>
+                  <span class="ease-widget-change-sb ease-widget-change-pos-sb">+5%</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="ease-tabs-panel-sb" role="tabpanel" id="panel-products" aria-labelledby="tab-products" aria-hidden="true">
+              <h4>Product Inventory</h4>
+              <div class="ease-dashboard-grid-sb">
+                <div class="ease-widget-card-sb">
+                  <div class="ease-widget-icon-sb">📋</div>
+                  <div class="ease-widget-value-sb">1,247</div>
+                  <div class="ease-widget-label-sb">Total Products</div>
+                  <span class="ease-widget-change-sb ease-widget-change-pos-sb">+42</span>
+                </div>
+                <div class="ease-widget-card-sb">
+                  <div class="ease-widget-icon-sb">✅</div>
+                  <div class="ease-widget-value-sb">892</div>
+                  <div class="ease-widget-label-sb">In Stock</div>
+                  <span class="ease-widget-change-sb ease-widget-change-pos-sb">+28</span>
+                </div>
+                <div class="ease-widget-card-sb">
+                  <div class="ease-widget-icon-sb">⚠️</div>
+                  <div class="ease-widget-value-sb">45</div>
+                  <div class="ease-widget-label-sb">Low Stock</div>
+                  <span class="ease-widget-change-sb ease-widget-change-neg-sb">+12</span>
+                </div>
+                <div class="ease-widget-card-sb">
+                  <div class="ease-widget-icon-sb">❌</div>
+                  <div class="ease-widget-value-sb">12</div>
+                  <div class="ease-widget-label-sb">Out of Stock</div>
+                  <span class="ease-widget-change-sb ease-widget-change-neg-sb">+3</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="ease-tabs-panel-sb" role="tabpanel" id="panel-customers" aria-labelledby="tab-customers" aria-hidden="true">
+              <h4>Customer Insights</h4>
+              <div class="ease-dashboard-grid-sb">
+                <div class="ease-widget-card-sb">
+                  <div class="ease-widget-icon-sb">👤</div>
+                  <div class="ease-widget-value-sb">8,924</div>
+                  <div class="ease-widget-label-sb">Total Customers</div>
+                  <span class="ease-widget-change-sb ease-widget-change-pos-sb">+1,234</span>
+                </div>
+                <div class="ease-widget-card-sb">
+                  <div class="ease-widget-icon-sb">🆕</div>
+                  <div class="ease-widget-value-sb">342</div>
+                  <div class="ease-widget-label-sb">New This Week</div>
+                  <span class="ease-widget-change-sb ease-widget-change-pos-sb">+56</span>
+                </div>
+                <div class="ease-widget-card-sb">
+                  <div class="ease-widget-icon-sb">💎</div>
+                  <div class="ease-widget-value-sb">1,247</div>
+                  <div class="ease-widget-label-sb">Premium</div>
+                  <span class="ease-widget-change-sb ease-widget-change-pos-sb">+89</span>
+                </div>
+                <div class="ease-widget-card-sb">
+                  <div class="ease-widget-icon-sb">📈</div>
+                  <div class="ease-widget-value-sb">72%</div>
+                  <div class="ease-widget-label-sb">Retention</div>
+                  <span class="ease-widget-change-sb ease-widget-change-pos-sb">+4%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Example 2: Navigation Style -->
+      <div class="demo-section">
+        <h3>Navigation Style</h3>
+        <div class="ease-slide-tabs-sb ease-nav-tabs-sb" role="tablist" aria-label="Navigation tabs">
+          <div class="ease-tabs-list-sb">
+            <button class="ease-tabs-trigger-sb" role="tab" aria-selected="true" aria-controls="panel-home" id="tab-home">
+              Home
+            </button>
+            <button class="ease-tabs-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-features" id="tab-features" tabindex="-1">
+              Features
+            </button>
+            <button class="ease-tabs-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-pricing" id="tab-pricing" tabindex="-1">
+              Pricing
+            </button>
+            <button class="ease-tabs-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-contact" id="tab-contact" tabindex="-1">
+              Contact
+            </button>
+          </div>
+          
+          <div class="ease-tabs-content-sb">
+            <div class="ease-tabs-panel-sb" role="tabpanel" id="panel-home" aria-labelledby="tab-home" aria-hidden="false">
+              <p>Welcome to the Home section. The slide-right indicator shows which tab is currently active.</p>
+            </div>
+            <div class="ease-tabs-panel-sb" role="tabpanel" id="panel-features" aria-labelledby="tab-features" aria-hidden="true">
+              <p>Explore our Features section with detailed information about our products and services.</p>
+            </div>
+            <div class="ease-tabs-panel-sb" role="tabpanel" id="panel-pricing" aria-labelledby="tab-pricing" aria-hidden="true">
+              <p>View our competitive Pricing plans designed to fit your needs and budget.</p>
+            </div>
+            <div class="ease-tabs-panel-sb" role="tabpanel" id="panel-contact" aria-labelledby="tab-contact" aria-hidden="true">
+              <p>Get in Touch with our team for inquiries, support, or partnership opportunities.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Example 3: Pill Style -->
+      <div class="demo-section">
+        <h3>Pill Style</h3>
+        <div class="ease-slide-tabs-sb ease-pill-tabs-sb" role="tablist" aria-label="Pill tabs">
+          <div class="ease-tabs-list-sb">
+            <button class="ease-tabs-trigger-sb" role="tab" aria-selected="true" aria-controls="panel-feed" id="tab-feed">
+              Feed
+            </button>
+            <button class="ease-tabs-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-explore" id="tab-explore" tabindex="-1">
+              Explore
+            </button>
+            <button class="ease-tabs-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-notifications" id="tab-notifications" tabindex="-1">
+              Notifications
+            </button>
+          </div>
+          
+          <div class="ease-tabs-content-sb">
+            <div class="ease-tabs-panel-sb" role="tabpanel" id="panel-feed" aria-labelledby="tab-feed" aria-hidden="false">
+              <p>Your personalized feed with the latest updates and content tailored for you.</p>
+            </div>
+            <div class="ease-tabs-panel-sb" role="tabpanel" id="panel-explore" aria-labelledby="tab-explore" aria-hidden="true">
+              <p>Discover new content, trending topics, and popular creators in the Explore section.</p>
+            </div>
+            <div class="ease-tabs-panel-sb" role="tabpanel" id="panel-notifications" aria-labelledby="tab-notifications" aria-hidden="true">
+              <p>Stay updated with your latest notifications, mentions, and activity alerts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Tab functionality for accessibility
+    document.querySelectorAll('.ease-slide-tabs-sb').forEach(tabGroup => {
+      const triggers = tabGroup.querySelectorAll('.ease-tabs-trigger-sb');
+      const panels = tabGroup.querySelectorAll('.ease-tabs-panel-sb');
+      
+      triggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          const targetId = trigger.getAttribute('aria-controls');
+          
+          // Update triggers
+          triggers.forEach(t => {
+            t.setAttribute('aria-selected', 'false');
+            t.setAttribute('tabindex', '-1');
+          });
+          trigger.setAttribute('aria-selected', 'true');
+          trigger.setAttribute('tabindex', '0');
+          
+          // Update panels
+          panels.forEach(panel => {
+            panel.setAttribute('aria-hidden', 'true');
+          });
+          document.getElementById(targetId).setAttribute('aria-hidden', 'false');
+        });
+        
+        // Keyboard navigation
+        trigger.addEventListener('keydown', (e) => {
+          const currentIndex = Array.from(triggers).indexOf(trigger);
+          let newIndex;
+          
+          if (e.key === 'ArrowRight') {
+            newIndex = (currentIndex + 1) % triggers.length;
+          } else if (e.key === 'ArrowLeft') {
+            newIndex = (currentIndex - 1 + triggers.length) % triggers.length;
+          } else if (e.key === 'Home') {
+            newIndex = 0;
+          } else if (e.key === 'End') {
+            newIndex = triggers.length - 1;
+          } else {
+            return;
+          }
+          
+          e.preventDefault();
+          triggers[newIndex].click();
+          triggers[newIndex].focus();
+        });
+      });
+    });
+  </script>
+</body>
+</html>
