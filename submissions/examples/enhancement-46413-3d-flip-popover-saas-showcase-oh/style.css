@@ -1,0 +1,29 @@
+/** EaseMotion CSS - 3D Flip Popover for SaaS Showcase | Issue: #46413 */
+:root { --popover-flip-duration: 0.5s; --popover-flip-easing: cubic-bezier(0.4, 0, 0.2, 1); --popover-rotate-x-from: -90deg; --popover-rotate-x-to: 0deg; --popover-scale-from: 0.8; --popover-scale-to: 1; --popover-perspective: 1000px; }
+.popover-3d-flip-container { position: absolute; z-index: 100; perspective: var(--popover-perspective); }
+.popover-3d-flip { width: 300px; height: 220px; position: relative; transform-style: preserve-3d; transform: rotateX(var(--popover-rotate-x-from)) scale(var(--popover-scale-from)); opacity: 0; visibility: hidden; transition: all var(--popover-flip-duration) var(--popover-flip-easing); transform-origin: center top; }
+.popover-3d-flip.active { transform: rotateX(var(--popover-rotate-x-to)) scale(var(--popover-scale-to)); opacity: 1; visibility: visible; }
+.popover-3d-flip.flip-bottom { transform-origin: center bottom; transform: rotateX(90deg) scale(var(--popover-scale-from)); }
+.popover-3d-flip.flip-bottom.active { transform: rotateX(0deg) scale(var(--popover-scale-to)); }
+.popover-3d-flip.flip-left { transform-origin: right center; transform: rotateY(90deg) scale(var(--popover-scale-from)); }
+.popover-3d-flip.flip-left.active { transform: rotateY(0deg) scale(var(--popover-scale-to)); }
+.popover-3d-flip.flip-right { transform-origin: left center; transform: rotateY(-90deg) scale(var(--popover-scale-from)); }
+.popover-3d-flip.flip-right.active { transform: rotateY(0deg) scale(var(--popover-scale-to)); }
+.popover-3d-flip-inner { background: linear-gradient(145deg, #1e1e2e 0%, #2d2d44 100%); border: 1px solid rgba(129, 140, 248, 0.3); border-radius: 16px; padding: 1.5rem; height: 100%; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); display: flex; flex-direction: column; }
+.popover-3d-flip::before { content: ''; position: absolute; top: -8px; width: 14px; height: 14px; background: #2d2d44; border-left: 1px solid rgba(129, 140, 248, 0.3); border-top: 1px solid rgba(129, 140, 248, 0.3); transform: rotate(45deg); }
+.popover-3d-flip.arrow-right::before { right: 14px; }
+.popover-3d-flip .flip-card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+.popover-3d-flip .flip-card-icon { width: 40px; height: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; }
+.popover-3d-flip .flip-card-title { font-size: 1rem; font-weight: 600; color: #fff; }
+.popover-3d-flip .flip-card-subtitle { font-size: 0.8rem; color: #71717a; }
+.popover-3d-flip .flip-card-content { flex: 1; color: #a1a1aa; font-size: 0.9rem; line-height: 1.5; }
+.popover-3d-flip .flip-card-actions { display: flex; gap: 0.75rem; margin-top: auto; }
+.popover-3d-flip .flip-btn { flex: 1; padding: 0.6rem; border-radius: 8px; font-size: 0.85rem; cursor: pointer; transition: all 0.2s ease; border: none; }
+.popover-3d-flip .flip-btn-primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+.popover-3d-flip .flip-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4); }
+.popover-3d-flip .flip-btn-secondary { background: rgba(255, 255, 255, 0.1); color: #e4e4e7; }
+.popover-3d-flip .flip-btn-secondary:hover { background: rgba(255, 255, 255, 0.15); }
+.popover-3d-flip .flip-btn:focus { outline: 2px solid #818cf8; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .popover-3d-flip { transition: opacity 0.2s ease; transform: none !important; } .popover-3d-flip.active { transform: none !important; } .popover-3d-flip .flip-btn { transition: none; } }
+.popover-3d-flip.bounce.active { animation: popover-3d-bounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); }
+@keyframes popover-3d-bounce { 0% { opacity: 0; transform: rotateX(-90deg) scale(0.7); } 50% { transform: rotateX(10deg) scale(1.02); } 100% { opacity: 1; transform: rotateX(0deg) scale(1); } }

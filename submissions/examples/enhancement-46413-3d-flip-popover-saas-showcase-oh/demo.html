@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Flip Popover - SaaS Showcase | EaseMotion CSS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; padding: 3rem; color: #e4e4e7; }
+        .demo-container { max-width: 1200px; margin: 0 auto; }
+        .demo-header { text-align: center; margin-bottom: 3rem; }
+        .demo-header h1 { font-size: 2.5rem; color: #fff; margin-bottom: 0.5rem; }
+        .demo-header p { color: #a1a1aa; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .feature-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 2rem; position: relative; backdrop-filter: blur(10px); transition: all 0.4s ease; }
+        .feature-card:hover { border-color: rgba(99, 102, 241, 0.5); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); }
+        .feature-icon { width: 60px; height: 60px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white; margin-bottom: 1.5rem; }
+        .feature-title { font-size: 1.25rem; font-weight: 600; color: #fff; margin-bottom: 0.75rem; }
+        .feature-description { color: #a1a1aa; line-height: 1.6; margin-bottom: 1.5rem; }
+        .feature-stats { display: flex; gap: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        .stat { text-align: center; }
+        .stat-value { font-size: 1.5rem; font-weight: 700; color: #818cf8; }
+        .stat-label { font-size: 0.75rem; color: #71717a; text-transform: uppercase; }
+        .popover-trigger-flip { position: absolute; top: 1rem; right: 1rem; width: 36px; height: 36px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.05); color: #a1a1aa; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
+        .popover-trigger-flip:hover { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-color: transparent; color: white; transform: rotate(90deg); }
+        .popover-trigger-flip:focus { outline: 2px solid #818cf8; outline-offset: 2px; }
+        .popover-3d-flip-container { position: absolute; top: 50px; right: 0; width: 300px; height: 220px; perspective: 1000px; z-index: 100; }
+        .popover-3d-flip { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transform: rotateX(-90deg) scale(0.8); opacity: 0; visibility: hidden; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); transform-origin: center top; }
+        .popover-3d-flip.active { transform: rotateX(0deg) scale(1); opacity: 1; visibility: visible; }
+        .popover-3d-flip-inner { background: linear-gradient(145deg, #1e1e2e 0%, #2d2d44 100%); border: 1px solid rgba(129, 140, 248, 0.3); border-radius: 16px; padding: 1.5rem; height: 100%; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(99, 102, 241, 0.2); display: flex; flex-direction: column; }
+        .popover-3d-flip::before { content: ''; position: absolute; top: -8px; right: 14px; width: 14px; height: 14px; background: #2d2d44; border-left: 1px solid rgba(129, 140, 248, 0.3); border-top: 1px solid rgba(129, 140, 248, 0.3); transform: rotate(45deg); }
+        .flip-card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+        .flip-card-icon { width: 40px; height: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; }
+        .flip-card-title { font-size: 1rem; font-weight: 600; color: #fff; }
+        .flip-card-subtitle { font-size: 0.8rem; color: #71717a; }
+        .flip-card-content { flex: 1; color: #a1a1aa; font-size: 0.9rem; line-height: 1.5; }
+        .flip-card-actions { display: flex; gap: 0.75rem; margin-top: auto; }
+        .flip-btn { flex: 1; padding: 0.6rem; border-radius: 8px; font-size: 0.85rem; cursor: pointer; transition: all 0.2s ease; border: none; }
+        .flip-btn-primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .flip-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4); }
+        .flip-btn-secondary { background: rgba(255, 255, 255, 0.1); color: #e4e4e7; }
+        .flip-btn-secondary:hover { background: rgba(255, 255, 255, 0.15); }
+        @media (prefers-reduced-motion: reduce) { .popover-3d-flip, .feature-card, .popover-trigger-flip, .flip-btn { transition: none; } .popover-3d-flip.active { transform: none; } }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header"><h1><i class="fas fa-rocket"></i> SaaS Feature Showcase</h1><p>Click the info button on each card to see the 3D Flip Popover animation</p></div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <button class="popover-trigger-flip" data-popover="popover-1" aria-label="View details"><i class="fas fa-info"></i></button>
+                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                <h3 class="feature-title">Lightning Fast Performance</h3>
+                <p class="feature-description">Blazing-fast load times with our optimized infrastructure and global CDN.</p>
+                <div class="feature-stats"><div class="stat"><div class="stat-value">99.9%</div><div class="stat-label">Uptime</div></div><div class="stat"><div class="stat-value">&lt;50ms</div><div class="stat-label">Response</div></div><div class="stat"><div class="stat-value">150+</div><div class="stat-label">Locations</div></div></div>
+                <div id="popover-1" class="popover-3d-flip-container"><div class="popover-3d-flip" role="dialog" aria-hidden="true"><div class="popover-3d-flip-inner"><div class="flip-card-header"><div class="flip-card-icon"><i class="fas fa-server"></i></div><div><h4 class="flip-card-title">Infrastructure</h4><p class="flip-card-subtitle">Multi-region deployment</p></div></div><p class="flip-card-content">Built on enterprise-grade infrastructure with automatic failover, load balancing, and real-time monitoring.</p><div class="flip-card-actions"><button class="flip-btn flip-btn-secondary">Learn More</button><button class="flip-btn flip-btn-primary">Get Started</button></div></div></div></div>
+            </div>
+            <div class="feature-card">
+                <button class="popover-trigger-flip" data-popover="popover-2" aria-label="View details"><i class="fas fa-info"></i></button>
+                <div class="feature-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"><i class="fas fa-shield-alt"></i></div>
+                <h3 class="feature-title">Enterprise Security</h3>
+                <p class="feature-description">Bank-grade encryption and compliance with SOC 2, GDPR, and HIPAA standards.</p>
+                <div class="feature-stats"><div class="stat"><div class="stat-value">256-bit</div><div class="stat-label">Encryption</div></div><div class="stat"><div class="stat-value">SOC2</div><div class="stat-label">Certified</div></div><div class="stat"><div class="stat-value">24/7</div><div class="stat-label">Monitoring</div></div></div>
+                <div id="popover-2" class="popover-3d-flip-container"><div class="popover-3d-flip" role="dialog" aria-hidden="true"><div class="popover-3d-flip-inner"><div class="flip-card-header"><div class="flip-card-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"><i class="fas fa-lock"></i></div><div><h4 class="flip-card-title">Security Features</h4><p class="flip-card-subtitle">Enterprise-grade protection</p></div></div><p class="flip-card-content">Advanced threat detection, automatic penetration testing, DDoS protection, and comprehensive audit logging.</p><div class="flip-card-actions"><button class="flip-btn flip-btn-secondary">View Docs</button><button class="flip-btn flip-btn-primary">Start Trial</button></div></div></div></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.popover-trigger-flip').forEach(trigger => { trigger.addEventListener('click', (e) => { e.stopPropagation(); const popoverId = trigger.getAttribute('data-popover'); const container = trigger.parentElement.querySelector('.popover-3d-flip-container'); const popover = container.querySelector('.popover-3d-flip'); document.querySelectorAll('.popover-3d-flip.active').forEach(p => { if (p !== popover) { p.classList.remove('active'); p.setAttribute('aria-hidden', 'true'); } }); popover.classList.toggle('active'); popover.setAttribute('aria-hidden', !popover.classList.contains('active')); }); });
+        document.addEventListener('click', (e) => { if (!e.target.closest('.popover-trigger-flip') && !e.target.closest('.popover-3d-flip')) { document.querySelectorAll('.popover-3d-flip.active').forEach(popover => { popover.classList.remove('active'); popover.setAttribute('aria-hidden', 'true'); }); } });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { document.querySelectorAll('.popover-3d-flip.active').forEach(popover => { popover.classList.remove('active'); popover.setAttribute('aria-hidden', 'true'); }); } });
+    </script>
+</body>
+</html>
