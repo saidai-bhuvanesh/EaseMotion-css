@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide-Up Popover - Product Catalog | EaseMotion CSS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; padding: 2rem; }
+        .demo-container { max-width: 1200px; margin: 0 auto; }
+        .demo-header { text-align: center; margin-bottom: 3rem; }
+        .demo-header h1 { color: #2c3e50; font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .demo-header p { color: #7f8c8d; font-size: 1.1rem; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+        .product-card { background: white; border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); }
+        .product-image { width: 100%; height: 180px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; }
+        .product-name { font-size: 1.2rem; font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem; }
+        .product-price { font-size: 1.1rem; color: #27ae60; font-weight: 700; margin-bottom: 1rem; }
+        .popover-trigger { position: absolute; top: 1rem; right: 1rem; width: 36px; height: 36px; border-radius: 50%; border: none; background: #f8f9fa; color: #6c757d; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; }
+        .popover-trigger:hover { background: #667eea; color: white; }
+        .popover-trigger:focus { outline: 2px solid #667eea; outline-offset: 2px; }
+        .popover-slide-up { position: absolute; top: 60px; right: 0; width: 280px; background: white; border-radius: 16px; padding: 1.25rem; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); z-index: 100; opacity: 0; visibility: hidden; transform: translateY(-20px) scale(0.95); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .popover-slide-up.active { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
+        .popover-slide-up::before { content: ''; position: absolute; top: -8px; right: 14px; width: 16px; height: 16px; background: white; transform: rotate(45deg); box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.02); }
+        .popover-header { font-weight: 600; color: #2c3e50; margin-bottom: 0.75rem; font-size: 1rem; }
+        .popover-content { font-size: 0.9rem; color: #7f8c8d; line-height: 1.5; margin-bottom: 1rem; }
+        .popover-actions { display: flex; gap: 0.5rem; }
+        .popover-btn { flex: 1; padding: 0.6rem; border: none; border-radius: 8px; font-size: 0.85rem; cursor: pointer; transition: all 0.3s ease; }
+        .popover-btn-primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .popover-btn-primary:hover { transform: scale(1.02); box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4); }
+        .popover-btn-secondary { background: #f8f9fa; color: #6c757d; }
+        .popover-btn-secondary:hover { background: #e9ecef; }
+        @media (prefers-reduced-motion: reduce) { .popover-slide-up { transition: opacity 0.2s ease; transform: none; } .popover-slide-up.active { transform: none; } .product-card, .popover-trigger, .popover-btn { transition: none; } }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header"><h1><i class="fas fa-box-open"></i> Product Catalog</h1><p>Click the info button on each product to see the Slide-Up Popover animation</p></div>
+        <div class="product-grid">
+            <div class="product-card">
+                <button class="popover-trigger" aria-label="View product details" data-popover="popover-1"><i class="fas fa-info"></i></button>
+                <div class="product-image"><i class="fas fa-headphones"></i></div>
+                <h3 class="product-name">Wireless Headphones Pro</h3>
+                <p class="product-price">$299.99</p>
+                <div id="popover-1" class="popover-slide-up" role="dialog" aria-hidden="true">
+                    <h4 class="popover-header">Quick View</h4>
+                    <p class="popover-content">Premium wireless headphones with active noise cancellation and 30-hour battery life.</p>
+                    <div class="popover-actions"><button class="popover-btn popover-btn-secondary">Details</button><button class="popover-btn popover-btn-primary">Add to Cart</button></div>
+                </div>
+            </div>
+            <div class="product-card">
+                <button class="popover-trigger" aria-label="View product details" data-popover="popover-2"><i class="fas fa-info"></i></button>
+                <div class="product-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"><i class="fas fa-mobile-alt"></i></div>
+                <h3 class="product-name">Smart Watch Ultra</h3>
+                <p class="product-price">$449.99</p>
+                <div id="popover-2" class="popover-slide-up" role="dialog" aria-hidden="true">
+                    <h4 class="popover-header">Quick View</h4>
+                    <p class="popover-content">Advanced smartwatch with health monitoring, GPS, and 7-day battery life.</p>
+                    <div class="popover-actions"><button class="popover-btn popover-btn-secondary">Details</button><button class="popover-btn popover-btn-primary">Add to Cart</button></div>
+                </div>
+            </div>
+            <div class="product-card">
+                <button class="popover-trigger" aria-label="View product details" data-popover="popover-3"><i class="fas fa-info"></i></button>
+                <div class="product-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"><i class="fas fa-laptop"></i></div>
+                <h3 class="product-name">Ultrabook Air 15</h3>
+                <p class="product-price">$1299.99</p>
+                <div id="popover-3" class="popover-slide-up" role="dialog" aria-hidden="true">
+                    <h4 class="popover-header">Quick View</h4>
+                    <p class="popover-content">Lightweight 15-inch laptop with Intel Core i7, 16GB RAM, and all-day battery.</p>
+                    <div class="popover-actions"><button class="popover-btn popover-btn-secondary">Details</button><button class="popover-btn popover-btn-primary">Add to Cart</button></div>
+                </div>
+            </div>
+            <div class="product-card">
+                <button class="popover-trigger" aria-label="View product details" data-popover="popover-4"><i class="fas fa-info"></i></button>
+                <div class="product-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"><i class="fas fa-tablet-alt"></i></div>
+                <h3 class="product-name">Tablet Pro 12.9</h3>
+                <p class="product-price">$899.99</p>
+                <div id="popover-4" class="popover-slide-up" role="dialog" aria-hidden="true">
+                    <h4 class="popover-header">Quick View</h4>
+                    <p class="popover-content">12.9-inch tablet with stylus support, perfect for creative professionals.</p>
+                    <div class="popover-actions"><button class="popover-btn popover-btn-secondary">Details</button><button class="popover-btn popover-btn-primary">Add to Cart</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.popover-trigger').forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const popoverId = trigger.getAttribute('data-popover');
+                const popover = document.getElementById(popoverId);
+                document.querySelectorAll('.popover-slide-up.active').forEach(p => { if (p.id !== popoverId) { p.classList.remove('active'); p.setAttribute('aria-hidden', 'true'); } });
+                popover.classList.toggle('active');
+                const isActive = popover.classList.contains('active');
+                popover.setAttribute('aria-hidden', !isActive);
+            });
+        });
+        document.addEventListener('click', (e) => { if (!e.target.closest('.popover-trigger') && !e.target.closest('.popover-slide-up')) { document.querySelectorAll('.popover-slide-up.active').forEach(popover => { popover.classList.remove('active'); popover.setAttribute('aria-hidden', 'true'); }); } });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { document.querySelectorAll('.popover-slide-up.active').forEach(popover => { popover.classList.remove('active'); popover.setAttribute('aria-hidden', 'true'); }); } });
+    </script>
+</body>
+</html>
