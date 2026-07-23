@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom-In Popover - Modern SaaS | EaseMotion CSS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #0f172a; min-height: 100vh; padding: 3rem; color: #e2e8f0; }
+        .demo-container { max-width: 1000px; margin: 0 auto; }
+        .demo-header { text-align: center; margin-bottom: 3rem; }
+        .demo-header h1 { font-size: 2.5rem; background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; }
+        .demo-header p { color: #94a3b8; }
+        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .dashboard-card { background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%); border: 1px solid #334155; border-radius: 16px; padding: 1.5rem; position: relative; transition: all 0.3s ease; }
+        .dashboard-card:hover { border-color: #6366f1; box-shadow: 0 0 30px rgba(99, 102, 241, 0.15); }
+        .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+        .card-title { font-size: 1rem; font-weight: 600; color: #f1f5f9; }
+        .card-metric { font-size: 2rem; font-weight: 700; background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; }
+        .card-change { font-size: 0.85rem; display: flex; align-items: center; gap: 0.25rem; }
+        .card-change.positive { color: #22c55e; }
+        .card-change.negative { color: #ef4444; }
+        .popover-trigger-zoom { width: 32px; height: 32px; border-radius: 8px; border: 1px solid #475569; background: transparent; color: #94a3b8; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
+        .popover-trigger-zoom:hover { background: #6366f1; border-color: #6366f1; color: white; }
+        .popover-trigger-zoom:focus { outline: 2px solid #818cf8; outline-offset: 2px; }
+        .popover-zoom-in { position: absolute; top: 50px; right: 0; width: 320px; background: #1e293b; border: 1px solid #475569; border-radius: 16px; padding: 1.5rem; z-index: 100; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); opacity: 0; visibility: hidden; transform: scale(0.8) translateY(-10px); transform-origin: top right; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+        .popover-zoom-in.active { opacity: 1; visibility: visible; transform: scale(1) translateY(0); }
+        .popover-zoom-in::before { content: ''; position: absolute; top: -6px; right: 12px; width: 12px; height: 12px; background: #1e293b; border-left: 1px solid #475569; border-top: 1px solid #475569; transform: rotate(45deg); }
+        .popover-section-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 0.75rem; }
+        .popover-detail-row { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #334155; }
+        .popover-detail-row:last-child { border-bottom: none; }
+        .popover-detail-label { color: #94a3b8; font-size: 0.9rem; }
+        .popover-detail-value { color: #f1f5f9; font-weight: 600; font-size: 0.9rem; }
+        .popover-zoom-in .popover-actions { margin-top: 1rem; display: flex; gap: 0.75rem; }
+        .popover-zoom-in .btn { flex: 1; padding: 0.75rem; border-radius: 8px; font-size: 0.85rem; font-weight: 500; cursor: pointer; transition: all 0.2s ease; border: none; }
+        .popover-zoom-in .btn-primary { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: white; }
+        .popover-zoom-in .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4); }
+        .popover-zoom-in .btn-secondary { background: #334155; color: #e2e8f0; }
+        .popover-zoom-in .btn-secondary:hover { background: #475569; }
+        @media (prefers-reduced-motion: reduce) { .popover-zoom-in, .dashboard-card, .popover-trigger-zoom, .btn { transition: none; } .popover-zoom-in.active { transform: none; } }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header"><h1><i class="fas fa-chart-line"></i> SaaS Analytics Dashboard</h1><p>Click the info button on each card to see the Zoom-In Popover animation</p></div>
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <div><h3 class="card-title">Total Revenue</h3><p class="card-metric">$124,563</p><p class="card-change positive"><i class="fas fa-arrow-up"></i> +12.5% vs last month</p></div>
+                    <button class="popover-trigger-zoom" data-popover="popover-revenue" aria-label="View details"><i class="fas fa-ellipsis-h"></i></button>
+                </div>
+                <div id="popover-revenue" class="popover-zoom-in" role="dialog" aria-hidden="true">
+                    <p class="popover-section-title">Revenue Breakdown</p>
+                    <div class="popover-detail-row"><span class="popover-detail-label">Product Sales</span><span class="popover-detail-value">$89,234</span></div>
+                    <div class="popover-detail-row"><span class="popover-detail-label">Subscriptions</span><span class="popover-detail-value">$28,450</span></div>
+                    <div class="popover-detail-row"><span class="popover-detail-label">Services</span><span class="popover-detail-value">$6,879</span></div>
+                    <div class="popover-actions"><button class="btn btn-secondary">Export</button><button class="btn btn-primary">View Report</button></div>
+                </div>
+            </div>
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <div><h3 class="card-title">Active Users</h3><p class="card-metric">24,521</p><p class="card-change positive"><i class="fas fa-arrow-up"></i> +8.2% vs last month</p></div>
+                    <button class="popover-trigger-zoom" data-popover="popover-users" aria-label="View details"><i class="fas fa-ellipsis-h"></i></button>
+                </div>
+                <div id="popover-users" class="popover-zoom-in" role="dialog" aria-hidden="true">
+                    <p class="popover-section-title">User Distribution</p>
+                    <div class="popover-detail-row"><span class="popover-detail-label">Enterprise</span><span class="popover-detail-value">8,234</span></div>
+                    <div class="popover-detail-row"><span class="popover-detail-label">Professional</span><span class="popover-detail-value">12,456</span></div>
+                    <div class="popover-detail-row"><span class="popover-detail-label">Free Tier</span><span class="popover-detail-value">3,831</span></div>
+                    <div class="popover-actions"><button class="btn btn-secondary">Manage</button><button class="btn btn-primary">View All</button></div>
+                </div>
+            </div>
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <div><h3 class="card-title">Conversion Rate</h3><p class="card-metric">3.24%</p><p class="card-change negative"><i class="fas fa-arrow-down"></i> -0.3% vs last month</p></div>
+                    <button class="popover-trigger-zoom" data-popover="popover-conversion" aria-label="View details"><i class="fas fa-ellipsis-h"></i></button>
+                </div>
+                <div id="popover-conversion" class="popover-zoom-in" role="dialog" aria-hidden="true">
+                    <p class="popover-section-title">Funnel Analysis</p>
+                    <div class="popover-detail-row"><span class="popover-detail-label">Visitors</span><span class="popover-detail-value">756,234</span></div>
+                    <div class="popover-detail-row"><span class="popover-detail-label">Sign-ups</span><span class="popover-detail-value">45,892</span></div>
+                    <div class="popover-detail-row"><span class="popover-detail-label">Paid Users</span><span class="popover-detail-value">24,521</span></div>
+                    <div class="popover-actions"><button class="btn btn-secondary">Analyze</button><button class="btn btn-primary">Optimize</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.popover-trigger-zoom').forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const popoverId = trigger.getAttribute('data-popover');
+                const popover = document.getElementById(popoverId);
+                document.querySelectorAll('.popover-zoom-in.active').forEach(p => { if (p.id !== popoverId) { p.classList.remove('active'); p.setAttribute('aria-hidden', 'true'); } });
+                popover.classList.toggle('active');
+                const isActive = popover.classList.contains('active');
+                popover.setAttribute('aria-hidden', !isActive);
+            });
+        });
+        document.addEventListener('click', (e) => { if (!e.target.closest('.popover-trigger-zoom') && !e.target.closest('.popover-zoom-in')) { document.querySelectorAll('.popover-zoom-in.active').forEach(popover => { popover.classList.remove('active'); popover.setAttribute('aria-hidden', 'true'); }); } });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { document.querySelectorAll('.popover-zoom-in.active').forEach(popover => { popover.classList.remove('active'); popover.setAttribute('aria-hidden', 'true'); }); } });
+    </script>
+</body>
+</html>
