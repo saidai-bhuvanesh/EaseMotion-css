@@ -1,0 +1,136 @@
+/* Custom premium styles for the Swing Select React Component */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --swing-bg-ag: #0a0a0e;
+    --swing-card-bg-ag: rgba(255, 255, 255, 0.03);
+    --swing-border-ag: rgba(255, 255, 255, 0.08);
+    --swing-text-ag: #f3f4f6;
+    --swing-muted-ag: #9ca3af;
+    --swing-success-ag: #10b981;
+}
+
+.swing-select-container-ag {
+    font-family: 'Outfit', sans-serif;
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    perspective: 800px;
+}
+
+.swing-select-trigger-ag {
+    width: 100%;
+    padding: 14px 20px;
+    background-color: var(--swing-card-bg-ag);
+    border: 1px solid var(--swing-border-ag);
+    border-radius: 12px;
+    color: var(--swing-text-ag);
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    backdrop-filter: blur(12px);
+    transition: border-color 0.3s ease, color 0.3s ease;
+    transform-origin: top center;
+}
+
+.swing-select-trigger-ag:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.swing-select-trigger-ag.is-success-ag {
+    border-color: var(--swing-success-ag);
+    color: var(--swing-success-ag);
+    animation: swing-pendulum-ag 0.8s ease-in-out;
+}
+
+/* Caret Icon */
+.swing-select-caret-ag {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.3s ease;
+}
+
+.swing-select-container-ag.is-open-ag .swing-select-caret-ag {
+    transform: rotate(180deg);
+}
+
+/* Options Dropdown */
+.swing-select-dropdown-ag {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 8px;
+    background-color: #121218;
+    border: 1px solid var(--swing-border-ag);
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 50;
+    list-style: none;
+    padding: 6px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    transform-origin: top;
+    transform: scaleY(0.95);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.swing-select-container-ag.is-open-ag .swing-select-dropdown-ag {
+    transform: scaleY(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.swing-select-option-ag {
+    padding: 12px 16px;
+    border-radius: 8px;
+    color: var(--swing-text-ag);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.swing-select-option-ag:hover,
+.swing-select-option-ag.is-focused-ag {
+    background-color: rgba(16, 185, 129, 0.15);
+    color: var(--swing-success-ag);
+}
+
+.swing-select-option-ag.is-selected-ag {
+    background-color: rgba(16, 185, 129, 0.25);
+    color: var(--swing-success-ag);
+    font-weight: 600;
+}
+
+/* Keyframes Swing Pendulum Animation */
+@keyframes swing-pendulum-ag {
+    0% { transform: rotate(0deg); }
+    20% { transform: rotate(15deg); }
+    40% { transform: rotate(-10deg); }
+    60% { transform: rotate(5deg); }
+    80% { transform: rotate(-2deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Accessibility: Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .swing-select-trigger-ag.is-success-ag {
+        animation: none !important;
+    }
+    .swing-select-dropdown-ag,
+    .swing-select-caret-ag {
+        transition: none !important;
+    }
+}
