@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rotate-Fade Dropdown - Creative Portfolio</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main>
+    <section class="demo-section">
+      <h1>Rotate-Fade Dropdown</h1>
+      <p>Click the dropdown to see the rotate and fade animation</p>
+      
+      <div class="ease-dropdown-sb">
+        <button class="ease-dropdown-trigger-sb" aria-expanded="false" aria-haspopup="true">
+          <span>🎨</span>
+          <span>Select Option</span>
+          <span class="ease-dropdown-arrow-sb">▼</span>
+        </button>
+        <div class="ease-dropdown-menu-sb" role="menu">
+          <a href="#" class="ease-dropdown-item-sb" role="menuitem">
+            <span class="ease-dropdown-item-icon-sb">✨</span>
+            <span>New Project</span>
+          </a>
+          <a href="#" class="ease-dropdown-item-sb" role="menuitem">
+            <span class="ease-dropdown-item-icon-sb">📂</span>
+            <span>Open Folder</span>
+          </a>
+          <a href="#" class="ease-dropdown-item-sb" role="menuitem">
+            <span class="ease-dropdown-item-icon-sb">⭐</span>
+            <span>Favorites</span>
+            <span class="ease-dropdown-badge-sb">New</span>
+          </a>
+          <div class="ease-dropdown-divider-sb"></div>
+          <a href="#" class="ease-dropdown-item-sb" role="menuitem">
+            <span class="ease-dropdown-item-icon-sb">⚙️</span>
+            <span>Settings</span>
+          </a>
+          <a href="#" class="ease-dropdown-item-sb" role="menuitem">
+            <span class="ease-dropdown-item-icon-sb">📤</span>
+            <span>Export</span>
+          </a>
+        </div>
+      </div>
+      
+      <script>
+        document.querySelector('.ease-dropdown-trigger-sb').addEventListener('click', function() {
+          const expanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', !expanded);
+        });
+        
+        document.addEventListener('click', function(e) {
+          const dropdown = document.querySelector('.ease-dropdown-sb');
+          const trigger = document.querySelector('.ease-dropdown-trigger-sb');
+          if (!dropdown.contains(e.target)) {
+            trigger.setAttribute('aria-expanded', 'false');
+          }
+        });
+      </script>
+    </section>
+    
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+      
+      .demo-section {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 60px 20px;
+        text-align: center;
+      }
+      
+      .demo-section h1 {
+        color: #ffffff;
+        font-size: 32px;
+        margin-bottom: 12px;
+      }
+      
+      .demo-section p {
+        color: #9090a0;
+        margin-bottom: 40px;
+      }
+      
+      .demo-section .ease-dropdown-sb {
+        display: block;
+      }
+    </style>
+  </main>
+</body>
+</html>
