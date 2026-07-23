@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spring Physics Tabs - Interactive & Portfolio</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="card">
+      <p class="eyebrow">EaseMotion CSS</p>
+      <h1>Spring Physics Tabs</h1>
+      <p>Interactive tabs with spring physics animations for dynamic interfaces.</p>
+
+      <!-- Example 1: Interactive Interface -->
+      <div class="demo-section">
+        <h3>Interactive Interface</h3>
+        <div class="ease-spring-tabs-sb ease-interactive-tabs-sb ease-spring-bounce-sb" role="tablist" aria-label="Interactive interface">
+          <div class="ease-spring-list-sb">
+            <button class="ease-spring-trigger-sb" role="tab" aria-selected="true" aria-controls="panel-dashboard" id="tab-dashboard" data-index="0">
+              <span class="ease-icon-sb">📊</span> Dashboard
+            </button>
+            <button class="ease-spring-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-widgets" id="tab-widgets" tabindex="-1" data-index="1">
+              <span class="ease-icon-sb">🧩</span> Widgets
+            </button>
+            <button class="ease-spring-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-analytics" id="tab-analytics" tabindex="-1" data-index="2">
+              <span class="ease-icon-sb">📈</span> Analytics
+            </button>
+            <div class="ease-spring-bg-sb" data-position="0"></div>
+          </div>
+          
+          <div class="ease-spring-content-sb">
+            <div class="ease-spring-panel-sb" role="tabpanel" id="panel-dashboard" aria-labelledby="tab-dashboard" aria-hidden="false">
+              <h4>Dashboard Overview</h4>
+              <div class="ease-interactive-grid-sb">
+                <div class="ease-interactive-card-sb">
+                  <div class="ease-interactive-icon-sb">🚀</div>
+                  <div class="ease-interactive-title-sb">Performance</div>
+                  <div class="ease-interactive-desc-sb">Track your application performance metrics in real-time.</div>
+                </div>
+                <div class="ease-interactive-card-sb">
+                  <div class="ease-interactive-icon-sb">⚡</div>
+                  <div class="ease-interactive-title-sb">Speed</div>
+                  <div class="ease-interactive-desc-sb">Monitor page load times and optimize user experience.</div>
+                </div>
+                <div class="ease-interactive-card-sb">
+                  <div class="ease-interactive-icon-sb">🔒</div>
+                  <div class="ease-interactive-title-sb">Security</div>
+                  <div class="ease-interactive-desc-sb">Keep your application secure with real-time monitoring.</div>
+                </div>
+              </div>
+              <div class="ease-stats-row-sb">
+                <div class="ease-stat-item-sb">
+                  <div class="ease-stat-value-sb">98.5%</div>
+                  <div class="ease-stat-label-sb">Uptime</div>
+                </div>
+                <div class="ease-stat-item-sb">
+                  <div class="ease-stat-value-sb">1.2s</div>
+                  <div class="ease-stat-label-sb">Load Time</div>
+                </div>
+                <div class="ease-stat-item-sb">
+                  <div class="ease-stat-value-sb">50K+</div>
+                  <div class="ease-stat-label-sb">Users</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="ease-spring-panel-sb" role="tabpanel" id="panel-widgets" aria-labelledby="tab-widgets" aria-hidden="true">
+              <h4>Available Widgets</h4>
+              <div class="ease-interactive-grid-sb">
+                <div class="ease-interactive-card-sb">
+                  <div class="ease-interactive-icon-sb">📱</div>
+                  <div class="ease-interactive-title-sb">Mobile Widgets</div>
+                  <div class="ease-interactive-desc-sb">Responsive widgets optimized for mobile devices.</div>
+                </div>
+                <div class="ease-interactive-card-sb">
+                  <div class="ease-interactive-icon-sb">🖥️</div>
+                  <div class="ease-interactive-title-sb">Desktop Widgets</div>
+                  <div class="ease-interactive-desc-sb">Full-featured widgets for desktop interfaces.</div>
+                </div>
+                <div class="ease-interactive-card-sb">
+                  <div class="ease-interactive-icon-sb">📋</div>
+                  <div class="ease-interactive-title-sb">Custom Widgets</div>
+                  <div class="ease-interactive-desc-sb">Build your own widgets with our SDK.</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="ease-spring-panel-sb" role="tabpanel" id="panel-analytics" aria-labelledby="tab-analytics" aria-hidden="true">
+              <h4>Analytics Dashboard</h4>
+              <div class="ease-interactive-grid-sb">
+                <div class="ease-interactive-card-sb">
+                  <div class="ease-interactive-icon-sb">👥</div>
+                  <div class="ease-interactive-title-sb">User Analytics</div>
+                  <div class="ease-interactive-desc-sb">Understand user behavior and engagement patterns.</div>
+                </div>
+                <div class="ease-interactive-card-sb">
+                  <div class="ease-interactive-icon-sb">🎯</div>
+                  <div class="ease-interactive-title-sb">Conversion</div>
+                  <div class="ease-interactive-desc-sb">Track and optimize your conversion funnels.</div>
+                </div>
+                <div class="ease-interactive-card-sb">
+                  <div class="ease-interactive-icon-sb">🌍</div>
+                  <div class="ease-interactive-title-sb">Geography</div>
+                  <div class="ease-interactive-desc-sb">Analyze traffic by location and region.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Example 2: Creative Portfolio -->
+      <div class="demo-section">
+        <h3>Creative Portfolio</h3>
+        <div class="ease-spring-tabs-sb ease-portfolio-tabs-sb ease-spring-bounce-sb" role="tablist" aria-label="Creative portfolio">
+          <div class="ease-spring-list-sb">
+            <button class="ease-spring-trigger-sb" role="tab" aria-selected="true" aria-controls="panel-projects" id="tab-projects" data-index="0">
+              <span class="ease-icon-sb">🎨</span> Projects
+            </button>
+            <button class="ease-spring-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-gallery" id="tab-gallery" tabindex="-1" data-index="1">
+              <span class="ease-icon-sb">📸</span> Gallery
+            </button>
+            <button class="ease-spring-trigger-sb" role="tab" aria-selected="false" aria-controls="panel-about" id="tab-about" tabindex="-1" data-index="2">
+              <span class="ease-icon-sb">👤</span> About
+            </button>
+            <div class="ease-spring-bg-sb" data-position="0"></div>
+          </div>
+          
+          <div class="ease-spring-content-sb">
+            <div class="ease-spring-panel-sb" role="tabpanel" id="panel-projects" aria-labelledby="tab-projects" aria-hidden="false">
+              <h4>Featured Projects</h4>
+              <div class="ease-interactive-grid-sb">
+                <div class="ease-interactive-card-sb">
+                  <div class="ease-interactive-icon-sb">🌐</div>
+                  <div class="ease-interactive-title-sb">Web Design</div>
+                  <div class="ease-interactive-desc-sb">Modern responsive websites with stunning visuals.</div>
+                </div>
+                <div class="ease-interactive-card-sb">
+                  <div class="ease-interactive-icon-sb">📱</div>
+                  <div class="ease-interactive-title-sb">Mobile Apps</div>
+                  <div class="ease-interactive-desc-sb">Cross-platform mobile applications.</div>
+                </div>
+                <div class="ease-interactive-card-sb">
+                  <div class="ease-interactive-icon-sb">🎮</div>
+                  <div class="ease-interactive-title-sb">UI/UX Design</div>
+                  <div class="ease-interactive-desc-sb">User-centered design solutions.</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="ease-spring-panel-sb" role="tabpanel" id="panel-gallery" aria-labelledby="tab-gallery" aria-hidden="true">
+              <h4>Work Gallery</h4>
+              <div class="ease-portfolio-grid-sb">
+                <div class="ease-portfolio-item-sb">
+                  <div class="ease-portfolio-overlay-sb">
+                    <strong>Project Alpha</strong><br>Brand Identity
+                  </div>
+                </div>
+                <div class="ease-portfolio-item-sb">
+                  <div class="ease-portfolio-overlay-sb">
+                    <strong>Project Beta</strong><br>Web Design
+                  </div>
+                </div>
+                <div class="ease-portfolio-item-sb">
+                  <div class="ease-portfolio-overlay-sb">
+                    <strong>Project Gamma</strong><br>App Design
+                  </div>
+                </div>
+                <div class="ease-portfolio-item-sb">
+                  <div class="ease-portfolio-overlay-sb">
+                    <strong>Project Delta</strong><br>UI Design
+                  </div>
+                </div>
+                <div class="ease-portfolio-item-sb">
+                  <div class="ease-portfolio-overlay-sb">
+                    <strong>Project Epsilon</strong><br>Branding
+                  </div>
+                </div>
+                <div class="ease-portfolio-item-sb">
+                  <div class="ease-portfolio-overlay-sb">
+                    <strong>Project Zeta</strong><br>Motion Design
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="ease-spring-panel-sb" role="tabpanel" id="panel-about" aria-labelledby="tab-about" aria-hidden="true">
+              <h4>About Me</h4>
+              <div class="ease-interactive-grid-sb">
+                <div class="ease-interactive-card-sb">
+                  <div class="ease-interactive-icon-sb">💼</div>
+                  <div class="ease-interactive-title-sb">Experience</div>
+                  <div class="ease-interactive-desc-sb">5+ years of design experience across multiple industries.</div>
+                </div>
+                <div class="ease-interactive-card-sb">
+                  <div class="ease-interactive-icon-sb">🎓</div>
+                  <div class="ease-interactive-title-sb">Education</div>
+                  <div class="ease-interactive-desc-sb">BFA in Graphic Design from Creative Arts Academy.</div>
+                </div>
+                <div class="ease-interactive-card-sb">
+                  <div class="ease-interactive-icon-sb">🏆</div>
+                  <div class="ease-interactive-title-sb">Awards</div>
+                  <div class="ease-interactive-desc-sb">Multiple design awards and recognitions.</div>
+                </div>
+              </div>
+              <div class="ease-stats-row-sb">
+                <div class="ease-stat-item-sb">
+                  <div class="ease-stat-value-sb">50+</div>
+                  <div class="ease-stat-label-sb">Projects</div>
+                </div>
+                <div class="ease-stat-item-sb">
+                  <div class="ease-stat-value-sb">30+</div>
+                  <div class="ease-stat-label-sb">Clients</div>
+                </div>
+                <div class="ease-stat-item-sb">
+                  <div class="ease-stat-value-sb">5</div>
+                  <div class="ease-stat-label-sb">Awards</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Tab functionality for spring physics tabs
+    document.querySelectorAll('.ease-spring-tabs-sb').forEach(tabGroup => {
+      const triggers = tabGroup.querySelectorAll('.ease-spring-trigger-sb');
+      const panels = tabGroup.querySelectorAll('.ease-spring-panel-sb');
+      const bg = tabGroup.querySelector('.ease-spring-bg-sb');
+      
+      triggers.forEach((trigger, index) => {
+        trigger.addEventListener('click', () => {
+          // Update triggers
+          triggers.forEach((t) => {
+            t.setAttribute('aria-selected', 'false');
+            t.setAttribute('tabindex', '-1');
+          });
+          trigger.setAttribute('aria-selected', 'true');
+          trigger.setAttribute('tabindex', '0');
+          
+          // Update background position
+          if (bg) {
+            bg.setAttribute('data-position', trigger.getAttribute('data-index'));
+          }
+          
+          // Update panels
+          panels.forEach(panel => {
+            panel.setAttribute('aria-hidden', 'true');
+          });
+          const targetId = trigger.getAttribute('aria-controls');
+          document.getElementById(targetId).setAttribute('aria-hidden', 'false');
+        });
+        
+        // Keyboard navigation
+        trigger.addEventListener('keydown', (e) => {
+          const currentIndex = Array.from(triggers).indexOf(trigger);
+          let newIndex;
+          
+          if (e.key === 'ArrowRight') {
+            newIndex = (currentIndex + 1) % triggers.length;
+          } else if (e.key === 'ArrowLeft') {
+            newIndex = (currentIndex - 1 + triggers.length) % triggers.length;
+          } else if (e.key === 'Home') {
+            newIndex = 0;
+          } else if (e.key === 'End') {
+            newIndex = triggers.length - 1;
+          } else {
+            return;
+          }
+          
+          e.preventDefault();
+          triggers[newIndex].click();
+          triggers[newIndex].focus();
+        });
+      });
+    });
+  </script>
+</body>
+</html>
