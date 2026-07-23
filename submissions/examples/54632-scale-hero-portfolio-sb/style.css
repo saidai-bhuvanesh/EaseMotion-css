@@ -1,0 +1,306 @@
+/* ============================================================
+   EaseMotion CSS - Scale-Hover Hero Section for Creative Portfolio
+   Pure CSS hero section with scale hover effects
+   ============================================================ */
+
+/* ── CSS Custom Properties ──────────────────────────────────── */
+.ease-hero-scale-sb {
+  --ease-hero-duration: 0.8s;
+  --ease-hero-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-scale-hover: 1.05;
+  
+  /* Creative Portfolio Colors - Dark Theme */
+  --ease-hero-bg: #0f0f23;
+  --ease-hero-bg-card: #1a1a2e;
+  --ease-hero-text: #ffffff;
+  --ease-hero-text-muted: #a0a0b0;
+  --ease-hero-accent: #00d9ff;
+  --ease-hero-accent-secondary: #ff6b9d;
+  --ease-hero-border: rgba(255, 255, 255, 0.1);
+  
+  /* Sizing */
+  --ease-hero-radius: 32px;
+  --ease-hero-padding: 80px;
+}
+
+/* ── Base Hero Container ─────────────────────────────────────── */
+.ease-hero-scale-sb {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ease-hero-bg);
+  position: relative;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  padding: var(--ease-hero-padding);
+  box-sizing: border-box;
+}
+
+/* ── Background Grid ─────────────────────────────────────────── */
+.ease-hero-grid-bg-sb {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(0, 217, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 217, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.ease-hero-glow-sb {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.ease-hero-glow-sb:nth-child(1) {
+  background: var(--ease-hero-accent);
+  top: -200px;
+  right: -200px;
+}
+
+.ease-hero-glow-sb:nth-child(2) {
+  background: var(--ease-hero-accent-secondary);
+  bottom: -200px;
+  left: -200px;
+}
+
+/* ── Hero Content ───────────────────────────────────────────── */
+.ease-hero-content-scale-sb {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  text-align: center;
+}
+
+/* ── Scale Entrance Animation ───────────────────────────────── */
+.ease-hero-badge-scale-sb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--ease-hero-bg-card);
+  border: 1px solid var(--ease-hero-border);
+  border-radius: 50px;
+  color: var(--ease-hero-accent);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 32px;
+  animation: ease-scale-in-sb var(--ease-hero-duration) var(--ease-hero-ease) forwards;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+@keyframes ease-scale-in-sb {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.ease-hero-title-scale-sb {
+  font-size: clamp(48px, 10vw, 96px);
+  font-weight: 900;
+  color: var(--ease-hero-text);
+  line-height: 1;
+  margin-bottom: 24px;
+  animation: ease-scale-in-sb var(--ease-hero-duration) var(--ease-hero-ease) forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.ease-hero-title-scale-sb .gradient-text {
+  background: linear-gradient(135deg, var(--ease-hero-accent), var(--ease-hero-accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ease-hero-desc-scale-sb {
+  font-size: 18px;
+  color: var(--ease-hero-text-muted);
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto 48px;
+  animation: ease-scale-in-sb var(--ease-hero-duration) var(--ease-hero-ease) forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+/* ── Portfolio Grid ──────────────────────────────────────────── */
+.ease-hero-portfolio-sb {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+  animation: ease-scale-in-sb var(--ease-hero-duration) var(--ease-hero-ease) forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.ease-hero-portfolio-item-sb {
+  background: var(--ease-hero-bg-card);
+  border: 1px solid var(--ease-hero-border);
+  border-radius: 20px;
+  padding: 32px;
+  text-align: left;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.ease-hero-portfolio-item-sb:hover {
+  transform: scale(var(--ease-scale-hover)) translateY(-8px);
+  border-color: var(--ease-hero-accent);
+  box-shadow: 0 20px 40px rgba(0, 217, 255, 0.15);
+}
+
+.ease-hero-portfolio-icon-sb {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+.ease-hero-portfolio-title-sb {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ease-hero-text);
+  margin-bottom: 8px;
+}
+
+.ease-hero-portfolio-desc-sb {
+  font-size: 14px;
+  color: var(--ease-hero-text-muted);
+}
+
+/* ── CTA Buttons ─────────────────────────────────────────────── */
+.ease-hero-cta-scale-sb {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 48px;
+  animation: ease-scale-in-sb var(--ease-hero-duration) var(--ease-hero-ease) forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.ease-hero-btn-scale-sb {
+  padding: 18px 36px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
+}
+
+.ease-hero-btn-primary-scale-sb {
+  background: linear-gradient(135deg, var(--ease-hero-accent), var(--ease-hero-accent-secondary));
+  color: var(--ease-hero-bg);
+}
+
+.ease-hero-btn-primary-scale-sb:hover {
+  transform: scale(var(--ease-scale-hover));
+  box-shadow: 0 15px 40px rgba(0, 217, 255, 0.4);
+}
+
+.ease-hero-btn-secondary-scale-sb {
+  background: transparent;
+  color: var(--ease-hero-text);
+  border: 2px solid var(--ease-hero-border);
+}
+
+.ease-hero-btn-secondary-scale-sb:hover {
+  background: var(--ease-hero-bg-card);
+  transform: scale(var(--ease-scale-hover));
+  border-color: var(--ease-hero-accent);
+}
+
+/* ── Floating Particles ─────────────────────────────────────── */
+.ease-hero-particle-sb {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--ease-hero-accent);
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: ease-particle-float-sb 15s linear infinite;
+}
+
+.ease-hero-particle-sb:nth-child(1) { left: 10%; animation-delay: 0s; }
+.ease-hero-particle-sb:nth-child(2) { left: 20%; animation-delay: -2s; width: 6px; height: 6px; }
+.ease-hero-particle-sb:nth-child(3) { left: 30%; animation-delay: -4s; }
+.ease-hero-particle-sb:nth-child(4) { left: 50%; animation-delay: -6s; width: 10px; height: 10px; }
+.ease-hero-particle-sb:nth-child(5) { left: 70%; animation-delay: -8s; }
+.ease-hero-particle-sb:nth-child(6) { left: 80%; animation-delay: -10s; width: 5px; height: 5px; }
+.ease-hero-particle-sb:nth-child(7) { left: 90%; animation-delay: -12s; }
+
+@keyframes ease-particle-float-sb {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.5; }
+  90% { opacity: 0.5; }
+  100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+}
+
+/* ── Reduced Motion ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .ease-hero-badge-scale-sb,
+  .ease-hero-title-scale-sb,
+  .ease-hero-desc-scale-sb,
+  .ease-hero-portfolio-sb,
+  .ease-hero-cta-scale-sb,
+  .ease-hero-particle-sb {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 992px) {
+  .ease-hero-portfolio-sb {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .ease-hero-scale-sb {
+    padding: 60px 24px;
+  }
+  
+  .ease-hero-portfolio-sb {
+    grid-template-columns: 1fr;
+  }
+  
+  .ease-hero-cta-scale-sb {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .ease-hero-btn-scale-sb {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+}
+
+/* ── Focus Visible ──────────────────────────────────────────── */
+*:focus-visible {
+  outline: 2px solid var(--ease-hero-accent);
+  outline-offset: 2px;
+}
