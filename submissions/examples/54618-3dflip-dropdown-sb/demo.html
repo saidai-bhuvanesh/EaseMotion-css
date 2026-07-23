@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D-Flip Dropdown - Creative Portfolio</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main>
+    <section class="demo-section">
+      <h1>3D-Flip Dropdown</h1>
+      <p>Pure CSS dropdown with 3D flip animation</p>
+      
+      <div class="ease-dropdown-3d-sb">
+        <button class="ease-dropdown-trigger-3d-sb" aria-expanded="false" aria-haspopup="true">
+          <span class="ease-dropdown-trigger-icon-sb">🎨</span>
+          <span class="ease-dropdown-trigger-text-sb">Choose Design</span>
+          <span class="ease-dropdown-arrow-3d-sb">▼</span>
+        </button>
+        <div class="ease-dropdown-menu-3d-sb" role="menu">
+          <a href="#" class="ease-dropdown-item-3d-sb" role="menuitem">
+            <span class="ease-dropdown-item-icon-3d-sb">✨</span>
+            <span class="ease-dropdown-item-text-3d-sb">Minimalist</span>
+            <span class="ease-dropdown-item-badge-3d-sb">Hot</span>
+          </a>
+          <a href="#" class="ease-dropdown-item-3d-sb" role="menuitem">
+            <span class="ease-dropdown-item-icon-3d-sb">🌈</span>
+            <span class="ease-dropdown-item-text-3d-sb">Colorful</span>
+          </a>
+          <a href="#" class="ease-dropdown-item-3d-sb" role="menuitem">
+            <span class="ease-dropdown-item-icon-3d-sb">🌙</span>
+            <span class="ease-dropdown-item-text-3d-sb">Dark Mode</span>
+          </a>
+          <div class="ease-dropdown-divider-3d-sb"></div>
+          <a href="#" class="ease-dropdown-item-3d-sb" role="menuitem">
+            <span class="ease-dropdown-item-icon-3d-sb">🎯</span>
+            <span class="ease-dropdown-item-text-3d-sb">Custom</span>
+            <span class="ease-dropdown-item-badge-3d-sb">New</span>
+          </a>
+          <a href="#" class="ease-dropdown-item-3d-sb" role="menuitem">
+            <span class="ease-dropdown-item-icon-3d-sb">📝</span>
+            <span class="ease-dropdown-item-text-3d-sb">Save Preset</span>
+          </a>
+        </div>
+      </div>
+      
+      <script>
+        document.querySelector('.ease-dropdown-trigger-3d-sb').addEventListener('click', function() {
+          const expanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', !expanded);
+        });
+        
+        document.addEventListener('click', function(e) {
+          const dropdown = document.querySelector('.ease-dropdown-3d-sb');
+          const trigger = document.querySelector('.ease-dropdown-trigger-3d-sb');
+          if (!dropdown.contains(e.target)) {
+            trigger.setAttribute('aria-expanded', 'false');
+          }
+        });
+      </script>
+    </section>
+    
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #1e1e2f 0%, #2a2a3d 50%, #363649 100%);
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+      
+      .demo-section {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 80px 20px;
+        text-align: center;
+      }
+      
+      .demo-section h1 {
+        color: #ffffff;
+        font-size: 36px;
+        margin-bottom: 12px;
+      }
+      
+      .demo-section p {
+        color: #8888a0;
+        margin-bottom: 48px;
+        font-size: 16px;
+      }
+      
+      .demo-section .ease-dropdown-3d-sb {
+        display: block;
+      }
+    </style>
+  </main>
+</body>
+</html>
