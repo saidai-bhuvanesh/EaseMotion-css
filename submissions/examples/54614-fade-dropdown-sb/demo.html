@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fade-In Dropdown - Creative Portfolio</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main>
+    <section class="demo-section">
+      <h1>Fade-In Dropdown</h1>
+      <p>Sleek dropdown with smooth fade animation</p>
+      
+      <div class="ease-dropdown-fade-sb">
+        <button class="ease-dropdown-trigger-fade-sb" aria-expanded="false" aria-haspopup="true">
+          <span class="ease-dropdown-icon-fade-sb">📁</span>
+          <span class="ease-dropdown-label-fade-sb">Open Menu</span>
+          <span class="ease-dropdown-arrow-fade-sb">▼</span>
+        </button>
+        <div class="ease-dropdown-menu-fade-sb" role="menu">
+          <div class="ease-dropdown-header-fade-sb">Recent</div>
+          <a href="#" class="ease-dropdown-item-fade-sb" role="menuitem">
+            <span class="ease-dropdown-item-icon-fade-sb">📄</span>
+            <span class="ease-dropdown-item-text-fade-sb">Document.pdf</span>
+            <span class="ease-dropdown-item-shortcut-fade-sb">⌘O</span>
+          </a>
+          <a href="#" class="ease-dropdown-item-fade-sb" role="menuitem">
+            <span class="ease-dropdown-item-icon-fade-sb">📊</span>
+            <span class="ease-dropdown-item-text-fade-sb">Data.xlsx</span>
+            <span class="ease-dropdown-item-shortcut-fade-sb">⌘D</span>
+          </a>
+          <div class="ease-dropdown-divider-fade-sb"></div>
+          <div class="ease-dropdown-header-fade-sb">Actions</div>
+          <a href="#" class="ease-dropdown-item-fade-sb" role="menuitem">
+            <span class="ease-dropdown-item-icon-fade-sb">📁</span>
+            <span class="ease-dropdown-item-text-fade-sb">New Folder</span>
+            <span class="ease-dropdown-item-shortcut-fade-sb">⌘N</span>
+          </a>
+          <a href="#" class="ease-dropdown-item-fade-sb" role="menuitem">
+            <span class="ease-dropdown-item-icon-fade-sb">⬆️</span>
+            <span class="ease-dropdown-item-text-fade-sb">Upload File</span>
+            <span class="ease-dropdown-item-shortcut-fade-sb">⌘U</span>
+          </a>
+          <div class="ease-dropdown-divider-fade-sb"></div>
+          <a href="#" class="ease-dropdown-item-fade-sb" role="menuitem">
+            <span class="ease-dropdown-item-icon-fade-sb">⚙️</span>
+            <span class="ease-dropdown-item-text-fade-sb">Settings</span>
+          </a>
+        </div>
+      </div>
+      
+      <script>
+        document.querySelector('.ease-dropdown-trigger-fade-sb').addEventListener('click', function() {
+          const expanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', !expanded);
+        });
+        
+        document.addEventListener('click', function(e) {
+          const dropdown = document.querySelector('.ease-dropdown-fade-sb');
+          const trigger = document.querySelector('.ease-dropdown-trigger-fade-sb');
+          if (!dropdown.contains(e.target)) {
+            trigger.setAttribute('aria-expanded', 'false');
+          }
+        });
+      </script>
+    </section>
+    
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 100%);
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+      
+      .demo-section {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 80px 20px;
+        text-align: center;
+      }
+      
+      .demo-section h1 {
+        color: #ffffff;
+        font-size: 36px;
+        margin-bottom: 12px;
+      }
+      
+      .demo-section p {
+        color: #a0a0a0;
+        margin-bottom: 48px;
+        font-size: 16px;
+      }
+      
+      .demo-section .ease-dropdown-fade-sb {
+        display: block;
+      }
+    </style>
+  </main>
+</body>
+</html>

@@ -1,0 +1,192 @@
+/* ============================================================
+   EaseMotion CSS - Fade-In Dropdown for Creative Portfolio
+   Pure CSS dropdown with fade transitions
+   ============================================================ */
+
+/* ── CSS Custom Properties ──────────────────────────────────── */
+.ease-dropdown-fade-sb {
+  --ease-dropdown-duration: 0.4s;
+  --ease-dropdown-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Creative Portfolio Colors - Coral Theme */
+  --ease-dropdown-bg: #1f1f1f;
+  --ease-dropdown-bg-card: #2a2a2a;
+  --ease-dropdown-bg-hover: #333333;
+  --ease-dropdown-text: #ffffff;
+  --ease-dropdown-text-muted: #a0a0a0;
+  --ease-dropdown-accent: #ff7f50;
+  --ease-dropdown-border: rgba(255, 127, 80, 0.2);
+  
+  /* Sizing */
+  --ease-dropdown-radius: 12px;
+  --ease-dropdown-padding: 14px;
+}
+
+/* ── Base Dropdown Container ────────────────────────────────── */
+.ease-dropdown-fade-sb {
+  position: relative;
+  display: inline-block;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ── Dropdown Trigger ───────────────────────────────────────── */
+.ease-dropdown-trigger-fade-sb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: var(--ease-dropdown-padding) 20px;
+  background: var(--ease-dropdown-bg);
+  border: 1px solid var(--ease-dropdown-border);
+  border-radius: var(--ease-dropdown-radius);
+  color: var(--ease-dropdown-text);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+
+.ease-dropdown-trigger-fade-sb:hover {
+  background: var(--ease-dropdown-bg-card);
+  border-color: var(--ease-dropdown-accent);
+}
+
+.ease-dropdown-trigger-fade-sb:focus {
+  outline: none;
+  border-color: var(--ease-dropdown-accent);
+  box-shadow: 0 0 0 3px rgba(255, 127, 80, 0.15);
+}
+
+.ease-dropdown-icon-fade-sb {
+  font-size: 18px;
+}
+
+.ease-dropdown-label-fade-sb {
+  flex: 1;
+  text-align: left;
+}
+
+.ease-dropdown-arrow-fade-sb {
+  font-size: 12px;
+  transition: transform var(--ease-dropdown-duration) var(--ease-dropdown-ease);
+}
+
+.ease-dropdown-trigger-fade-sb[aria-expanded="true"] .ease-dropdown-arrow-fade-sb {
+  transform: rotate(180deg);
+}
+
+/* ── Dropdown Menu ──────────────────────────────────────────── */
+.ease-dropdown-menu-fade-sb {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 240px;
+  background: var(--ease-dropdown-bg-card);
+  border: 1px solid var(--ease-dropdown-border);
+  border-radius: var(--ease-dropdown-radius);
+  padding: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all var(--ease-dropdown-duration) var(--ease-dropdown-ease);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+/* ── Dropdown Open State ────────────────────────────────────── */
+.ease-dropdown-fade-sb:focus-within .ease-dropdown-menu-fade-sb,
+.ease-dropdown-trigger-fade-sb[aria-expanded="true"] ~ .ease-dropdown-menu-fade-sb {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ── Dropdown Items ─────────────────────────────────────────── */
+.ease-dropdown-item-fade-sb {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  color: var(--ease-dropdown-text-muted);
+  font-size: 13px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ease-dropdown-item-fade-sb:hover {
+  background: var(--ease-dropdown-bg-hover);
+  color: var(--ease-dropdown-text);
+}
+
+.ease-dropdown-item-fade-sb:focus {
+  outline: none;
+  background: var(--ease-dropdown-bg-hover);
+  color: var(--ease-dropdown-text);
+}
+
+.ease-dropdown-item-icon-fade-sb {
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.ease-dropdown-item-fade-sb:hover .ease-dropdown-item-icon-fade-sb {
+  opacity: 1;
+}
+
+.ease-dropdown-item-text-fade-sb {
+  flex: 1;
+}
+
+.ease-dropdown-item-shortcut-fade-sb {
+  font-size: 11px;
+  color: var(--ease-dropdown-text-muted);
+  opacity: 0.5;
+}
+
+/* ── Header Item ────────────────────────────────────────────── */
+.ease-dropdown-header-fade-sb {
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ease-dropdown-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ── Divider ────────────────────────────────────────────────── */
+.ease-dropdown-divider-fade-sb {
+  height: 1px;
+  background: var(--ease-dropdown-border);
+  margin: 8px 0;
+}
+
+/* ── Reduced Motion ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .ease-dropdown-trigger-fade-sb,
+  .ease-dropdown-arrow-fade-sb,
+  .ease-dropdown-menu-fade-sb,
+  .ease-dropdown-item-fade-sb {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .ease-dropdown-trigger-fade-sb {
+    width: 100%;
+  }
+  
+  .ease-dropdown-menu-fade-sb {
+    position: static;
+    margin-top: 8px;
+    box-shadow: none;
+  }
+}
+
+/* ── Focus Visible ──────────────────────────────────────────── */
+*:focus-visible {
+  outline: 2px solid var(--ease-dropdown-accent);
+  outline-offset: 2px;
+}
