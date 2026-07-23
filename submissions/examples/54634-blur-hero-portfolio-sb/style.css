@@ -1,0 +1,325 @@
+/* ============================================================
+   EaseMotion CSS - Blur-Entrance Hero Section for Creative Portfolio
+   Pure CSS hero section with blur transition effects
+   ============================================================ */
+
+/* ── CSS Custom Properties ──────────────────────────────────── */
+.ease-hero-sb {
+  --ease-hero-duration: 0.8s;
+  --ease-hero-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-hero-blur: 15px;
+  
+  /* Creative Portfolio Colors */
+  --ease-hero-bg: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  --ease-hero-bg-overlay: rgba(102, 126, 234, 0.1);
+  --ease-hero-text: #ffffff;
+  --ease-hero-text-muted: rgba(255, 255, 255, 0.8);
+  --ease-hero-accent: #ffd1dc;
+  --ease-hero-accent-secondary: #ffeaa7;
+  --ease-hero-card-bg: rgba(255, 255, 255, 0.15);
+  --ease-hero-card-border: rgba(255, 255, 255, 0.3);
+  
+  /* Sizing */
+  --ease-hero-radius: 24px;
+  --ease-hero-padding: 80px;
+}
+
+/* ── Base Hero Container ─────────────────────────────────────── */
+.ease-hero-sb {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ease-hero-bg);
+  position: relative;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  padding: var(--ease-hero-padding);
+  box-sizing: border-box;
+}
+
+/* ── Background Decorations ─────────────────────────────────── */
+.ease-hero-bg-shapes-sb {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ease-hero-shape-sb {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--ease-hero-bg-overlay);
+  backdrop-filter: blur(10px);
+}
+
+.ease-hero-shape-sb:nth-child(1) {
+  width: 400px;
+  height: 400px;
+  top: -100px;
+  right: -100px;
+  animation: ease-float-sb 8s ease-in-out infinite;
+}
+
+.ease-hero-shape-sb:nth-child(2) {
+  width: 300px;
+  height: 300px;
+  bottom: -80px;
+  left: -80px;
+  animation: ease-float-sb 10s ease-in-out infinite reverse;
+}
+
+.ease-hero-shape-sb:nth-child(3) {
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 20%;
+  animation: ease-float-sb 6s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+@keyframes ease-float-sb {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(10deg); }
+}
+
+/* ── Hero Content ───────────────────────────────────────────── */
+.ease-hero-content-sb {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  text-align: center;
+}
+
+/* ── Blur Entrance Animation ───────────────────────────────── */
+.ease-hero-badge-sb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--ease-hero-card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--ease-hero-card-border);
+  border-radius: 50px;
+  color: var(--ease-hero-text);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  animation: ease-blur-entrance-sb var(--ease-hero-duration) var(--ease-hero-ease) forwards;
+  opacity: 0;
+  filter: blur(var(--ease-hero-blur));
+}
+
+@keyframes ease-blur-entrance-sb {
+  0% {
+    opacity: 0;
+    filter: blur(var(--ease-hero-blur));
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+.ease-hero-title-sb {
+  font-size: clamp(40px, 8vw, 72px);
+  font-weight: 800;
+  color: var(--ease-hero-text);
+  line-height: 1.1;
+  margin-bottom: 24px;
+  animation: ease-blur-entrance-sb var(--ease-hero-duration) var(--ease-hero-ease) forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+  filter: blur(var(--ease-hero-blur));
+}
+
+.ease-hero-title-sb span {
+  display: block;
+  background: linear-gradient(90deg, var(--ease-hero-accent), var(--ease-hero-accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ease-hero-desc-sb {
+  font-size: 18px;
+  color: var(--ease-hero-text-muted);
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  animation: ease-blur-entrance-sb var(--ease-hero-duration) var(--ease-hero-ease) forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+  filter: blur(var(--ease-hero-blur));
+}
+
+/* ── CTA Buttons ─────────────────────────────────────────────── */
+.ease-hero-cta-sb {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: ease-blur-entrance-sb var(--ease-hero-duration) var(--ease-hero-ease) forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+  filter: blur(var(--ease-hero-blur));
+}
+
+.ease-hero-btn-sb {
+  padding: 16px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.ease-hero-btn-primary-sb {
+  background: var(--ease-hero-text);
+  color: #667eea;
+}
+
+.ease-hero-btn-primary-sb:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.ease-hero-btn-secondary-sb {
+  background: transparent;
+  color: var(--ease-hero-text);
+  border: 2px solid var(--ease-hero-card-border);
+  backdrop-filter: blur(10px);
+}
+
+.ease-hero-btn-secondary-sb:hover {
+  background: var(--ease-hero-card-bg);
+  transform: translateY(-3px);
+}
+
+/* ── Stats Row ──────────────────────────────────────────────── */
+.ease-hero-stats-sb {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 60px;
+  animation: ease-blur-entrance-sb var(--ease-hero-duration) var(--ease-hero-ease) forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+  filter: blur(var(--ease-hero-blur));
+}
+
+.ease-hero-stat-sb {
+  text-align: center;
+}
+
+.ease-hero-stat-value-sb {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--ease-hero-text);
+  line-height: 1;
+}
+
+.ease-hero-stat-label-sb {
+  font-size: 14px;
+  color: var(--ease-hero-text-muted);
+  margin-top: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ── Scroll Indicator ───────────────────────────────────────── */
+.ease-hero-scroll-sb {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--ease-hero-text-muted);
+  font-size: 12px;
+  animation: ease-blur-entrance-sb var(--ease-hero-duration) var(--ease-hero-ease) forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+.ease-hero-scroll-line-sb {
+  width: 2px;
+  height: 40px;
+  background: var(--ease-hero-card-border);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ease-hero-scroll-line-sb::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: var(--ease-hero-text);
+  animation: ease-scroll-sb 1.5s ease-in-out infinite;
+}
+
+@keyframes ease-scroll-sb {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(200%); }
+}
+
+/* ── Reduced Motion ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .ease-hero-badge-sb,
+  .ease-hero-title-sb,
+  .ease-hero-desc-sb,
+  .ease-hero-cta-sb,
+  .ease-hero-stats-sb,
+  .ease-hero-scroll-sb,
+  .ease-hero-shape-sb {
+    animation: none;
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .ease-hero-sb {
+    padding: 60px 24px;
+  }
+  
+  .ease-hero-stats-sb {
+    gap: 32px;
+  }
+  
+  .ease-hero-stat-value-sb {
+    font-size: 32px;
+  }
+  
+  .ease-hero-cta-sb {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .ease-hero-btn-sb {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+}
+
+/* ── Focus Visible ──────────────────────────────────────────── */
+*:focus-visible {
+  outline: 2px solid var(--ease-hero-text);
+  outline-offset: 2px;
+}
