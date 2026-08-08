@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ease-fade-in-toast — Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="page__intro">
+      <h1>ease-fade-in-toast</h1>
+      <p>Toast notifications that fade in and fade out gently, staggered by index.</p>
+    </header>
+
+    <section class="demo" aria-label="Toast demo">
+      <p class="demo__note">Reload to replay the fade-in entrance. Each toast auto-dismisses after the loop.</p>
+
+      <div class="toaststack" role="region" aria-label="Notifications" aria-live="polite">
+        <div class="toast toast--info" role="status">
+          <span class="toast__icon" aria-hidden="true">ⓘ</span>
+          <span class="toast__msg">Saved to drafts.</span>
+        </div>
+        <div class="toast toast--success" role="status">
+          <span class="toast__icon" aria-hidden="true">✓</span>
+          <span class="toast__msg">Export ready — 1 file.</span>
+        </div>
+        <div class="toast toast--warn" role="status">
+          <span class="toast__icon" aria-hidden="true">!</span>
+          <span class="toast__msg">Unsaved changes will be lost.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
