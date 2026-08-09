@@ -1,0 +1,213 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 07dc623ff2..4d6e5ab67d 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -45,6 +45,13 @@ jobs:
+         uses: actions/setup-node@v4
+         with:
+           node-version: 20
++          cache: 'npm'
++
++      - name: Cache status
++        if: steps.changed-files.outputs.any_changed == 'true'
++        run: |
++          if [ -f ~/.npm/_cacache ]; then echo "npm cache restored (hit)"; else echo "npm cache miss (fresh)"; fi
++          echo "::notice title=npm cache::setup-node cache key = package-lock.json hash"
+ 
+       - name: Run HTMLHint on Changed HTML Files
+         if: steps.changed-files.outputs.any_changed == 'true'
+@@ -100,6 +107,15 @@ jobs:
+       - name: Install dependencies
+         run: npm ci || npm install
+ 
++      - name: Cache status
++        run: |
++          if [ -d ~/.npm/_cacache ] && [ -n "$(ls -A ~/.npm/_cacache 2>/dev/null)" ]; then
++            echo "npm cache restored (hit)"
++          else
++            echo "npm cache miss (fresh)"
++          fi
++          echo "::notice title=npm cache::setup-node cache key = package-lock.json hash"
++
+       - name: Validate Minified CSS Bundle
+         run: npm run validate:bundle
+ 
+diff --git a/.github/workflows/honeypot-sandbox.yml b/.github/workflows/honeypot-sandbox.yml
+index 44f1eded9a..09ceb4372a 100644
+--- a/.github/workflows/honeypot-sandbox.yml
++++ b/.github/workflows/honeypot-sandbox.yml
+@@ -1,76 +1,78 @@
+-name: Honeypot Sandbox Registry
+-
+-on:
+-  pull_request_target:
+-    types: [opened, synchronize, reopened, ready_for_review]
+-  schedule:
+-    # Sweep every 5 minutes to catch bots that slip through the event trigger
+-    - cron: '*/5 * * * *'
+-  workflow_dispatch:
+-    inputs:
+-      force_sweep:
+-        description: 'Force sweep all spammer open PRs'
+-        required: false
+-        default: 'true'
+-
+-permissions:
+-  pull-requests: write
+-  contents: write
+-  issues: write
+-
+-jobs:
+-  # Job 1: Triggered per-PR (event-driven, fast)
+-  sandbox-relocate:
+-    name: Sandbox Relocate & Tag
+-    runs-on: ubuntu-latest
+-    if: false
+-    steps:
+-      - name: Checkout Code
+-        uses: actions/checkout@v4
+-        with:
+-          token: ${{ secrets.BOT_PAT || secrets.GITHUB_TOKEN }}
+-          ref: main
+-
+-      - name: Setup Node.js
+-        uses: actions/setup-node@v4
+-        with:
+-          node-version: 20
+-
+-      - name: Run Sandbox Relocation
+-        env:
+-          GH_TOKEN: ${{ secrets.BOT_PAT || secrets.GITHUB_TOKEN }}
+-          PR_NUMBER: ${{ github.event.pull_request.number }}
+-          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+-          GITHUB_REPOSITORY: ${{ github.repository }}
+-        run: |
+-          node .github/scripts/sandbox-relocate.js
+-
+-  # Job 2: Scheduled sweep (disabled)
+-  scheduled-sweep:
+-    name: Scheduled Spam Sweep
+-    runs-on: ubuntu-latest
+-    if: false
+-    steps:
+-      - name: Checkout Code
+-        uses: actions/checkout@v4
+-        with:
+-          token: ${{ secrets.BOT_PAT || secrets.GITHUB_TOKEN }}
+-          ref: main
+-          fetch-depth: 1
+-
+-      - name: Setup Node.js
+-        uses: actions/setup-node@v4
+-        with:
+-          node-version: 20
+-
+-      - name: Setup Git
+-        run: |
+-          git config user.name "github-actions[bot]"
+-          git config user.email "github-actions[bot]@users.noreply.github.com"
+-
+-      - name: Sweep All Open Spammer PRs
+-        env:
+-          GH_TOKEN: ${{ secrets.BOT_PAT || secrets.GITHUB_TOKEN }}
+-          GITHUB_REPOSITORY: ${{ github.repository }}
+-        run: |
+-          node .github/scripts/sandbox-sweep.js
++name: Honeypot Sandbox Registry
++
++on:
++  pull_request_target:
++    types: [opened, synchronize, reopened, ready_for_review]
++  schedule:
++    # Sweep every 5 minutes to catch bots that slip through the event trigger
++    - cron: '*/5 * * * *'
++  workflow_dispatch:
++    inputs:
++      force_sweep:
++        description: 'Force sweep all spammer open PRs'
++        required: false
++        default: 'true'
++
++permissions:
++  pull-requests: write
++  contents: write
++  issues: write
++
++jobs:
++  # Job 1: Triggered per-PR (event-driven, fast)
++  sandbox-relocate:
++    name: Sandbox Relocate & Tag
++    runs-on: ubuntu-latest
++    if: false
++    steps:
++      - name: Checkout Code
++        uses: actions/checkout@v4
++        with:
++          token: ${{ secrets.BOT_PAT || secrets.GITHUB_TOKEN }}
++          ref: main
++
++      - name: Setup Node.js
++        uses: actions/setup-node@v4
++        with:
++          node-version: 20
++          cache: 'npm'
++
++      - name: Run Sandbox Relocation
++        env:
++          GH_TOKEN: ${{ secrets.BOT_PAT || secrets.GITHUB_TOKEN }}
++          PR_NUMBER: ${{ github.event.pull_request.number }}
++          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
++          GITHUB_REPOSITORY: ${{ github.repository }}
++        run: |
++          node .github/scripts/sandbox-relocate.js
++
++  # Job 2: Scheduled sweep (disabled)
++  scheduled-sweep:
++    name: Scheduled Spam Sweep
++    runs-on: ubuntu-latest
++    if: false
++    steps:
++      - name: Checkout Code
++        uses: actions/checkout@v4
++        with:
++          token: ${{ secrets.BOT_PAT || secrets.GITHUB_TOKEN }}
++          ref: main
++          fetch-depth: 1
++
++      - name: Setup Node.js
++        uses: actions/setup-node@v4
++        with:
++          node-version: 20
++          cache: 'npm'
++
++      - name: Setup Git
++        run: |
++          git config user.name "github-actions[bot]"
++          git config user.email "github-actions[bot]@users.noreply.github.com"
++
++      - name: Sweep All Open Spammer PRs
++        env:
++          GH_TOKEN: ${{ secrets.BOT_PAT || secrets.GITHUB_TOKEN }}
++          GITHUB_REPOSITORY: ${{ github.repository }}
++        run: |
++          node .github/scripts/sandbox-sweep.js
+diff --git a/.github/workflows/release-minified-css.yml b/.github/workflows/release-minified-css.yml
+index 21663c4f31..8b191cc8a2 100644
+--- a/.github/workflows/release-minified-css.yml
++++ b/.github/workflows/release-minified-css.yml
+@@ -21,6 +21,15 @@ jobs:
+         uses: actions/setup-node@v4
+         with:
+           node-version: 20
++          cache: 'npm'
++
++      - name: Cache status
++        run: |
++          if [ -d ~/.npm/_cacache ] && [ -n "$(ls -A ~/.npm/_cacache 2>/dev/null)" ]; then
++            echo "npm cache restored (hit)"
++          else
++            echo "npm cache miss (fresh)"
++          fi
+ 
+       - name: Generate easemotion.min.css
+         run: node scripts/build-minified-css.mjs
