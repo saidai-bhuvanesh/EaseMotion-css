@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Native CSS Scroll-Snap Carousel | EaseMotion CSS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="copy">
+        <h1>Native CSS Scroll-Snap Carousel</h1>
+        <p>
+          Touch-friendly, keyboard-accessible carousel using only the browser's
+          native <code>scroll-snap</code> engine. Drag, swipe, or arrow-key
+          through the cards. No JS.
+        </p>
+      </header>
+
+      <!-- the scroll viewport -->
+      <section
+        class="carousel"
+        aria-label="Card carousel"
+        tabindex="0"
+        role="region"
+      >
+        <article class="card">
+          <div class="card__media" data-tone="1"></div>
+          <div class="card__body">
+            <span class="card__index">01</span>
+            <h2>Sunrise</h2>
+            <p>Native snapping with <code>scroll-snap-type: x mandatory</code>.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__media" data-tone="2"></div>
+          <div class="card__body">
+            <span class="card__index">02</span>
+            <h2>Tide</h2>
+            <p><code>scroll-snap-align: center</code> centers each card.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__media" data-tone="3"></div>
+          <div class="card__body">
+            <span class="card__index">03</span>
+            <h2>Forest</h2>
+            <p>Keyboard reachable via <code>tabindex</code> + arrow keys.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__media" data-tone="4"></div>
+          <div class="card__body">
+            <span class="card__index">04</span>
+            <h2>Dusk</h2>
+            <p>Smooth momentum via <code>scroll-behavior: smooth</code>.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__media" data-tone="5"></div>
+          <div class="card__body">
+            <span class="card__index">05</span>
+            <h2>Midnight</h2>
+            <p>Edge scroll snap stop prevents skipping cards on fast flicks.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__media" data-tone="6"></div>
+          <div class="card__body">
+            <span class="card__index">06</span>
+            <h2>Aurora</h2>
+            <p>Focus-visible ring is keyboard-only; no mouse flash.</p>
+          </div>
+        </article>
+      </section>
+
+      <p class="hint">Tip: click the carousel, then press &larr; &rarr; arrow keys.</p>
+    </main>
+  </body>
+</html>
