@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quantum Teleportation Grover's Search Algorithm | EaseMotion CSS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="quantum">
+      <header class="quantum__head">
+        <p class="quantum__eyebrow">rithm-17 &middot; pure CSS quantum visualization</p>
+        <h1 class="quantum__title">Grover&rsquo;s Search Algorithm</h1>
+        <p class="quantum__sub">
+          A fully-rendered, multi-layered quantum amplitude-amplification UI:
+          boundary tracks, oracle inversion, diffusion operator, and live flux
+          rotation telemetry. Zero JavaScript.
+        </p>
+      </header>
+
+      <!-- ========================================================
+           CORE: the qubit register + oracle + diffusion orbit
+      ========================================================= -->
+      <section
+        class="core"
+        aria-label="Quantum core telemetry"
+        role="region"
+      >
+        <div class="core__halo"></div>
+        <div class="core__ring core__ring--1"></div>
+        <div class="core__ring core__ring--2"></div>
+        <div class="core__ring core__ring--3"></div>
+
+        <!-- orbiting flux particles -->
+        <div class="flux flux--a">
+          <span class="flux__node"></span>
+        </div>
+        <div class="flux flux--b">
+          <span class="flux__node"></span>
+        </div>
+        <div class="flux flux--c">
+          <span class="flux__node"></span>
+        </div>
+        <div class="flux flux--d">
+          <span class="flux__node"></span>
+        </div>
+
+        <!-- the marked item (the "answer" Grover amplifies) -->
+        <div class="core__seed" aria-label="marked item">
+          <span class="core__seed-inner"></span>
+        </div>
+
+        <!-- boundary track readouts -->
+        <ul class="core__tracks" aria-label="boundary tracks">
+          <li><span class="led led--on"></span> oracle inversion</li>
+          <li><span class="led led--on"></span> diffusion operator</li>
+          <li><span class="led led--pulse"></span> flux rotation</li>
+          <li><span class="led led--off"></span> measurement gate</li>
+        </ul>
+      </section>
+
+      <!-- ========================================================
+           TELEMETRY CONTROLS (pure CSS checkbox "interaction")
+      ========================================================= -->
+      <section class="panel" aria-label="Amplification controls">
+        <input type="checkbox" id="run-amplification" class="panel__toggle" />
+        <label for="run-amplification" class="panel__btn">
+          <span class="panel__btn-led"></span>
+          <span class="panel__btn-label">execute amplification</span>
+        </label>
+
+        <div class="panel__grid">
+          <div class="metric">
+            <span class="metric__k">iterations</span>
+            <span class="metric__v" data-val="3">3</span>
+            <div class="metric__bar"><i></i></div>
+          </div>
+          <div class="metric">
+            <span class="metric__k">amplitude gain</span>
+            <span class="metric__v">O(&radic;N)</span>
+            <div class="metric__bar"><i style="--w: 78%"></i></div>
+          </div>
+          <div class="metric">
+            <span class="metric__k">success prob.</span>
+            <span class="metric__v">97.6%</span>
+            <div class="metric__bar"><i style="--w: 97%"></i></div>
+          </div>
+          <div class="metric">
+            <span class="metric__k">oracle calls</span>
+            <span class="metric__v">3</span>
+            <div class="metric__bar"><i style="--w: 24%"></i></div>
+          </div>
+        </div>
+
+        <!-- timeline -->
+        <div class="timeline" aria-label="flux timeline">
+          <div class="timeline__row">
+            <span class="timeline__label">|s&gt;</span>
+            <div class="timeline__track"><i class="timeline__phase phase--init"></i></div>
+          </div>
+          <div class="timeline__row">
+            <span class="timeline__label">|&omega;&gt;</span>
+            <div class="timeline__track"><i class="timeline__phase phase--oracle"></i></div>
+          </div>
+          <div class="timeline__row">
+            <span class="timeline__label">2|&omega;&gt;-|s&gt;</span>
+            <div class="timeline__track"><i class="timeline__phase phase--diffuse"></i></div>
+          </div>
+          <div class="timeline__row">
+            <span class="timeline__label">measure</span>
+            <div class="timeline__track"><i class="timeline__phase phase--measure"></i></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- status -->
+      <footer class="status" role="status">
+        <p>
+          <span class="status__dot"></span> system nominal &middot; amplitude
+          amplification stable &middot; quadrant flux locked
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
