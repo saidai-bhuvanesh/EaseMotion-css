@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTP Timer Resend</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="card" aria-labelledby="title">
+        <p class="eyebrow">EaseMotion CSS</p>
+        <h1 id="title">OTP Timer Resend</h1>
+        <p class="copy">An OTP resend button with a CSS-only countdown timer before it re-enables.</p>
+
+        <div class="otp">
+          <span class="otp__digit">4</span>
+          <span class="otp__digit">8</span>
+          <span class="otp__digit">2</span>
+          <span class="otp__digit">7</span>
+        </div>
+
+        <div class="resend" role="status" aria-live="polite">
+          <!-- Countdown ring (SVG-free, conic gradient driven by --progress) -->
+          <span class="resend__dial">
+            <span class="resend__dial-mask">
+              <!-- The animated digit text uses steps() so each number holds for 1s -->
+              <span class="resend__count">0123456789</span>
+            </span>
+          </span>
+
+          <span class="resend__copy">
+            <span class="resend__counting">Resend code in <b>0:0X</b></span>
+            <button type="button" class="resend__btn" disabled>Resend code</button>
+          </span>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

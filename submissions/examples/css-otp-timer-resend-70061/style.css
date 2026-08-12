@@ -1,0 +1,218 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  color: #f4f4f5;
+  background: radial-gradient(120% 120% at 50% 0%, #1f1f23 0%, #09090b 60%);
+}
+
+.shell {
+  width: min(92vw, 460px);
+}
+
+.card {
+  padding: 40px;
+  border-radius: 28px;
+  background: #18181b;
+  border: 1px solid #27272a;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #06b6d4;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+#title {
+  margin: 0 0 6px;
+  font-size: 1.5rem;
+}
+
+.copy {
+  margin: 0 0 26px;
+  color: #a1a1aa;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+/* OTP digit boxes */
+.otp {
+  display: inline-flex;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.otp__digit {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 60px;
+  border-radius: 14px;
+  background: #27272a;
+  border: 1px solid #3f3f46;
+  color: #f4f4f5;
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  animation: digit-pop 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.otp__digit:nth-child(1) { animation-delay: 0.05s; }
+.otp__digit:nth-child(2) { animation-delay: 0.15s; }
+.otp__digit:nth-child(3) { animation-delay: 0.25s; }
+.otp__digit:nth-child(4) { animation-delay: 0.35s; }
+
+@keyframes digit-pop {
+  from { transform: translateY(8px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* Resend block: dial + copy */
+.resend {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.resend__dial {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: conic-gradient(#06b6d4 var(--progress, 0%), #27272a 0);
+  animation: dial-deplete 10s linear forwards;
+}
+
+.resend__dial::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  background: #18181b;
+}
+
+.resend__dial-mask {
+  position: relative;
+  z-index: 1;
+  width: 1ch;
+  height: 1em;
+  overflow: hidden;
+  line-height: 1;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: #67e8f9;
+}
+
+/* The digit string is translated up in steps of 1em, one per second */
+.resend__count {
+  display: block;
+  /* "0123456789" -> show 9..0 over 10s, then end disabled */
+  animation: count-down 10s steps(10, end) forwards;
+}
+
+@keyframes count-down {
+  to {
+    transform: translateY(-10em);
+  }
+}
+
+@keyframes dial-deplete {
+  from { --progress: 100%; }
+  to   { --progress: 0%; }
+}
+
+/* Property-registered custom prop so the conic gradient can interpolate */
+@property --progress {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+
+.resend__copy {
+  text-align: left;
+  font-size: 0.9rem;
+  color: #a1a1aa;
+}
+
+.resend__copy b {
+  color: #67e8f9;
+  font-variant-numeric: tabular-nums;
+}
+
+.resend__btn {
+  display: block;
+  margin-top: 8px;
+  padding: 9px 18px;
+  border-radius: 9999px;
+  border: 1px solid #3f3f46;
+  background: transparent;
+  color: #52525b;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: not-allowed;
+  /* After the 10s countdown, enable + restyle the button */
+  animation: enable-btn 0.01s 10s forwards;
+}
+
+@keyframes enable-btn {
+  to {
+    border-color: #06b6d4;
+    background: linear-gradient(135deg, #06b6d4, #0891b2);
+    color: #021016;
+    cursor: pointer;
+  }
+}
+
+/* When the button is enabled, switch the copy too */
+.resend__counting {
+  animation: swap-copy 0.01s 10s forwards;
+}
+
+@keyframes swap-copy {
+  to {
+    visibility: hidden;
+  }
+}
+
+.resend__counting::after {
+  content: "";
+}
+
+/* After countdown, reveal a ready hint via the button's disabled state flip
+   is non-trivial in pure CSS; we keep the visible "enable" via animation above. */
+
+@media (prefers-reduced-motion: reduce) {
+  .otp__digit,
+  .resend__dial,
+  .resend__count,
+  .resend__btn,
+  .resend__counting {
+    animation: none;
+  }
+  .resend__dial {
+    --progress: 0%;
+    background: #27272a;
+  }
+  .resend__btn {
+    border-color: #06b6d4;
+    background: linear-gradient(135deg, #06b6d4, #0891b2);
+    color: #021016;
+    cursor: pointer;
+  }
+}
