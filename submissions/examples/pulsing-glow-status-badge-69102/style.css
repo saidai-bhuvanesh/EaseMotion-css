@@ -1,0 +1,185 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color: #f4f4f5;
+  background: radial-gradient(120% 120% at 50% 0%, #1f1f23 0%, #09090b 60%);
+}
+
+.shell {
+  width: min(92vw, 560px);
+}
+
+.card {
+  padding: 42px;
+  border-radius: 28px;
+  background: #18181b;
+  border: 1px solid #27272a;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #22c55e;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+#badge-title {
+  margin: 0 0 10px;
+  font-size: 1.6rem;
+}
+
+.copy {
+  margin: 0 auto 28px;
+  max-width: 42ch;
+  color: #a1a1aa;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+/* Core status badge from the issue spec */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  gap: 8px;
+  padding: 6px 12px;
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 9999px;
+  color: #f4f4f5;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: system-ui, sans-serif;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  border-radius: 50%;
+}
+
+.pulse-ring {
+  position: absolute;
+  left: 12px; /* aligns with dot position */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  animation: pulse-expand 2s cubic-bezier(0.25, 0, 0, 1) infinite;
+}
+
+@keyframes pulse-expand {
+  0% {
+    transform: translateY(-50%) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-50%) scale(3.5);
+    opacity: 0;
+  }
+}
+
+/* Layout for the demo rows */
+.stack {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.avatars {
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid #27272a;
+}
+
+.avatar-row {
+  display: inline-flex;
+  gap: 18px;
+}
+
+/* Composable avatar variant: badge sits on the avatar corner */
+.avatar {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3f3f46, #18181b);
+  color: #e4e4e7;
+  font-weight: 700;
+}
+
+.avatar-badge {
+  padding: 0;
+  background: transparent;
+  border: none;
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+}
+
+.avatar-badge .pulse-dot {
+  display: block;
+}
+
+.avatar-badge .pulse-ring {
+  left: 0;
+  top: 0;
+  transform: none;
+}
+
+.avatar-badge .pulse-ring {
+  animation-name: pulse-expand-corner;
+}
+
+@keyframes pulse-expand-corner {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+
+/* Status color variants */
+.status-warning .pulse-dot,
+.status-warning .pulse-ring {
+  background-color: #f59e0b;
+}
+
+.status-offline .pulse-dot {
+  background-color: #71717a;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .pulse-ring {
+    animation: none;
+    opacity: 0;
+  }
+}

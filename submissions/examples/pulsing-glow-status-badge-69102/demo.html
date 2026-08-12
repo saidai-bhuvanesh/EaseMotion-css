@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pulsing Glow Status Badge</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="card" aria-labelledby="badge-title">
+        <p class="eyebrow">EaseMotion CSS</p>
+        <h1 id="badge-title">Pulsing Glow Status Badge</h1>
+        <p class="copy">
+          A pure-CSS infinite pulse: a solid status dot wrapped in a glowing
+          radial ring that expands outward and fades away, simulating a live
+          radar pulse. Compose it on avatars, list rows, or toolbar headers.
+        </p>
+
+        <div class="stack">
+          <span class="status-badge status-online">
+            <span class="pulse-ring"></span>
+            <span class="pulse-dot"></span>
+            Live
+          </span>
+
+          <span class="status-badge status-warning">
+            <span class="pulse-ring"></span>
+            <span class="pulse-dot"></span>
+            Syncing
+          </span>
+
+          <span class="status-badge status-offline">
+            <span class="pulse-dot"></span>
+            Offline
+          </span>
+        </div>
+
+        <div class="avatars" aria-label="Composed on avatars">
+          <span class="avatar-row">
+            <span class="avatar">
+              <span class="status-badge status-online avatar-badge">
+                <span class="pulse-ring"></span>
+                <span class="pulse-dot"></span>
+              </span>
+              A
+            </span>
+            <span class="avatar">
+              <span class="status-badge status-warning avatar-badge">
+                <span class="pulse-ring"></span>
+                <span class="pulse-dot"></span>
+              </span>
+              B
+            </span>
+            <span class="avatar">
+              <span class="status-badge status-offline avatar-badge">
+                <span class="pulse-dot"></span>
+              </span>
+              C
+            </span>
+          </span>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
