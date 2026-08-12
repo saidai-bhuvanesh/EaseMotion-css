@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infinite Auto-Scrolling Masonry Columns | EaseMotion CSS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="hero">
+      <header class="hero__copy">
+        <p class="hero__eyebrow">Pure CSS &middot; GPU-accelerated infinite scroll</p>
+        <h1 class="hero__title">Infinite Auto-Scrolling Masonry Columns</h1>
+        <p class="hero__lead">
+          Vertical columns of images scroll endlessly Ã¢ some rise, some fall Ã¢
+          creating a massive sense of scale popularized by premium agency
+          portfolios. The loop is flawless because each column duplicates its
+          content and translates by exactly <code>-50%</code>, then snaps back
+          invisibly. No JavaScript parallax libraries required.
+        </p>
+      </header>
+
+      <section class="masonry" aria-label="Infinite scrolling image masonry">
+        <!-- Column 1: scrolls UP -->
+        <div class="column column--up">
+          <div class="column__track">
+            <figure class="tile"><img src="https://picsum.photos/seed/em-col-1a/400/520" alt="" loading="lazy" /></figure>
+            <figure class="tile"><img src="https://picsum.photos/seed/em-col-1b/400/440" alt="" loading="lazy" /></figure>
+            <figure class="tile"><img src="https://picsum.photos/seed/em-col-1c/400/600" alt="" loading="lazy" /></figure>
+            <figure class="tile"><img src="https://picsum.photos/seed/em-col-1d/400/480" alt="" loading="lazy" /></figure>
+            <!-- duplicate set for seamless loop -->
+            <figure class="tile" aria-hidden="true"><img src="https://picsum.photos/seed/em-col-1a/400/520" alt="" loading="lazy" /></figure>
+            <figure class="tile" aria-hidden="true"><img src="https://picsum.photos/seed/em-col-1b/400/440" alt="" loading="lazy" /></figure>
+            <figure class="tile" aria-hidden="true"><img src="https://picsum.photos/seed/em-col-1c/400/600" alt="" loading="lazy" /></figure>
+            <figure class="tile" aria-hidden="true"><img src="https://picsum.photos/seed/em-col-1d/400/480" alt="" loading="lazy" /></figure>
+          </div>
+        </div>
+
+        <!-- Column 2: scrolls DOWN -->
+        <div class="column column--down">
+          <div class="column__track">
+            <figure class="tile"><img src="https://picsum.photos/seed/em-col-2a/400/480" alt="" loading="lazy" /></figure>
+            <figure class="tile"><img src="https://picsum.photos/seed/em-col-2b/400/600" alt="" loading="lazy" /></figure>
+            <figure class="tile"><img src="https://picsum.photos/seed/em-col-2c/400/420" alt="" loading="lazy" /></figure>
+            <figure class="tile"><img src="https://picsum.photos/seed/em-col-2d/400/540" alt="" loading="lazy" /></figure>
+            <figure class="tile" aria-hidden="true"><img src="https://picsum.photos/seed/em-col-2a/400/480" alt="" loading="lazy" /></figure>
+            <figure class="tile" aria-hidden="true"><img src="https://picsum.photos/seed/em-col-2b/400/600" alt="" loading="lazy" /></figure>
+            <figure class="tile" aria-hidden="true"><img src="https://picsum.photos/seed/em-col-2c/400/420" alt="" loading="lazy" /></figure>
+            <figure class="tile" aria-hidden="true"><img src="https://picsum.photos/seed/em-col-2d/400/540" alt="" loading="lazy" /></figure>
+          </div>
+        </div>
+
+        <!-- Column 3: scrolls UP (faster) -->
+        <div class="column column--up column--fast">
+          <div class="column__track">
+            <figure class="tile"><img src="https://picsum.photos/seed/em-col-3a/400/560" alt="" loading="lazy" /></figure>
+            <figure class="tile"><img src="https://picsum.photos/seed/em-col-3b/400/460" alt="" loading="lazy" /></figure>
+            <figure class="tile"><img src="https://picsum.photos/seed/em-col-3c/400/520" alt="" loading="lazy" /></figure>
+            <figure class="tile"><img src="https://picsum.photos/seed/em-col-3d/400/500" alt="" loading="lazy" /></figure>
+            <figure class="tile" aria-hidden="true"><img src="https://picsum.photos/seed/em-col-3a/400/560" alt="" loading="lazy" /></figure>
+            <figure class="tile" aria-hidden="true"><img src="https://picsum.photos/seed/em-col-3b/400/460" alt="" loading="lazy" /></figure>
+            <figure class="tile" aria-hidden="true"><img src="https://picsum.photos/seed/em-col-3c/400/520" alt="" loading="lazy" /></figure>
+            <figure class="tile" aria-hidden="true"><img src="https://picsum.photos/seed/em-col-3d/400/500" alt="" loading="lazy" /></figure>
+          </div>
+        </div>
+
+        <!-- Column 4: scrolls DOWN (slower) -->
+        <div class="column column--down column--slow">
+          <div class="column__track">
+            <figure class="tile"><img src="https://picsum.photos/seed/em-col-4a/400/500" alt="" loading="lazy" /></figure>
+            <figure class="tile"><img src="https://picsum.photos/seed/em-col-4b/400/560" alt="" loading="lazy" /></figure>
+            <figure class="tile"><img src="https://picsum.photos/seed/em-col-4c/400/440" alt="" loading="lazy" /></figure>
+            <figure class="tile"><img src="https://picsum.photos/seed/em-col-4d/400/600" alt="" loading="lazy" /></figure>
+            <figure class="tile" aria-hidden="true"><img src="https://picsum.photos/seed/em-col-4a/400/500" alt="" loading="lazy" /></figure>
+            <figure class="tile" aria-hidden="true"><img src="https://picsum.photos/seed/em-col-4b/400/560" alt="" loading="lazy" /></figure>
+            <figure class="tile" aria-hidden="true"><img src="https://picsum.photos/seed/em-col-4c/400/440" alt="" loading="lazy" /></figure>
+            <figure class="tile" aria-hidden="true"><img src="https://picsum.photos/seed/em-col-4d/400/600" alt="" loading="lazy" /></figure>
+          </div>
+        </div>
+
+        <!-- Column 5: scrolls UP -->
+        <div class="column column--up">
+          <div class="column__track">
+            <figure class="tile"><img src="https://picsum.photos/seed/em-col-5a/400/540" alt="" loading="lazy" /></figure>
+            <figure class="tile"><img src="https://picsum.photos/seed/em-col-5b/400/480" alt="" loading="lazy" /></figure>
+            <figure class="tile"><img src="https://picsum.photos/seed/em-col-5c/400/580" alt="" loading="lazy" /></figure>
+            <figure class="tile"><img src="https://picsum.photos/seed/em-col-5d/400/460" alt="" loading="lazy" /></figure>
+            <figure class="tile" aria-hidden="true"><img src="https://picsum.photos/seed/em-col-5a/400/540" alt="" loading="lazy" /></figure>
+            <figure class="tile" aria-hidden="true"><img src="https://picsum.photos/seed/em-col-5b/400/480" alt="" loading="lazy" /></figure>
+            <figure class="tile" aria-hidden="true"><img src="https://picsum.photos/seed/em-col-5c/400/580" alt="" loading="lazy" /></figure>
+            <figure class="tile" aria-hidden="true"><img src="https://picsum.photos/seed/em-col-5d/400/460" alt="" loading="lazy" /></figure>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

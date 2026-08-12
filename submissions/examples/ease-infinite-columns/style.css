@@ -1,0 +1,197 @@
+/* =========================================================================
+   Infinite Auto-Scrolling Masonry Columns
+   Pure CSS vertical infinite scroll using duplicated content + -50% translateY
+   ========================================================================= */
+
+:root {
+  --col-count: 5;
+  --col-gap: 14px;
+  --speed: 28s;
+  --speed-fast: 18s;
+  --speed-slow: 40s;
+  --tile-radius: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0a0a0f;
+  color: #f5f5f7;
+  font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ----- Layout ----- */
+.hero {
+  position: relative;
+  padding: clamp(28px, 5vw, 64px);
+}
+
+.hero__copy {
+  max-width: 640px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.hero__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  color: #8a8aff;
+  margin: 0 0 12px;
+}
+
+.hero__title {
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  line-height: 1.1;
+  margin: 0 0 14px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.hero__lead {
+  margin: 0 auto;
+  max-width: 560px;
+  color: #c3c3d0;
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+.hero__lead code {
+  background: #1c1c2a;
+  padding: 1px 6px;
+  border-radius: 6px;
+  color: #ffd27a;
+  font-size: 0.85em;
+}
+
+/* ----- Masonry container ----- */
+.masonry {
+  display: grid;
+  grid-template-columns: repeat(var(--col-count), 1fr);
+  gap: var(--col-gap);
+  height: clamp(420px, 70vh, 760px);
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+}
+
+/* ----- Column (the visible window) ----- */
+.column {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--tile-radius);
+  background: #14141f;
+}
+
+/* The track holds both the original + duplicated set; it animates */
+.column__track {
+  display: flex;
+  flex-direction: column;
+  gap: var(--col-gap);
+  will-change: transform;
+}
+
+.tile {
+  margin: 0;
+  border-radius: var(--tile-radius);
+  overflow: hidden;
+  background: #1b1b2a;
+}
+
+.tile img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ----- The infinite loop ----- */
+
+/* Up: translate the track up by 50% of its own height, then snap back.
+   Because the duplicated set is identical, the snap is invisible. */
+.column--up .column__track {
+  animation: scroll-up var(--speed) linear infinite;
+}
+
+.column--down .column__track {
+  animation: scroll-down var(--speed) linear infinite;
+}
+
+.column--up.column--fast .column__track {
+  animation-duration: var(--speed-fast);
+}
+
+.column--down.column--slow .column__track,
+.column--up.column--slow .column__track {
+  animation-duration: var(--speed-slow);
+}
+
+@keyframes scroll-up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scroll-down {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 900px) {
+  :root {
+    --col-count: 4;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --col-count: 3;
+    --speed: 22s;
+  }
+}
+
+@media (max-width: 420px) {
+  :root {
+    --col-count: 2;
+  }
+}
+
+/* ----- Accessibility: respect reduced motion ----- */
+@media (prefers-reduced-motion: reduce) {
+  .column__track {
+    animation: none !important;
+    transform: none !important;
+  }
+}
