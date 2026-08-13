@@ -1,0 +1,7 @@
+{
+  "benchmark": "Gzip vs Brotli Compression Efficiency Benchmark (CI)",
+  "budgets": {
+    "maximumExecutionMs": 5000,
+    "maximumBundleBytes": 25000
+  }
+}
