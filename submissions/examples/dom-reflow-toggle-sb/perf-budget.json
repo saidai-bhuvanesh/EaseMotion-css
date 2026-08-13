@@ -1,0 +1,7 @@
+{
+  "benchmark": "DOM Reflow Count Benchmark during Dynamic Class Toggles",
+  "budgets": {
+    "maximumExecutionMs": 5000,
+    "maximumBundleBytes": 25000
+  }
+}
