@@ -1,0 +1,7 @@
+{
+  "benchmark": "CSS Layer Cascade Rule Order Evaluation Audit",
+  "budgets": {
+    "maximumExecutionMs": 5000,
+    "maximumBundleBytes": 25000
+  }
+}
