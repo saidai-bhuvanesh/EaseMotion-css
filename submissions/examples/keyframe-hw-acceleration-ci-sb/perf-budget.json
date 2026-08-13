@@ -1,0 +1,7 @@
+{
+  "benchmark": "CSS Keyframe Animation Hardware Acceleration Verification (CI)",
+  "budgets": {
+    "maximumExecutionMs": 5000,
+    "maximumBundleBytes": 25000
+  }
+}
