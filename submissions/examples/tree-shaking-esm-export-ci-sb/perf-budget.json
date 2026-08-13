@@ -1,0 +1,7 @@
+{
+  "benchmark": "Tree-Shaking ESM Module Export Verification Test (CI)",
+  "budgets": {
+    "maximumExecutionMs": 5000,
+    "maximumBundleBytes": 25000
+  }
+}
