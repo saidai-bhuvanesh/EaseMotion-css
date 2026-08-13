@@ -1,0 +1,7 @@
+{
+  "benchmark": "Critical CSS Extraction Benchmark for Above-the-Fold Loading (CI)",
+  "budgets": {
+    "maximumExecutionMs": 5000,
+    "maximumBundleBytes": 25000
+  }
+}
