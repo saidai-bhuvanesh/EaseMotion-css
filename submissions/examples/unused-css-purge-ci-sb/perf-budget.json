@@ -1,0 +1,7 @@
+{
+  "benchmark": "Unused CSS Class Extraction & Purge Efficiency Benchmark (CI)",
+  "budgets": {
+    "maximumExecutionMs": 5000,
+    "maximumBundleBytes": 25000
+  }
+}
