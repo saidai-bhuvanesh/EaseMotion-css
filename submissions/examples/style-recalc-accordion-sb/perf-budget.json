@@ -1,0 +1,7 @@
+{
+  "benchmark": "Style Recalculation Duration Audit for Accordions",
+  "budgets": {
+    "maximumExecutionMs": 5000,
+    "maximumBundleBytes": 25000
+  }
+}
