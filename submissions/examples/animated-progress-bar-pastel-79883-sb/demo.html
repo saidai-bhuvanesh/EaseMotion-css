@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Progress Bar — Pastel</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="demo-shell">
+      <section class="demo-card" aria-labelledby="pb-title">
+        <p class="eyebrow">Feedback component</p>
+        <h1 id="pb-title">Animated progress bar with pastel styling</h1>
+        <p class="demo-copy">Soft pastel progress bars with a moving sheen, animated fill, and percentage labels for uploads, onboarding, and dashboards.</p>
+        <div class="pb-list">
+          <div class="pb-item">
+            <div class="pb-row"><span class="pb-label">Uploading photos</span><span class="pb-value">35%</span></div>
+            <div class="pb-track" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"><div class="pb-fill" style="--pb-pct: 35%"></div></div>
+          </div>
+          <div class="pb-item">
+            <div class="pb-row"><span class="pb-label">Profile setup</span><span class="pb-value">68%</span></div>
+            <div class="pb-track" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"><div class="pb-fill pb-fill--lilac" style="--pb-pct: 68%"></div></div>
+          </div>
+          <div class="pb-item">
+            <div class="pb-row"><span class="pb-label">Syncing calendar</span><span class="pb-value">92%</span></div>
+            <div class="pb-track" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"><div class="pb-fill pb-fill--mint" style="--pb-pct: 92%"></div></div>
+          </div>
+          <div class="pb-item">
+            <div class="pb-row"><span class="pb-label">Building assets</span><span class="pb-value">50%</span></div>
+            <div class="pb-track" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><div class="pb-fill pb-fill--peach" style="--pb-pct: 50%"></div></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
