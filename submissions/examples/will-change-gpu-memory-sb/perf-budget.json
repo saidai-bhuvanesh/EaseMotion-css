@@ -1,0 +1,7 @@
+{
+  "benchmark": "CSS Will-Change GPU Memory Overhead Benchmark",
+  "budgets": {
+    "maximumExecutionMs": 5000,
+    "maximumBundleBytes": 25000
+  }
+}
