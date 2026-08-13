@@ -1,0 +1,7 @@
+{
+  "benchmark": "Third-Party Framework CSS Reset Conflict Benchmark (CI)",
+  "budgets": {
+    "maximumExecutionMs": 5000,
+    "maximumBundleBytes": 25000
+  }
+}
