@@ -1,0 +1,7 @@
+{
+  "benchmark": "Pure CSS vs JS Motion Engine Performance Benchmark Comparison",
+  "budgets": {
+    "maximumExecutionMs": 5000,
+    "maximumBundleBytes": 25000
+  }
+}
