@@ -1,0 +1,7 @@
+{
+  "benchmark": "Backdrop-Filter Render Cost Benchmark on Low-End Mobile Devices (CI)",
+  "budgets": {
+    "maximumExecutionMs": 5000,
+    "maximumBundleBytes": 25000
+  }
+}
