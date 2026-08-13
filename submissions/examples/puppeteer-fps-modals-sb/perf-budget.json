@@ -1,0 +1,7 @@
+{
+  "benchmark": "Headless Chrome Puppeteer FPS Rendering Benchmark for Modals",
+  "budgets": {
+    "maximumExecutionMs": 5000,
+    "maximumBundleBytes": 25000
+  }
+}
