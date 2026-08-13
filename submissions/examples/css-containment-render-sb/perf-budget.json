@@ -1,0 +1,7 @@
+{
+  "benchmark": "CSS Containment Property Rendering Optimization Test",
+  "budgets": {
+    "maximumExecutionMs": 5000,
+    "maximumBundleBytes": 25000
+  }
+}
