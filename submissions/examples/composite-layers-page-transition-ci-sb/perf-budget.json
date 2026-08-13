@@ -1,0 +1,7 @@
+{
+  "benchmark": "Composite Layers Count Audit during Page Transitions (CI)",
+  "budgets": {
+    "maximumExecutionMs": 5000,
+    "maximumBundleBytes": 25000
+  }
+}
