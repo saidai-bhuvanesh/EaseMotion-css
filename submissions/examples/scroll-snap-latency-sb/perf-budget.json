@@ -1,0 +1,7 @@
+{
+  "benchmark": "Scroll Snap Latency Benchmark during Fast Touch Swiping",
+  "budgets": {
+    "maximumExecutionMs": 5000,
+    "maximumBundleBytes": 25000
+  }
+}
