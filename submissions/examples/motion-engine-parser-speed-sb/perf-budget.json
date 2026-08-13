@@ -1,0 +1,7 @@
+{
+  "benchmark": "Motion Engine Attribute Parser Speed Benchmark (Ops/sec)",
+  "budgets": {
+    "maximumExecutionMs": 5000,
+    "maximumBundleBytes": 25000
+  }
+}
